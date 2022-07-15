@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Actor
+  - Block
+  - Hiable
+  - Hurtable
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Actor
+    uniqueID: 2026927523
+    locked: 0
+  - name: Effect
+    uniqueID: 1691158465
     locked: 0

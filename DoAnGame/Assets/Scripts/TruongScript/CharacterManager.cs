@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEditor.Animations;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class CharacterManager : MonoBehaviour
     private Animator animator;
 
     private int selectedOption = 0;
-
 
     void Start()
     {
@@ -79,7 +77,8 @@ public class CharacterManager : MonoBehaviour
 
     public void ChangeScene(int sceneID)
     {
-        SceneManager.LoadScene(sceneID); 
+        SceneManager.LoadScene(sceneID);
     }
-
+     
+   
 }

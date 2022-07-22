@@ -37,7 +37,7 @@ public class SpellCoolDownCicle : MonoBehaviour
     public void coolDownLap(float time)
     {
         CollDownTime = time;
-        if(time > 0.0f)
+        if(time > 0.6f)
         {
             isCollDown = true;
             CollDownTimer = CollDownTime;

@@ -52,19 +52,9 @@ public class Player : MonoBehaviour
         //Reset MovedDelta
         moveDelta = new Vector3(x, y, 0);
         //Swap sprites direction, whether you're going right or left
-        if (moveDelta.x > 0)
+        if (moveDelta.x > 0 || moveDelta.x < 0 || moveDelta.y != 0)
         {
             
-            isMove = true;
-        }
-
-        else if (moveDelta.x < 0)
-        {
-            isMove = true;
-        }
-        else if (moveDelta.y != 0)
-        {
-          
             isMove = true;
         }
         else

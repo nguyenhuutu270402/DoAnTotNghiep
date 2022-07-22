@@ -130,15 +130,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weapons_0
+      name: pistol
       rect:
         serializedVersion: 2
-        x: 12
+        x: 0
         y: 202
-        width: 60
+        width: 66
         height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,6 +146,27 @@ TextureImporter:
       bones: []
       spriteID: d0180f6e9417b2542b411c22112d62ab
       internalID: -335692485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thompson
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 134
+        width: 96
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23fb1e35ca7c4b4f8e3eff6e7e43f0e
+      internalID: -44687002
       vertices: []
       indices: 
       edges: []
@@ -161,7 +182,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      weapons_0: -335692485
+      pistol: -335692485
+      thompson: -44687002
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

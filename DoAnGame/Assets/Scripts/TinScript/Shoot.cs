@@ -33,21 +33,14 @@ public class Shoot : MonoBehaviour
         //
 
     }
-
-    // Update is called once per frame
     void Update()
     {
-
-        //if (Input.GetKey(KeyCode.Q))
-        //{
-        //    weapon.sprite = sprites;
-        //    Debug.Log(">>>>>>>>>");
-        //}
 
 
         coolDown -= Time.deltaTime;
         if(Input.GetKey(KeyCode.Mouse0) && coolDown <= 0f)
         {
+            
             DoShoot();
             coolDown = coolDownLap;
 
@@ -58,6 +51,8 @@ public class Shoot : MonoBehaviour
 
         }
     }
+
+   
 
     public void DoShoot()
     {

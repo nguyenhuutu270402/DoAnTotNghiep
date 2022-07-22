@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    private float coolDown = 0, coolDownLap = 0.1f;
-    public GameObject bazookaBullet;
+    private float coolDown = 0;
+    public float coolDownLap;
+    public GameObject bulletPrefabs;
     public Transform firePoint;
     public float bulletForce;
     private AudioSource audioSource;
+    public float recoilForce;
 
     //public Sprite sprites; private SpriteRenderer weapon;
 
@@ -40,13 +42,13 @@ public class Shoot : MonoBehaviour
 
     public void DoShoot()
     {
-        coolDownLap = 0.7f;
-        GameObject bullet = Instantiate(bazookaBullet, firePoint.position, firePoint.rotation);
+        //coolDownLap = 0.7f;
+        GameObject bullet = Instantiate(bulletPrefabs, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
         audioSource.Play();
         //Recoil
-        transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(firePoint.right * -150, ForceMode2D.Force);
+        transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(firePoint.right * -recoilForce, ForceMode2D.Force);
 
     }
 }

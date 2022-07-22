@@ -24,10 +24,6 @@ public class BombScript : MonoBehaviour
 
 
     }
-
-   
-        
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
     if (collision.gameObject.layer == 8)

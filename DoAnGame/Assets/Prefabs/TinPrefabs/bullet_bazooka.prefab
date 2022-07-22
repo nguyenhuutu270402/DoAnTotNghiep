@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7565543239176537705}
   - component: {fileID: 8685315840262560048}
   - component: {fileID: 8439987653521409614}
-  - component: {fileID: 8639323494574647524}
   - component: {fileID: 3078454348695170216}
   - component: {fileID: -435113262516433878}
+  - component: {fileID: 4168696544184630829}
   m_Layer: 0
   m_Name: bullet_bazooka
   m_TagString: Untagged
@@ -31,10 +31,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.115238406, y: -0.010190355, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8685315840262560048
 SpriteRenderer:
@@ -109,22 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &8639323494574647524
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7065512835102934730}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0098177055, y: -0.000000021181382}
-  m_Size: {x: 0.12821901, y: 0.080000184}
-  m_Direction: 1
 --- !u!114 &3078454348695170216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,3 +224,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &4168696544184630829
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7065512835102934730}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0063490733, y: 0.0029626905}
+  m_Size: {x: 0.1273022, y: 0.07820704}
+  m_Direction: 1

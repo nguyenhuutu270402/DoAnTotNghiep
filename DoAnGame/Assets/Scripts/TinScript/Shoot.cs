@@ -14,11 +14,24 @@ public class Shoot : MonoBehaviour
 
     //public Sprite sprites; private SpriteRenderer weapon;
 
+    // truong
+    SpellCoolDownCicle spell;
+        
+    //
+
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
         //weapon = gameObject.GetComponent<SpriteRenderer>();
+
+
+        // truong
+        spell = FindObjectOfType<SpellCoolDownCicle>();
+
+        //
+
     }
 
     // Update is called once per frame
@@ -37,6 +50,12 @@ public class Shoot : MonoBehaviour
         {
             DoShoot();
             coolDown = coolDownLap;
+
+            // truong
+                spell.coolDownLap(coolDownLap);
+
+            //
+
         }
     }
 

@@ -28,7 +28,6 @@ public class SpellCoolDownCicle : MonoBehaviour
                 CollDownTimer = 0.0f;
                 isCollDown = false;
             }
-            
         }
     }
     

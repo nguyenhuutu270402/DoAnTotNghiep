@@ -12,7 +12,6 @@ public class Shoot : MonoBehaviour
     private AudioSource audioSource;
     public float recoilForce;
 
-    
 
     private string SHOTGUN = "shotgun", THOMPSON = "thompson", MINER = "miner", BAZOOKA = "bazooka", PISTOL = "pistol"  ;
 
@@ -57,7 +56,8 @@ public class Shoot : MonoBehaviour
     public void DoShoot()
     {
         //Shake
-        CinemachineShake.Instance.ShakeCamera(0.5f, 0.2f);
+
+         CinemachineShake.Instance.ShakeCamera(0.5f, 0.2f);
 
         //Create bullet
         if(transform.gameObject.name == SHOTGUN)

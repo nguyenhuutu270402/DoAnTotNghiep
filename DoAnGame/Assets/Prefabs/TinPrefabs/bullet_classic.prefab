@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1816506066145068104
 SpriteRenderer:
@@ -102,8 +102,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016242716, y: 0.0009745508}
-  m_Size: {x: 0.13675149, y: 0.06635624}
+  m_Offset: {x: -0.00017243848, y: -0.00082221424}
+  m_Size: {x: 0.14034517, y: 0.10269111}
   m_Direction: 1
 --- !u!50 &6178385759422766822
 Rigidbody2D:
@@ -239,7 +239,7 @@ MonoBehaviour:
   LayerToHit:
     serializedVersion: 2
     m_Bits: 256
-  ExplosionEffect: {fileID: 788943414665018995, guid: aab34dab1b915204db329ff1c1294f12, type: 3}
+  ExplosionEffect: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   audioSource: {fileID: 4394807780253091890}
 --- !u!82 &4394807780253091890
 AudioSource:

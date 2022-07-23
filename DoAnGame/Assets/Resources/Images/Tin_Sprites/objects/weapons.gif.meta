@@ -159,7 +159,7 @@ TextureImporter:
         width: 96
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,6 +167,48 @@ TextureImporter:
       bones: []
       spriteID: e23fb1e35ca7c4b4f8e3eff6e7e43f0e
       internalID: -44687002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: korth
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 202
+        width: 64
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a254da762056bf4f896dd412ca2b7ab
+      internalID: -50572422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shotGun
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 10
+        width: 96
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed9aad7fb951624b8c4d1767f8a92e5
+      internalID: -296039334
       vertices: []
       indices: 
       edges: []
@@ -182,6 +224,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      shotGun: -296039334
+      korth: -50572422
       pistol: -335692485
       thompson: -44687002
   spritePackingTag: 

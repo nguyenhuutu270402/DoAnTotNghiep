@@ -32,10 +32,10 @@ public class BombScript : MonoBehaviour
            gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);
             Destroy(gameObject, audioSource.clip.length);      
         }
-        else
-        {
-            Destroy(gameObject, 3f);
-        }
+        //else
+        //{
+        //    Destroy(gameObject, 3f);
+        //}
     }
     public void explosion()
     {

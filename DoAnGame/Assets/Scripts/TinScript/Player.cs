@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
 
     private Animator animator;
     private bool isMove;
+    private GameObject Cam;
+    private int PickupWeapon = 2, HoldingWeapon = 2;
 
 
     // truong
@@ -23,8 +26,9 @@ public class Player : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-
-
+        Cam = GameObject.FindWithTag("MainCamera");
+        transform.GetChild(2).gameObject.SetActive(true);
+ 
         // truong
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
@@ -75,6 +79,38 @@ public class Player : MonoBehaviour
         {
             //Make this thing move 
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+        }
+    }
+
+
+    // COLLISION WITH THE CHEST
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "chest_0")
+        {
+
+
+            //PickupWeapon = Random.Range(3, 8);
+            while(PickupWeapon == HoldingWeapon)
+            {
+                PickupWeapon = Random.Range(3, 8);
+            }
+            transform.GetChild(HoldingWeapon).transform.gameObject.SetActive(false);
+            transform.GetChild(PickupWeapon).transform.gameObject.SetActive(true);
+            
+            if (PickupWeapon == 7)
+            {
+                Cam.GetComponent<Volume>().weight = 1;
+            }
+            else
+            {
+                Cam.GetComponent<Volume>().weight = 0;
+
+            }
+
+            ChestRandom.Instance.RandomPosition();
+
+            HoldingWeapon = PickupWeapon;
         }
     }
 

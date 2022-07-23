@@ -60,20 +60,39 @@ public class Shoot : MonoBehaviour
          CinemachineShake.Instance.ShakeCamera(0.5f, 0.2f);
 
         //Create bullet
-        if(transform.gameObject.name == SHOTGUN)
-        {
 
-            for (int i = 0; i <= 5; i++)
-            {
-                Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), 0);
-                CreateBullet(shortGunFlyingDirection, 3, 0.7f);
-            }
-          
-        }
-        else
+        switch (transform.gameObject.name)
         {
-            CreateBullet( Vector3.zero, 0, 3f);
+            case "shotgun":
+                for (int i = 0; i <= 5; i++)
+                {
+                    Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), 0);
+                    CreateBullet(shortGunFlyingDirection, 3, 0.7f);
+                }
+
+                break;
+            case "miner":
+                CreateBullet(Vector3.zero, 0, 1000f);
+                break;
+                    
+            default:
+                CreateBullet(Vector3.zero, 0, 3f);
+                break;
         }
+        //if(transform.gameObject.name == SHOTGUN)
+        //{
+
+            //for (int i = 0; i <= 5; i++)
+            //{
+            //    Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), 0);
+            //    CreateBullet(shortGunFlyingDirection, 3, 0.7f);
+            //}
+          
+        //}
+        //else
+        //{
+        //    CreateBullet( Vector3.zero, 0, 3f);
+        //}
 
         audioSource.Play();
         //Recoil

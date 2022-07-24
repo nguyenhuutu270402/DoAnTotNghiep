@@ -45,50 +45,17 @@ public class ShootLaser : MonoBehaviour
             
             Destroy(effect, 0.25f);
             
-           
-
         }
         else
         {
-            //Draw2DRay(laserFirePoint.position, laserFirePoint.transform.right * defDistanceRay);
-            //audioSource.Pause();
             m_lineRenderer.enabled = false;
-           
-
         }
 
         }
-    void Shoot(){
-        if (Physics2D.Raycast(m_transform.position, transform.right) )
-        {
-            RaycastHit2D _hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
-            Draw2DRay(laserFirePoint.position, _hit.point);
-            Instantiate(Effect, laserFirePoint.position, Quaternion.identity);
-        }
-        else
-        {
-            Draw2DRay(laserFirePoint.position, laserFirePoint.transform.right * defDistanceRay);
-        }
-    }
+
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
         m_lineRenderer.SetPosition(0, startPos);
         m_lineRenderer.SetPosition(1, endPos);
-    }
-
-    void hitEnemy()
-    {
-        Collider2D[] objects = Physics2D.OverlapBoxAll(transform.position, fieldOfImpact, LayerToHit);
-        foreach(Collider2D obj in objects)
-        {
-            //audioSource.Play();
-            if (obj.gameObject.tag == "Enemies")
-            {
-                Vector2 direction = obj.transform.position - transform.position;
-                obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
-                Destroy(obj.gameObject, 1f);
-            }
-            GameObject effect = Instantiate(Effect, transform.position, Quaternion.identity);
-        }
     }
 }

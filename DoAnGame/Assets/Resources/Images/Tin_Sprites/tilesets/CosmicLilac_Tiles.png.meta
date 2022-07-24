@@ -298,7 +298,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_8
+      name: space_58
       rect:
         serializedVersion: 2
         x: 128
@@ -319,7 +319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_9
+      name: space_59
       rect:
         serializedVersion: 2
         x: 144
@@ -529,7 +529,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space_20
+      name: space_60
       rect:
         serializedVersion: 2
         x: 96
@@ -550,7 +550,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space_21
+      name: space_61
       rect:
         serializedVersion: 2
         x: 112
@@ -571,7 +571,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space_22
+      name: space_62
       rect:
         serializedVersion: 2
         x: 128
@@ -613,7 +613,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_23
+      name: alien_0
       rect:
         serializedVersion: 2
         x: 160
@@ -655,7 +655,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_25
+      name: wardrobe_0
       rect:
         serializedVersion: 2
         x: 192
@@ -802,7 +802,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space_24
+      name: space_63
       rect:
         serializedVersion: 2
         x: 96
@@ -823,7 +823,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space_25
+      name: space_64
       rect:
         serializedVersion: 2
         x: 112
@@ -844,7 +844,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space_26
+      name: space_65
       rect:
         serializedVersion: 2
         x: 128
@@ -886,7 +886,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_36
+      name: alien_1
       rect:
         serializedVersion: 2
         x: 160
@@ -928,7 +928,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_38
+      name: wardrobe_1
       rect:
         serializedVersion: 2
         x: 192
@@ -1033,7 +1033,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_43
+      name: space_67
       rect:
         serializedVersion: 2
         x: 64
@@ -1054,7 +1054,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_44
+      name: space_68
       rect:
         serializedVersion: 2
         x: 80
@@ -1264,7 +1264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_54
+      name: space_46
       rect:
         serializedVersion: 2
         x: 32
@@ -1285,7 +1285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_55
+      name: space_47
       rect:
         serializedVersion: 2
         x: 48
@@ -1306,7 +1306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_56
+      name: space_48
       rect:
         serializedVersion: 2
         x: 64
@@ -1327,7 +1327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_57
+      name: space_52
       rect:
         serializedVersion: 2
         x: 80
@@ -1348,7 +1348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_58
+      name: space_53
       rect:
         serializedVersion: 2
         x: 96
@@ -1537,7 +1537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_67
+      name: space_49
       rect:
         serializedVersion: 2
         x: 32
@@ -1558,7 +1558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_68
+      name: space_50
       rect:
         serializedVersion: 2
         x: 48
@@ -1579,7 +1579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_69
+      name: space_51
       rect:
         serializedVersion: 2
         x: 64
@@ -1600,7 +1600,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_70
+      name: space_54
       rect:
         serializedVersion: 2
         x: 80
@@ -1621,7 +1621,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_71
+      name: space_55
       rect:
         serializedVersion: 2
         x: 96
@@ -1642,7 +1642,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_72
+      name: space_56
       rect:
         serializedVersion: 2
         x: 112
@@ -1663,7 +1663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_73
+      name: space_57
       rect:
         serializedVersion: 2
         x: 128
@@ -1957,7 +1957,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_87
+      name: space_42
       rect:
         serializedVersion: 2
         x: 144
@@ -1978,7 +1978,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_88
+      name: space_43
       rect:
         serializedVersion: 2
         x: 160
@@ -1999,7 +1999,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_89
+      name: space_44
       rect:
         serializedVersion: 2
         x: 176
@@ -2020,7 +2020,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CosmicLilac_Tiles_90
+      name: space_45
       rect:
         serializedVersion: 2
         x: 192
@@ -2183,29 +2183,31 @@ TextureImporter:
       space_31: -39436115
       space_32: 1524608558
       CosmicLilac_Tiles_86: -639518356
-      CosmicLilac_Tiles_23: 480408459
       CosmicLilac_Tiles_81: -2132747830
       space_13: -1223551560
+      space_59: 576588973
+      space_67: -1392409713
       CosmicLilac_Tiles_52: 713050371
       CosmicLilac_Tiles_4: 381997109
       CosmicLilac_Tiles_64: 1819494650
+      space_68: -1475172323
+      alien_1: 781188060
       CosmicLilac_Tiles_93: 1728592418
       CosmicLilac_Tiles_18: 110520119
       CosmicLilac_Tiles_11: -667756884
       CosmicLilac_Tiles_80: -623712191
-      CosmicLilac_Tiles_72: 1218422767
+      wardrobe_1: 1635397619
       space_23: -1188648645
-      CosmicLilac_Tiles_71: -966184260
+      space_46: 1118397180
       CosmicLilac_Tiles_7: -727204096
-      CosmicLilac_Tiles_36: 781188060
       CosmicLilac_Tiles_99: 246836620
       space_8: -1469045694
       space_30: -953732992
-      CosmicLilac_Tiles_87: 2118976525
       CosmicLilac_Tiles_76: -20475093
       CosmicLilac_Tiles_95: 1181436656
       CosmicLilac_Tiles_12: -1798940290
       space_33: -1632445090
+      space_53: -882283950
       CosmicLilac_Tiles_24: 33682998
       CosmicLilac_Tiles_97: -976358219
       CosmicLilac_Tiles_10: -1678141377
@@ -2215,72 +2217,70 @@ TextureImporter:
       CosmicLilac_Tiles_61: 228797013
       CosmicLilac_Tiles_5: -163787514
       space_0: -1712397123
-      CosmicLilac_Tiles_90: -1850500179
-      CosmicLilac_Tiles_44: -1475172323
       CosmicLilac_Tiles_77: 582825267
       space_4: -1269581204
       CosmicLilac_Tiles_103: 1265774868
       space_3: 1802423896
-      space_24: -372678555
+      space_51: 1635289728
+      space_58: -1624126498
       CosmicLilac_Tiles_85: 1587538007
-      space_26: 857741036
-      space_25: -1496994102
-      space_20: 1248007950
+      space_42: 2118976525
       CosmicLilac_Tiles_59: 1219236521
+      space_65: 857741036
       CosmicLilac_Tiles_79: -1444964472
-      CosmicLilac_Tiles_68: 1740913751
+      space_47: 879166685
+      space_43: -894129315
+      space_45: -1850500179
       space_35: 96803059
       space_19: 523819444
-      CosmicLilac_Tiles_70: 1133385665
       CosmicLilac_Tiles_96: -1190712192
       space_16: -1856975428
+      space_64: -1496994102
+      space_52: -949916986
+      space_50: 1740913751
+      space_56: 1218422767
+      wardrobe_0: 1594166573
+      space_60: 1248007950
       CosmicLilac_Tiles_6: 231096481
       CosmicLilac_Tiles_94: -683460130
+      space_61: -1398581496
       space_10: -1576946256
       space_7: 1171454233
       CosmicLilac_Tiles_53: -1800643823
       CosmicLilac_Tiles_102: 2124903471
+      space_62: -746486345
       CosmicLilac_Tiles_62: 197156182
+      space_63: -372678555
       space_29: 1026530574
+      space_57: -1980886665
       space_14: 369727081
-      CosmicLilac_Tiles_54: 1118397180
       CosmicLilac_Tiles_98: -968453779
+      space_49: 291340279
       CosmicLilac_Tiles_60: -1919465430
+      space_55: -966184260
       CosmicLilac_Tiles_17: -979414983
+      space_54: 1133385665
       space_37: 827476759
-      CosmicLilac_Tiles_25: 1594166573
       CosmicLilac_Tiles_101: -916362210
+      space_44: 981842084
+      alien_0: 480408459
       CosmicLilac_Tiles_100: 1918630377
       space_1: -1337704161
       CosmicLilac_Tiles_92: 198040106
       space_18: 1296116656
-      CosmicLilac_Tiles_8: -1624126498
-      CosmicLilac_Tiles_69: 1635289728
-      CosmicLilac_Tiles_88: -894129315
       space_5: 414034954
       space_11: -1881003625
-      CosmicLilac_Tiles_38: 1635397619
-      CosmicLilac_Tiles_43: -1392409713
-      CosmicLilac_Tiles_9: 576588973
-      CosmicLilac_Tiles_56: -1848168712
-      space_28: 1094831478
       space_36: 2094427568
-      CosmicLilac_Tiles_30: 2062018162
-      CosmicLilac_Tiles_67: 291340279
       space_6: 262573416
-      space_21: -1398581496
+      space_28: 1094831478
+      CosmicLilac_Tiles_30: 2062018162
       CosmicLilac_Tiles_49: 962492045
-      CosmicLilac_Tiles_58: -882283950
-      CosmicLilac_Tiles_57: -949916986
+      space_48: -1848168712
       CosmicLilac_Tiles_31: -379121480
       CosmicLilac_Tiles_63: -1383419406
       CosmicLilac_Tiles_65: -1387247675
-      CosmicLilac_Tiles_73: -1980886665
-      space_22: -746486345
-      CosmicLilac_Tiles_89: 981842084
-      space_17: 1813430436
-      CosmicLilac_Tiles_55: 879166685
       CosmicLilac_Tiles_75: -876721211
+      space_17: 1813430436
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

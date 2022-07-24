@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
             Load();
         }
         updateCharacter(selectedOption);
+
+
+
         //
     }
 

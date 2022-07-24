@@ -139,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUI_1
+      name: slider0
       rect:
         serializedVersion: 2
         x: 104
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUI_2
+      name: slider1
       rect:
         serializedVersion: 2
         x: 124
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUI_3
+      name: slider2
       rect:
         serializedVersion: 2
         x: 143
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUI_4
+      name: sliderDow
       rect:
         serializedVersion: 2
         x: 103
@@ -412,7 +412,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUI_14
+      name: scrollbar
       rect:
         serializedVersion: 2
         x: 114
@@ -475,7 +475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Btn_game0
+      name: Btn_game1
       rect:
         serializedVersion: 2
         x: 0
@@ -517,7 +517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Btn_game
+      name: Btn_game0
       rect:
         serializedVersion: 2
         x: 0
@@ -538,7 +538,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUI_20
+      name: LanguageDropdown0
       rect:
         serializedVersion: 2
         x: 21
@@ -559,7 +559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUI_21
+      name: LanguageDropdown1
       rect:
         serializedVersion: 2
         x: 21
@@ -633,29 +633,29 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       btn_dow0: -234157994
-      Btn_game: -1814873433
+      scrollbar: 1085920672
       btn_right0: -1839559403
       btn_right1: -1320909026
-      allTheDinoUI_21: 1022815478
       btn_right2: 737078213
-      allTheDinoUI_14: 1085920672
-      allTheDinoUI_3: -1726733720
       btn_play1: 1815741928
+      sliderDow: -316830759
+      slider2: -1726733720
       Btn_game2: -318305475
-      allTheDinoUI_20: -889835481
+      LanguageDropdown0: -889835481
+      slider1: -1741166312
       btn_left2: 168516087
       btn_dow2: 371697156
-      Btn_game0: -743183355
+      Btn_game0: -1814873433
+      LanguageDropdown1: 1022815478
       table: 1709858591
       btn_play2: -137896057
-      allTheDinoUI_4: -316830759
       allTheDinoUI_23: -1211231854
-      btn_dow1: -399147044
       btn_left1: 1053299599
-      allTheDinoUI_2: -1741166312
-      allTheDinoUI_1: 1113381632
+      btn_dow1: -399147044
+      slider0: 1113381632
       btn_left0: 1304028526
       btn_play0: 792539345
+      Btn_game1: -743183355
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

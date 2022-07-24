@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -24,8 +23,6 @@ public class CharacterManager : MonoBehaviour
         {
             Load();
         }
-
-
         updateCharacter(selectedOption);
     }
 
@@ -74,11 +71,4 @@ public class CharacterManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectedOption", selectedOption);
     }
-
-    public void ChangeScene(int sceneID)
-    {
-        SceneManager.LoadScene(sceneID);
-    }
-     
-   
 }

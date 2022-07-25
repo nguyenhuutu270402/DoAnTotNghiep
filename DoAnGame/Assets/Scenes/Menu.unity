@@ -852,7 +852,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5586,6 +5586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1239599513}
+  - component: {fileID: 1239599517}
   - component: {fileID: 1239599516}
   - component: {fileID: 1239599512}
   - component: {fileID: 1239599511}
@@ -5718,6 +5719,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa981543480dd2478bfba45c9e652bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1239599517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239599509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35de4b3ae2d48db42982a5f317d90214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown_language: {fileID: 417452183}
+  MenuMain:
+  - {fileID: 1495433956}
+  - {fileID: 385959416}
+  - {fileID: 1040491831}
+  - {fileID: 960720278}
+  - {fileID: 1950277099}
+  MenuPlay:
+  - {fileID: 679450892}
+  - {fileID: 1777122400}
+  - {fileID: 294399633}
+  MenuCredits:
+  - {fileID: 564971639}
+  MenuSetting:
+  - {fileID: 1308295654}
+  - {fileID: 1663055077}
+  - {fileID: 1368329406}
+  - {fileID: 1356093281}
+  - {fileID: 726709425}
+  BtnBack:
+  - {fileID: 572485763}
+  - {fileID: 1122375803}
+  - {fileID: 151067508}
+  - {fileID: 2090348381}
+  credits: {fileID: 1851340347}
+  textCredits:
+  - {fileID: 591079258}
+  - {fileID: 211287966}
+  textCreditsDisplay:
+  - {fileID: 591079257}
+  - {fileID: 211287965}
+  index: 0
 --- !u!1 &1250513155
 GameObject:
   m_ObjectHideFlags: 0
@@ -7053,7 +7098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1651770640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7321,7 +7366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1702098832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8544,6 +8589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sound: {fileID: 8300000, guid: 1824922f8a7a49548b229d2b38e53b6c, type: 3}
+  _sound2: {fileID: 0}
   SFX_Scrollbar: {fileID: 1634218129}
   BGM_Scrollbar: {fileID: 2144062556}
   index: 1
@@ -8576,7 +8622,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Sounds : MonoBehaviour
 {
     AudioSource m_sound;
-    public AudioClip _sound, _sound2;
+    [SerializeField] public AudioClip _sound, _sound2;
     public Slider SFX_Scrollbar, BGM_Scrollbar;
     public int index;
     private float SFX_Scrollbar_Value, SFX_befor;

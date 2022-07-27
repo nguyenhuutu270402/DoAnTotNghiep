@@ -6,8 +6,8 @@ using System.IO;
 
 public class JsonManager : MonoBehaviour
 {
-    private string filepath = "ProGame.json";
-
+    //private string filepath = "ProGame.json";
+    private string filepath = Path.Combine(Application.streamingAssetsPath, "ProGame.json");
 
 
     public static JsonManager Instance { get; private set; }

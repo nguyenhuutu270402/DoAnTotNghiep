@@ -5,13 +5,23 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
-    [SerializeField] private Transform dino, dinoText1, dinoText2;
-    [SerializeField] private float _cu = 0.5f;
+    [SerializeField] private float _cu ;
     void Start()
     {
-        transform.DOMove(new Vector3(transform.position.x, 0.01f, 0), _cu).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        transform.DOMoveY(-0.1f, _cu * 0.7f).OnStepComplete(() =>
+        {
+            transform.DOMoveY(0.02f, _cu).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        });
 
-        
+        //transform.DOScale(new Vector3(0, 0, 0), 0.3f).OnStepComplete(() =>
+        //{
+        //    Destroy(transform);
+        //});
+        //transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnStepComplete(() =>
+        //{
+        //    gameObject.SetActive(false);
+        //});
+
     }
 
     // Update is called once per frame

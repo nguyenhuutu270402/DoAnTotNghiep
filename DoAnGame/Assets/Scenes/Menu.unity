@@ -2566,7 +2566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 50}
+  m_AnchoredPosition: {x: 100, y: 500}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649384292
@@ -2581,9 +2581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d5a253831a4434598e13691bf3407d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dino: {fileID: 2072862359}
-  dinoText1: {fileID: 0}
-  dinoText2: {fileID: 0}
   _cu: 1
 --- !u!1 &679450890
 GameObject:
@@ -7563,7 +7560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf1f21e270b6ea4cb55a51eb8fc3a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sound: {fileID: 8300000, guid: 1824922f8a7a49548b229d2b38e53b6c, type: 3}
+  _sound: {fileID: 8300000, guid: 43ebbce9e28c6064d8644096d4dcbbf2, type: 3}
   _sound2: {fileID: 0}
   SFX_Scrollbar: {fileID: 1634218129}
   BGM_Scrollbar: {fileID: 2144062556}

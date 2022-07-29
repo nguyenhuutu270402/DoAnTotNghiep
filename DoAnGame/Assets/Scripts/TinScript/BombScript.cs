@@ -29,13 +29,12 @@ public class BombScript : MonoBehaviour
     if (collision.gameObject.layer == 8)
         {
             explosion();
-           gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);
+
+            gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);
             Destroy(gameObject, audioSource.clip.length);      
+
         }
-        //else
-        //{
-        //    Destroy(gameObject, 3f);
-        //}
+
     }
     public void explosion()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootLaser : MonoBehaviour
 {
 
-    [SerializeField] private float defDistanceRay = 100;
+    //[SerializeField] private float defDistanceRay = 100;
     public Transform laserFirePoint;
     public LineRenderer m_lineRenderer;
     Transform m_transform;

@@ -133,10 +133,10 @@ TextureImporter:
       name: pistol
       rect:
         serializedVersion: 2
-        x: 0
+        x: 16
         y: 202
-        width: 66
-        height: 37
+        width: 50
+        height: 38
       alignment: 4
       pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

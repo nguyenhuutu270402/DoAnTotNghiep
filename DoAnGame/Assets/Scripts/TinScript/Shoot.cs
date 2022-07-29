@@ -13,8 +13,6 @@ public class Shoot : MonoBehaviour
     public float recoilForce;
 
 
-    private string SHOTGUN = "shotgun", THOMPSON = "thompson", MINER = "miner", BAZOOKA = "bazooka", PISTOL = "pistol"  ;
-
     // truong
     SpellCoolDownCicle spell;
     //
@@ -57,7 +55,8 @@ public class Shoot : MonoBehaviour
     {
         //Shake
 
-           CinemachineShake.Instance.ShakeCamera(0.5f, 0.2f);
+           CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
+           //CinemachineShake.Instance.ShakeCamera(5f, 1f);
 
 
         //Create bullet

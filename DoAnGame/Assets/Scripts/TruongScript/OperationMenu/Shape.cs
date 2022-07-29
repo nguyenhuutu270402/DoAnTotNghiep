@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +5,13 @@ using UnityEngine;
 public class Shape : MonoBehaviour
 {
     float _cu = 0.3f;
+    public GameObject dino;
     void Start()
     {
-        transform.DOMoveY(-0.1f, _cu).OnStepComplete(() =>
+        LeanTween.moveY(dino, 0.5f, _cu).setOnComplete(() =>
         {
-            transform.DOMoveY(0.02f, _cu * 1.5f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+            LeanTween.moveY(dino, 0.02f, _cu * 3f).setLoopPingPong();
         });
-
 
     }
 

@@ -8,6 +8,10 @@ public class CharacterManager : MonoBehaviour
     public CharacterDatabase characterDB;
     public TextMeshProUGUI charactername;
     public SpriteRenderer artworkSprite;
+    public int check;
+
+
+
     private Animator animator;
 
     private int selectedOption = 0;
@@ -23,7 +27,12 @@ public class CharacterManager : MonoBehaviour
         {
             Load();
         }
-        updateCharacter(selectedOption);
+        if(check == 0) { } 
+        else if(check == 1)
+        {
+            updateCharacter(selectedOption);
+        }
+        
     }
 
     // Update is called once per frame
@@ -68,7 +77,12 @@ public class CharacterManager : MonoBehaviour
     }
 
     private void save()
-    {
-        PlayerPrefs.SetInt("selectedOption", selectedOption);
+    {   
+        if(check == 0) { }
+        else if(check == 1)
+        {
+            PlayerPrefs.SetInt("selectedOption", selectedOption);
+        }
+      
     }
 }

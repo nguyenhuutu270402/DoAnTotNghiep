@@ -15,11 +15,7 @@ public class Player : MonoBehaviour
     private int PickupWeapon = 2, HoldingWeapon = 2;
 
 
-    // truong
-    public CharacterDatabase characterDB;
-    public SpriteRenderer artworkSprite;
-    private int selectedOption = 0;
-    //
+    
 
 
     void Start()
@@ -29,20 +25,7 @@ public class Player : MonoBehaviour
         Cam = GameObject.FindWithTag("MainCamera");
         transform.GetChild(2).gameObject.SetActive(true);
  
-        // truong
-        if (!PlayerPrefs.HasKey("selectedOption"))
-        {
-            selectedOption = 0;
-        }
-        else
-        {
-            Load();
-        }
-        updateCharacter(selectedOption);
-
-
-
-        //
+        
     }
 
     // Update is called once per frame
@@ -119,17 +102,5 @@ public class Player : MonoBehaviour
 
 
 
-    // truong
-    private void updateCharacter(int selectedOption)
-    {
-        Character character = characterDB.GetCharacter(selectedOption);
-        artworkSprite.sprite = character.CharacterSprite;
-        animator.runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-    }
-
-    private void Load()
-    {
-        selectedOption = PlayerPrefs.GetInt("selectedOption");
-    }
-    //
+    
 }

@@ -17,18 +17,18 @@ public class Shoot : MonoBehaviour
 
     // truong
     SpellCoolDownCicle spell;
-        
     //
 
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        
-        
+        coolDown = coolDownLap;
+
 
         // truong
         spell = FindObjectOfType<SpellCoolDownCicle>();
+
 
         //
 
@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour
     {
       
         coolDown -= Time.deltaTime;
-        if(Input.GetKey(KeyCode.Mouse0) && coolDown <= 0f)
+        if(Input.GetKey(KeyCode.Mouse0) && coolDown <= 0f && Time.timeScale != 0)
         {
             
             DoShoot();
@@ -57,7 +57,8 @@ public class Shoot : MonoBehaviour
     {
         //Shake
 
-         CinemachineShake.Instance.ShakeCamera(0.5f, 0.2f);
+           CinemachineShake.Instance.ShakeCamera(0.5f, 0.2f);
+
 
         //Create bullet
 

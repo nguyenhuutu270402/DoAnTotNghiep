@@ -27,7 +27,8 @@ public class Shoot : MonoBehaviour
         // truong
         spell = FindObjectOfType<SpellCoolDownCicle>();
 
-
+        float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
+        audioSource.volume = sound[0];
         //
 
     }
@@ -109,4 +110,19 @@ public class Shoot : MonoBehaviour
         rbShortGun.drag = drag;
         Destroy(bullet, destroyTime);
     }
+
+    // truong
+    public static Shoot Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    public void volue(float volume)
+    {
+        audioSource.volume = volume;
+    }
+
+
+    //
 }

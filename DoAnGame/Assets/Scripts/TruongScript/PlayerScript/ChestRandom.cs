@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ChestRandom : MonoBehaviour
@@ -9,6 +10,9 @@ public class ChestRandom : MonoBehaviour
     private int PreviousPosition; // hiện tại
     private int CurrentPosition = -1;  // trước đó
     public static ChestRandom Instance { get; private set; }
+
+    public TextMeshProUGUI UIScore;
+    private int Score = 0;
 
     private void Awake()
     {
@@ -22,6 +26,8 @@ public class ChestRandom : MonoBehaviour
             chests.Add(PositionChest.transform.GetChild(i).gameObject);
         }
     }
+
+
     public void RandomPosition()
     {
         CurrentPosition = PreviousPosition;
@@ -31,5 +37,9 @@ public class ChestRandom : MonoBehaviour
             PreviousPosition = Random.Range(0, chests.Count - 1);
         }
         transform.position = chests[PreviousPosition].transform.position;
+        Score++;
+        UIScore.text = Score + "";
+        ArrowChest.Instance.Score(Score);
     }
+    
 }

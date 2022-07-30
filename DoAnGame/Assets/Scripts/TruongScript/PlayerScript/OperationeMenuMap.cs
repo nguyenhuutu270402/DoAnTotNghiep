@@ -9,7 +9,6 @@ public class OperationeMenuMap : MonoBehaviour
     public GameObject MenuPause;
     public GameObject MenuSettings;
     [SerializeField]
-    private int dem = 0;
 
     void Start()
     {
@@ -18,19 +17,6 @@ public class OperationeMenuMap : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape) && dem == 0)
-        //{
-        //    MenuPause.SetActive(true);
-        //    TimePause(0);
-        //    dem = 1;
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Escape) && dem == 1)
-        //{
-        //    dem = 0;
-        //    MenuPause.SetActive(false);
-        //    TimePause(1);
-        //}
-
         if (Input.GetKeyDown(KeyCode.Escape) && !MenuPause.active)
         {
             MenuPause.SetActive(true);

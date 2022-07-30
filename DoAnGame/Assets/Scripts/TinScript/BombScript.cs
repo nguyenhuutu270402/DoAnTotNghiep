@@ -16,6 +16,12 @@ public class BombScript : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        // truong
+
+        float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
+        audioSource.volume = sound[0];
+        //
     }
 
     // Update is called once per frame
@@ -60,4 +66,19 @@ public class BombScript : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, fieldOfImpact);
     }
+
+    // truong
+    public static BombScript Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    public void volue(float volume)
+    {
+        audioSource.volume = volume;
+    }
+
+
+    //
 }

@@ -12,9 +12,9 @@ public class Sounds : MonoBehaviour
     private float SFX_Scrollbar_Value, SFX_befor;
     private float BGM_Scrollbar_Value, BGM_befor;
     void Start()
-    {
+    {   
         float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
-        Debug.Log(sound[0] + ":" + sound[1] + " ủa");
+
         m_sound = GetComponent<AudioSource>();
         // 0 : map
         // 1 : menu
@@ -44,6 +44,8 @@ public class Sounds : MonoBehaviour
 
         m_sound.volume = sound[1];
 
+
+        
     }
     void Update()
     {
@@ -55,6 +57,7 @@ public class Sounds : MonoBehaviour
 
             // truyền volume SFX vào click
             SoundsClick.Instance.volue(SFX_Scrollbar_Value);
+            Shoot.Instance.volue(SFX_Scrollbar_Value);
         }
         BGM_Scrollbar_Value = BGM_Scrollbar.value;
         if (BGM_Scrollbar_Value != BGM_befor)

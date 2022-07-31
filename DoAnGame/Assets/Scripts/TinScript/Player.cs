@@ -14,12 +14,14 @@ public class Player : MonoBehaviour
     private GameObject Cam;
     private int PickupWeapon = 2, HoldingWeapon = 2;
 
-
-    
-
+    public GameObject dust;
+    private float dust_coolDown = 0;
+    private float dust_coolDownlap = 0.2f;
 
     void Start()
     {
+        dust_coolDown = dust_coolDownlap;
+
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         Cam = GameObject.FindWithTag("MainCamera");
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dust_coolDown -= Time.deltaTime;
         animator.SetBool("isMove", isMove);
         
     }
@@ -44,8 +47,13 @@ public class Player : MonoBehaviour
         //Swap sprites direction, whether you're going right or left
         if (moveDelta.x > 0 || moveDelta.x < 0 || moveDelta.y != 0)
         {
-            
             isMove = true;
+            if(dust_coolDown <= 0)
+            {
+                GameObject TheDust = Instantiate(dust, transform.position, Quaternion.identity);
+                Destroy(TheDust, 0.6f);
+                dust_coolDown = dust_coolDownlap;
+            }
         }
         else
         {

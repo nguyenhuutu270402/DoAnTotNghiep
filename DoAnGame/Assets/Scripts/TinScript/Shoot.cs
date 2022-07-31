@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour
     public float recoilForce;
 
 
+
     // truong
     SpellCoolDownCicle spell;
     //
@@ -55,10 +56,10 @@ public class Shoot : MonoBehaviour
     public void DoShoot()
     {
         //Shake
-
            CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
-           //CinemachineShake.Instance.ShakeCamera(5f, 1f);
 
+        //Muzzle 
+        Muzzle.Instance.PlayMuzzle();
 
         //Create bullet
 

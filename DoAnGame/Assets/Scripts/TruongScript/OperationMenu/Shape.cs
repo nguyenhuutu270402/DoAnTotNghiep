@@ -12,7 +12,6 @@ public class Shape : MonoBehaviour
         {
             LeanTween.moveY(dino, 0.02f, _cu * 3f).setLoopPingPong();
         });
-
     }
 
 

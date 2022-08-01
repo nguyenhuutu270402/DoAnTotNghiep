@@ -10,8 +10,17 @@ public class OperationeMenuMap : MonoBehaviour
     public GameObject MenuSettings;
     [SerializeField]
 
+    public GameObject load1, load2;
+
+    private void Awake()
+    {
+        LeanTween.moveX(load1, 3000f, 3f);
+        LeanTween.moveX(load2, -1000f, 3f);
+    }
+
     void Start()
     {
+        
     }
 
     [System.Obsolete]

@@ -28,7 +28,7 @@ public class ShootLaser : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && Time.timeScale != 0)
         {
             //audioSource.Play();
             m_lineRenderer.enabled = true;

@@ -14,11 +14,11 @@ public class LoadLeverMap : MonoBehaviour
     public GameObject load1, load2;
 
     
-    private int SceneMap = 1;
+    private int SceneMap = 2;
 
 
     public TextMeshProUGUI ModeMap;
-    private int Mode = 1;
+    private int Mode = 2;
 
     void Start()
     {   
@@ -35,9 +35,9 @@ public class LoadLeverMap : MonoBehaviour
     public void ClickNextSceneMap()
     {
         SceneMap++;
-        if(SceneMap > 3)
+        if(SceneMap > 4)
         {
-            SceneMap = 1;
+            SceneMap = 2;
         }
         Switch(SceneMap);
         
@@ -46,9 +46,9 @@ public class LoadLeverMap : MonoBehaviour
     public void ClickBackSceneMap()
     {
         SceneMap--;
-        if (SceneMap < 1)
+        if (SceneMap < 2)
         {
-            SceneMap = 3;
+            SceneMap = 4;
         }
         Switch(SceneMap);
     }
@@ -56,15 +56,15 @@ public class LoadLeverMap : MonoBehaviour
     {
         switch (map)
         {
-            case 1:
+            case 2:
                 IMG.sprite = IMG1;
                 NameMap.text = "1";
                 break;
-            case 2:
+            case 3:
                 IMG.sprite = IMG2;
                 NameMap.text = "2";
                 break;
-            case 3:
+            case 4:
                 IMG.sprite = IMG3;
                 NameMap.text = "3";
                 break;

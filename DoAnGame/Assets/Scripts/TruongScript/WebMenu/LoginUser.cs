@@ -7,11 +7,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class LoginUser : MonoBehaviour
 {
-
-    [SerializeField] private string authen = "http://localhost:3000/api/login-user";
     [SerializeField] private TMP_InputField UserNameInput;
     [SerializeField] private TMP_InputField PassWordInput;
 
+    public GameAccountDatabase data;
     void Start()
     {
         
@@ -50,7 +49,7 @@ public class LoginUser : MonoBehaviour
             else
             {
                 GameAccount account = JsonUtility.FromJson<GameAccount>(www.downloadHandler.text);
-                Debug.Log(account.statusName);
+                data.insertAccount(account.status, account.statusName, account.id, account.name, account.price, account.points);
                 if (account.statusName == "false")
                 {
                     Screen.SetResolution(1920, 1080, true);
@@ -60,10 +59,11 @@ public class LoginUser : MonoBehaviour
                 else if (account.status == "true")
                 {
                     Screen.SetResolution(1920 , 1080, true);
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(1);
                     yield return null;
                 }
             }
         }
+        
     }
 }

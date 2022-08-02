@@ -14,7 +14,10 @@ public class ScaleMenu : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            back();
+        }
     }
     public void click()
     {

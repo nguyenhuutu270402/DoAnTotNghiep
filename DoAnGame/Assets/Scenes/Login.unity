@@ -1920,6 +1920,7 @@ MonoBehaviour:
   authen: http://localhost:3000/api/login-user
   UserNameInput: {fileID: 244899155}
   PassWordInput: {fileID: 203383886}
+  data: {fileID: 11400000, guid: b637382d2c36579458a1a48520895fea, type: 2}
 --- !u!1 &1277822171
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,6 @@ public class GameAccount
     public string statusName;
     public string id;
     public string name;
-    public string price;
-    public string points;
+    public int price;
+    public int points;
 }

@@ -19,7 +19,7 @@ public class GameAccountDatabase : ScriptableObject
         return gameAccounts[index];
     }
 
-    public GameAccount insertAccount(string _status, string _statusName, string _id, string _name, string _price, string _points)
+    public GameAccount insertAccount(string _status, string _statusName, string _id, string _name, int _price, int _points)
     {
         gameAccounts[0].status = _status;
         gameAccounts[0].statusName = _statusName;

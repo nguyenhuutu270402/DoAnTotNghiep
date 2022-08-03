@@ -25,7 +25,6 @@ public class LoadLeverMap : MonoBehaviour
         Switch(SceneMap);
 
         ModeMap.text = "normal";
-        PlayerPrefs.SetInt("ModeMap", Mode);
 
     }
     void Update()

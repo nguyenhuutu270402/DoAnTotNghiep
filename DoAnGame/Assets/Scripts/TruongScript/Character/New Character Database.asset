@@ -16,12 +16,12 @@ MonoBehaviour:
   - CharacterName: dino1
     CharacterSprite: {fileID: 901431819, guid: e62f7b7a95ac9284db1990a5a5214d90, type: 3}
     animation: {fileID: 9100000, guid: eee96607779c0b84e99f4b871fdefb1d, type: 2}
-  - CharacterName: dino2
-    CharacterSprite: {fileID: -2021168541, guid: 57895603691963e4fbc4a6b63ef93815, type: 3}
-    animation: {fileID: 9100000, guid: 4358ebe3b2ce5d242a7903fd4f72b5a7, type: 2}
   - CharacterName: minion
     CharacterSprite: {fileID: -824369758, guid: 1000febd2ab77d3458dbc51e1935f5fc, type: 3}
     animation: {fileID: 9100000, guid: 7c14f26876897c04d8e61451bf865769, type: 2}
   - CharacterName: robo
     CharacterSprite: {fileID: -1451367185, guid: f5a67e3f1759e124fb672ad619d33eb3, type: 3}
     animation: {fileID: 9100000, guid: 69f0b730260876342bbeade4faf4f519, type: 2}
+  - CharacterName: vampire
+    CharacterSprite: {fileID: 1533508108, guid: 1283f5f4f5f0b354ebc2a0c6ba675569, type: 3}
+    animation: {fileID: 9100000, guid: 1408838e6579f134dbfd2c43dd652bb1, type: 2}

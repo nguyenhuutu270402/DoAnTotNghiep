@@ -12,6 +12,7 @@ public class UpdateName : MonoBehaviour
     private string path = "http://localhost:3000/api/";
     public GameObject Menu;
     public GameObject MenuName;
+    public GameObject MenuInfo;
     public Button BtnSave;
     void Start()
     {
@@ -54,6 +55,7 @@ public class UpdateName : MonoBehaviour
                 if (account.status == "true")
                 {
                     Menu.SetActive(true);
+                    MenuInfo.SetActive(true);
                     MenuName.SetActive(false);
                     data.setName(name);
                     
@@ -61,6 +63,7 @@ public class UpdateName : MonoBehaviour
                 }else if(account.status == "false")
                 {
                     Menu.SetActive(false);
+                    MenuInfo.SetActive(false);
                     MenuName.SetActive(true);
                     yield return null;
                 }

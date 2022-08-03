@@ -6598,6 +6598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 1651770639}
   MenuName: {fileID: 1798703881}
+  MenuInfo: {fileID: 48816183}
   data: {fileID: 11400000, guid: b637382d2c36579458a1a48520895fea, type: 2}
 --- !u!1 &1245167096
 GameObject:
@@ -9306,6 +9307,7 @@ MonoBehaviour:
   NameUpdate: {fileID: 1245167098}
   Menu: {fileID: 1651770639}
   MenuName: {fileID: 1798703881}
+  MenuInfo: {fileID: 48816183}
   BtnSave: {fileID: 2042318044}
 --- !u!222 &1798703884
 CanvasRenderer:

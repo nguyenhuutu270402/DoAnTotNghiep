@@ -6,18 +6,21 @@ public class CheckName : MonoBehaviour
 {
     public GameObject Menu;
     public GameObject MenuName;
+    public GameObject MenuInfo;
     public GameAccountDatabase data;
     void Start()
     {
         GameAccount gameAccount = data.GetGameAccounts(0);
-        if(gameAccount.name != null)
+        if(gameAccount.name.Length > 2)
         {
             Menu.SetActive(true);
+            MenuInfo.SetActive(true);
             MenuName.SetActive(false);
         }
         else
         {
             Menu.SetActive(false);
+            MenuInfo.SetActive(false);
             MenuName.SetActive(true);
         }
     }

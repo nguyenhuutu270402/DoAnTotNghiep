@@ -68,6 +68,9 @@ public class CharacterManager : MonoBehaviour
         artworkSprite.sprite = character.CharacterSprite;
         charactername.text = character.CharacterName;
         animator.runtimeAnimatorController = character.animation as RuntimeAnimatorController;
+
+        artworkSprite.drawMode = SpriteDrawMode.Sliced;
+        artworkSprite.size = new Vector2(0.15f, 0.17f);
     }
 
 

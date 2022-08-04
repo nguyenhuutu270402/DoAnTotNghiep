@@ -43,6 +43,10 @@ public class CharacterPlayer : MonoBehaviour
         Character character = characterDB.GetCharacter(selectedOption);
         artworkSprite.sprite = character.CharacterSprite;
         animator.runtimeAnimatorController = character.animation as RuntimeAnimatorController;
+        artworkSprite.drawMode = SpriteDrawMode.Sliced;
+        artworkSprite.size = new Vector2(0.15f, 0.17f);
+
+
     }
 
     private void Load()

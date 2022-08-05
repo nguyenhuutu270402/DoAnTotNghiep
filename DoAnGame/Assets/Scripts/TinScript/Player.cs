@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private float dust_coolDown = 0;
     private float dust_coolDownlap = 0.2f;
 
+
+
     void Start()
     {
         dust_coolDown = dust_coolDownlap;
@@ -26,8 +28,6 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         Cam = GameObject.FindWithTag("MainCamera");
         transform.GetChild(2).gameObject.SetActive(true);
- 
-        
     }
 
     // Update is called once per frame
@@ -82,10 +82,8 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.name == "chest_0")
         {
-
-
             //PickupWeapon = Random.Range(3, 8);
-            while(PickupWeapon == HoldingWeapon)
+            while (PickupWeapon == HoldingWeapon)
             {
                 PickupWeapon = Random.Range(3, 8);
             }

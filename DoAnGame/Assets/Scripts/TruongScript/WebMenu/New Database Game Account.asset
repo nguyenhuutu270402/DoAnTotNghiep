@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: New Database Game Account
   m_EditorClassIdentifier: 
   gameAccounts:
-  - status: 1
+  - status: 0
     id: 
-    name: 123123123
+    name: 123123213
     price: 0
     points: 0

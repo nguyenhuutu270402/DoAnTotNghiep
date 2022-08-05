@@ -30,21 +30,20 @@ public class DropdownUser : MonoBehaviour
         dataUser = JsonUser.Instance.getUser();
         dataPass = JsonUser.Instance.getPass();
         Drop.AddOptions(dataUser);
-        if (dataUser.Count > 0)
-        {
-            username.text = dataUser[Drop.value] + "";
-            password.text = dataPass[Drop.value] + "";
-        }
-        
-    }
 
+        Drop.onValueChanged.AddListener(delegate {
+            DropdownValueChanged(Drop);
+        });
+
+    }
+    void DropdownValueChanged(TMP_Dropdown change)
+    {
+        username.text = dataUser[change.value] + "";
+        password.text = dataPass[change.value] + "";
+    }
     void Update()
     {
-        if(dataUser.Count > 0)
-        {
-            username.text = dataUser[Drop.value] + "";
-            password.text = dataPass[Drop.value] + "";
-        }
+        
     }
     public void updateOptions()
     {

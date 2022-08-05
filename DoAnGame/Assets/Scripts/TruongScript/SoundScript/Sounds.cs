@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Sounds : MonoBehaviour
 {
-    AudioSource m_sound;
-    [SerializeField] public AudioClip _sound, _sound2;
+    private AudioSource m_sound;
     public Slider SFX_Scrollbar, BGM_Scrollbar;
     public int index;
     private float SFX_Scrollbar_Value, SFX_befor;
@@ -19,23 +18,22 @@ public class Sounds : MonoBehaviour
         // 0 : map
         // 1 : menu
         // set nhạc nền BGM
-        if(index == 0)
+        if (index == 0)
         {
             int IndexSound = Random.Range(0, 2);
-            if(IndexSound == 0)
+            if (IndexSound == 0)
             {
-                m_sound.clip = _sound;
+                playSound("Game_screen1");
             }
             else
             {
-                m_sound.clip = _sound2;
+                playSound("Game_screen2");
             }
         }
-        else if(index == 1)
+        else if (index == 1)
         {
-            m_sound.clip = _sound;
+            playSound("game_screen_main");
         }
-        m_sound.Play();
 
         SFX_Scrollbar.value = sound[0];
         SFX_befor = sound[0];
@@ -57,7 +55,11 @@ public class Sounds : MonoBehaviour
 
             // truyền volume SFX vào click
             SoundsClick.Instance.volue(SFX_Scrollbar_Value);
-            Shoot.Instance.volue(SFX_Scrollbar_Value);
+            if(index == 0)
+            {
+                Shoot.Instance.volue(SFX_Scrollbar_Value);
+            }
+            
         }
         BGM_Scrollbar_Value = BGM_Scrollbar.value;
         if (BGM_Scrollbar_Value != BGM_befor)
@@ -68,5 +70,9 @@ public class Sounds : MonoBehaviour
 
 
         m_sound.volume = BGM_Scrollbar_Value;
+    }
+    public void playSound(string _file)
+    {
+        m_sound.PlayOneShot(Resources.Load<AudioClip>("Sounds/" + _file));
     }
 }

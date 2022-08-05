@@ -15,14 +15,6 @@ public class SoundsClick : MonoBehaviour
         float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
         m_sound_click.volume = sound[0];
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
-        //m_sound_click.volume = sound[0];
-        //Debug.Log(sound[0] + "aaa");
-    }
     public void click()
     {
         m_sound_click.Play();

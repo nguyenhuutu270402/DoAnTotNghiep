@@ -5,15 +5,11 @@ using TMPro;
 
 public class CharacterManager : MonoBehaviour
 {
-    public CharacterDatabase characterDB;
+    public DatabaseCharacter charactersDB;
     public TextMeshProUGUI charactername;
     public SpriteRenderer artworkSprite;
     public int check;
-
-
-
     private Animator animator;
-
     private int selectedOption = 0;
 
     void Start()
@@ -34,17 +30,10 @@ public class CharacterManager : MonoBehaviour
         }
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void NextOption()
     {
         selectedOption++;
-        if(selectedOption >= characterDB.CharacterCount)
+        if(selectedOption >= charactersDB.CharacterCount)
         {
             selectedOption = 0; 
         }
@@ -56,7 +45,7 @@ public class CharacterManager : MonoBehaviour
         selectedOption--;
         if (selectedOption < 0)
         {
-            selectedOption = characterDB.CharacterCount - 1;
+            selectedOption = charactersDB.CharacterCount - 1;
         }
         updateCharacter(selectedOption);
         save();
@@ -64,14 +53,14 @@ public class CharacterManager : MonoBehaviour
 
     private void updateCharacter(int selectedOption)
     {
-        Character character = characterDB.GetCharacter(selectedOption);
+        Characters character = charactersDB.GetCharacter(selectedOption);
         artworkSprite.sprite = character.CharacterSprite;
         charactername.text = character.CharacterName;
         animator.runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-
         artworkSprite.drawMode = SpriteDrawMode.Sliced;
         artworkSprite.size = new Vector2(0.15f, 0.17f);
     }
+    
 
 
     private void Load()

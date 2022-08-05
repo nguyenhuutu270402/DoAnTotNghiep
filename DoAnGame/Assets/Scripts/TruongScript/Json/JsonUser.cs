@@ -17,16 +17,6 @@ public class JsonUser : MonoBehaviour
     {
         Instance = this;
     }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
     public List<string> getUser()
     {
         List<string> data = new List<string> { };
@@ -69,6 +59,27 @@ public class JsonUser : MonoBehaviour
             data.Add(users[i].username);
         }
         return data;
+    }
+    public void DeleteUser(string user )
+    {
+        var games = new List<ProGame>();
+        using (StreamReader r = new StreamReader(filepath))
+        {
+            var json = r.ReadToEnd();
+            games = JsonConvert.DeserializeObject<List<ProGame>>(json);
+            // kiem tra username ton tai
+            if (games == null) games = new List<ProGame>();
+            check = games.Find(i => i.username == user);
+            if (check != null)
+            {
+                games.Remove(check);
+            }
+        }
+        using (StreamWriter file = File.CreateText(filepath))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(file, games);
+        }
     }
     public void SavaUser(string user, string pass)
     {

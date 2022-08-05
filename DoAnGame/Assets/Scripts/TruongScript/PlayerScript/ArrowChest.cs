@@ -6,37 +6,24 @@ public class ArrowChest : MonoBehaviour
 {
     public GameObject chest;
     int score;
-
     private int BossAppears = 0;
-
-
     public static ArrowChest Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
     }
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        
-       
         if(BossAppears == 0)
         {
             transform.up = new Vector2(chest.transform.position.x - transform.position.x, chest.transform.position.y - transform.position.y);
         }
         else
         {
-            Debug.Log("boss nè " + BossAppears);
+            Debug.Log("boss ne " + BossAppears);
             transform.gameObject.SetActive(false);
             chest.SetActive(false);
         }
-
-
     }
     public void Score(int _score)
     {

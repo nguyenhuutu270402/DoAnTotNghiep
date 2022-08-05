@@ -17,12 +17,6 @@ public class OperationeMenuMap : MonoBehaviour
         LeanTween.moveX(load1, 3000f, 3f);
         LeanTween.moveX(load2, -1000f, 3f);
     }
-
-    void Start()
-    {
-        
-    }
-
     [System.Obsolete]
     void Update()
     {
@@ -65,9 +59,6 @@ public class OperationeMenuMap : MonoBehaviour
         MenuPause.SetActive(false);
         TimePause(1);       
     }
-
-
-
     public void TimePause(int time)
     {
         Time.timeScale = time;

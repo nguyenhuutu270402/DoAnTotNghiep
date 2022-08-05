@@ -10,22 +10,16 @@ public class LoadLeverMap : MonoBehaviour
     public Image IMG;
     public Sprite IMG1, IMG2, IMG3;
     public TextMeshProUGUI NameMap;
-
     public GameObject load1, load2;
-
-    
     private int SceneMap = 2;
-
-
     public TextMeshProUGUI ModeMap;
-    private int Mode = 2;
+    private int Mode = 1;
 
     void Start()
     {   
         Switch(SceneMap);
-
-        ModeMap.text = "normal";
-
+        ModeMap.text = "normal mode";
+        PlayerPrefs.SetInt("ModeMap", Mode);
     }
     void Update()
     {
@@ -39,8 +33,6 @@ public class LoadLeverMap : MonoBehaviour
             SceneMap = 2;
         }
         Switch(SceneMap);
-        
-
     }
     public void ClickBackSceneMap()
     {
@@ -73,24 +65,19 @@ public class LoadLeverMap : MonoBehaviour
     }
     public void StartSceneMap()
     {
-        //LevelLoader.Instance.loadNextLevel(SceneMap);
         load1.SetActive(true);
         load2.SetActive(true);
         LeanTween.moveX(load1, 6f, 0.5f);
         LeanTween.moveX(load2, -6f, 0.5f).setOnComplete(() =>
         {
             SceneManager.LoadScene(SceneMap);
-        });
-        
+        }); 
     }
-
-
     public void ClickModeMap()
     {
         Mode++;
         if (Mode > 2) Mode = 1;
         PlayerPrefs.SetInt("ModeMap", Mode);
-
         if (Mode == 1)
         {
             ModeMap.text = "normal mode";
@@ -99,6 +86,5 @@ public class LoadLeverMap : MonoBehaviour
         {
             ModeMap.text = "hard mode";
         }
-
     }
 }

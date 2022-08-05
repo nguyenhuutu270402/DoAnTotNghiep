@@ -10,20 +10,22 @@ public class LoginUser : MonoBehaviour
     [SerializeField] private TMP_InputField UserNameInput;
     [SerializeField] private TMP_InputField PassWordInput;
 
-    public GameAccountDatabase data;
+    public DatabaseGameAccount data;
     public Button BtnLogin;
     public GameObject TextErro;
     private bool isLogin = false;
     private float startTime = 0.0f;
 
+
     public Toggle toggle;
     void Start()
     {
         TextErro.SetActive(false);
+        
     }
     void Update()
     {
-
+        
         if(isLogin == true)
         {
             startTime += Time.deltaTime;
@@ -43,21 +45,12 @@ public class LoginUser : MonoBehaviour
     {
         isLogin = true;
         BtnLogin.interactable = false;
-
-
         string username = UserNameInput.text.Trim();
         string password = PassWordInput.text.Trim();
-        if (username.Length == 0)
-        {
-            username = "0";
-        }
-        if (password.Length == 0)
-        {
-            password = "0";
-        }
         WWWForm form = new WWWForm();
         form.AddField("username", username);
         form.AddField("password", password);
+
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/login-user", form))
         {
             yield return www.SendWebRequest();
@@ -68,29 +61,21 @@ public class LoginUser : MonoBehaviour
             }
             else
             {
-                GameAccount account = JsonUtility.FromJson<GameAccount>(www.downloadHandler.text);
-                data.insertAccount(account.status, account.statusName, account.id, account.name, account.price, account.points);
-                if(account.status == "false")
-                {
-                    TextErro.SetActive(true);
-                }
-                else if (account.statusName == "false")
+                GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
+                data.insertAccount(account.status, account.id, account.name, account.price, account.points);
+                
+                if (account.status)
                 {
                     Screen.SetResolution(1920, 1080, true);
                     SceneManager.LoadScene(1);
                     CheckSave(toggle.isOn, username, password);
                     yield return null;
-                }
-                else if (account.status == "true")
+                }else if(!account.status)
                 {
-                    Screen.SetResolution(1920 , 1080, true);
-                    SceneManager.LoadScene(1);
-                    CheckSave(toggle.isOn, username, password);
-                    yield return null;
+                    TextErro.SetActive(true);
                 }
             }
         }
-        
     }
     public void CheckSave(bool sv, string us, string ps)
     {

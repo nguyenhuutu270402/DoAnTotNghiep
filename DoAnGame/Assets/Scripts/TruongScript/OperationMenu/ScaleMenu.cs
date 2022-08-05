@@ -7,11 +7,6 @@ public class ScaleMenu : MonoBehaviour
     public GameObject MenuPresent;
     public GameObject MenuBefore;
     float TimeScale = 0.3f;
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

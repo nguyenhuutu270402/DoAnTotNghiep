@@ -9,12 +9,10 @@ public class SpellCoolDownCicle : MonoBehaviour
     private bool isCollDown = false;
     private float CollDownTime;
     private float CollDownTimer = 0.0f;
-
     void Start()
     {
         ImgCooldown.fillAmount = 0f;
     }
-
     // Update is called once per frame
     void Update()
     {   
@@ -30,8 +28,6 @@ public class SpellCoolDownCicle : MonoBehaviour
             }
         }
     }
-    
-
     // lấy time hồi bên shoot
     public void coolDownLap(float time)
     {

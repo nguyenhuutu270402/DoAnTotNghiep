@@ -20,14 +20,14 @@ public class ChestRandom : MonoBehaviour
     }
     private void Start()
     {
+        ArrowChest.Instance.Score(Score);
+
         LengthChild_PositionChest = PositionChest.transform.childCount;
         for(int i = 0; i < LengthChild_PositionChest; i++)
         {
             chests.Add(PositionChest.transform.GetChild(i).gameObject);
         }
     }
-
-
     public void RandomPosition()
     {
         CurrentPosition = PreviousPosition;

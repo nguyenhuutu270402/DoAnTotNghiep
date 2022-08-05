@@ -9,7 +9,6 @@ public class JsonManager : MonoBehaviour
     //private string filepath = "ProGame.json";
     private string filepath = Path.Combine(Application.streamingAssetsPath, "ProGame.json");
 
-
     public static JsonManager Instance { get; private set; }
 
     private void Awake()
@@ -19,10 +18,6 @@ public class JsonManager : MonoBehaviour
     void Start()
     {
         StartJson();
-    }
-    void Update()
-    {
-        
     }
     public void updateSounds(float value, int index)
     {
@@ -59,18 +54,7 @@ public class JsonManager : MonoBehaviour
         }
         return sound;
     }
-    public bool getFullscene()
-    {   
-        // false : ko full
-        // true : full
-        bool full = false;
-        var progames = StreamReader();
-        foreach (var item in progames)
-        {
-            full = item.fullscene;
-        }
-        return full;
-    }
+
     public List<ProGame> StreamReader()
     {
         var progames = new List<ProGame>();
@@ -96,7 +80,6 @@ public class JsonManager : MonoBehaviour
            BGM_valu = 1,
            SFX_valu = 1,
            tontai = 0,
-           fullscene = false,
        };
         
         var progames = new List<ProGame>();
@@ -124,6 +107,5 @@ public class JsonManager : MonoBehaviour
         public float BGM_valu { get; set; }
         public float SFX_valu { get; set; }
         public int tontai { get; set; }
-        public bool fullscene { get; set; }
     }
 }

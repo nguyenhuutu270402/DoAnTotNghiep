@@ -6,15 +6,6 @@ public class DeleteItemJsonUser : MonoBehaviour
 {
 
     private List<string> dataUser;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
     public void DeleteItem()
     {
         Debug.Log("" + transform.name[5]);

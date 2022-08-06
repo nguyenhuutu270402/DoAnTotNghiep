@@ -33,7 +33,7 @@ public class CheckAndUpdateName : MonoBehaviour
     void Update()
     {
         string name = NameUpdate.text.Trim();
-        if (name.Length < 1)
+        if (name.Length < 6)
         {
             BtnSave.interactable = false;
         }

@@ -41,10 +41,6 @@ public class DropdownUser : MonoBehaviour
         username.text = dataUser[change.value] + "";
         password.text = dataPass[change.value] + "";
     }
-    void Update()
-    {
-        
-    }
     public void updateOptions()
     {
         Drop.Hide();

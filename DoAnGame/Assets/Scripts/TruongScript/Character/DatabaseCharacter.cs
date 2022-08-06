@@ -31,4 +31,5 @@ public class Characters
     public string CharacterName;
     public Sprite CharacterSprite;
     public RuntimeAnimatorController animation;
+    public int Price;
 }

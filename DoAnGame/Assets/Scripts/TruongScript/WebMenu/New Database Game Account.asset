@@ -16,5 +16,5 @@ MonoBehaviour:
   - status: 0
     id: 
     name: 123123213
-    price: 0
+    price: 123
     points: 0

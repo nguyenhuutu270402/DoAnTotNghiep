@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -6,14 +6,20 @@ using TMPro;
 public class CharacterManager : MonoBehaviour
 {
     public DatabaseCharacter charactersDB;
-    public TextMeshProUGUI charactername;
     public SpriteRenderer artworkSprite;
     public int check;
     private Animator animator;
     private int selectedOption = 0;
 
+    public DatabaseGameAccount data;
+    private int index = 3;
+
     void Start()
     {
+        GameAccounts gameAccount = data.GetGameAccounts(0);
+
+        CheckIndex(gameAccount.points);
+
         animator = gameObject.GetComponent<Animator>();
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
@@ -23,17 +29,41 @@ public class CharacterManager : MonoBehaviour
         {
             Load();
         }
-        if(check == 0) { } 
+        if(check == 0) 
+        {
+            updateCharacter(0);
+        } 
         else if(check == 1)
         {
             updateCharacter(selectedOption);
         }
-        
+
+    }
+    public void CheckIndex(int _points)
+    {   
+        if(_points >= 100)
+        {
+            index = 4;
+        }
+        else if(_points >= 150)
+        {
+            index = 5;
+        }
+        else if (_points >= 200)
+        {
+            index = 6;
+        }
     }
     public void NextOption()
     {
+        int max = charactersDB.CharacterCount;
+        if(check == 1)
+        {
+            max = index + 1;
+        }
+
         selectedOption++;
-        if(selectedOption >= charactersDB.CharacterCount)
+        if(selectedOption >= max)
         {
             selectedOption = 0; 
         }
@@ -42,10 +72,16 @@ public class CharacterManager : MonoBehaviour
     }
     public void BackOption()
     {
+        int min = charactersDB.CharacterCount - 1;
+        if (check == 1)
+        {
+            min = index;
+        }
+
         selectedOption--;
         if (selectedOption < 0)
         {
-            selectedOption = charactersDB.CharacterCount - 1;
+            selectedOption = min;
         }
         updateCharacter(selectedOption);
         save();
@@ -55,7 +91,6 @@ public class CharacterManager : MonoBehaviour
     {
         Characters character = charactersDB.GetCharacter(selectedOption);
         artworkSprite.sprite = character.CharacterSprite;
-        charactername.text = character.CharacterName;
         animator.runtimeAnimatorController = character.animation as RuntimeAnimatorController;
         artworkSprite.drawMode = SpriteDrawMode.Sliced;
         artworkSprite.size = new Vector2(0.15f, 0.17f);
@@ -69,12 +104,11 @@ public class CharacterManager : MonoBehaviour
     }
 
     private void save()
-    {   
-        if(check == 0) { }
-        else if(check == 1)
+    {   if(selectedOption <= index && check == 1)
         {
             PlayerPrefs.SetInt("selectedOption", selectedOption);
         }
+        
       
     }
 }

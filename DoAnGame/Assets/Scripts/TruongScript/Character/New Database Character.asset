@@ -13,15 +13,38 @@ MonoBehaviour:
   m_Name: New Database Character
   m_EditorClassIdentifier: 
   character:
-  - CharacterName: dino1
+  - CharacterName: Dino Blu
     CharacterSprite: {fileID: 901431819, guid: e62f7b7a95ac9284db1990a5a5214d90, type: 3}
     animation: {fileID: 9100000, guid: eee96607779c0b84e99f4b871fdefb1d, type: 2}
-  - CharacterName: minion
+    Price: 0
+    Had: 1
+  - CharacterName: Dino Green
+    CharacterSprite: {fileID: -1114672219, guid: 8aa0a3cdaf3888642b75414fe0c93360, type: 3}
+    animation: {fileID: 9100000, guid: e69c42688bb8e384fb120f869568e4d2, type: 2}
+    Price: 0
+    Had: 1
+  - CharacterName: Dino Red
+    CharacterSprite: {fileID: -1613733591, guid: 664945d382ddb154e82ff1fb595eac60, type: 3}
+    animation: {fileID: 9100000, guid: 5f8da9ca59ef106439ff517aafe156c5, type: 2}
+    Price: 0
+    Had: 1
+  - CharacterName: Dino Yellow
+    CharacterSprite: {fileID: -121328335, guid: bb7c7749b7374614b8a00c30f9f64079, type: 3}
+    animation: {fileID: 9100000, guid: 60b37176f8f21d24fb153248872c8c65, type: 2}
+    Price: 0
+    Had: 1
+  - CharacterName: Minion
     CharacterSprite: {fileID: -824369758, guid: 1000febd2ab77d3458dbc51e1935f5fc, type: 3}
     animation: {fileID: 9100000, guid: 7c14f26876897c04d8e61451bf865769, type: 2}
-  - CharacterName: robo
+    Price: 1
+    Had: 0
+  - CharacterName: Robo
     CharacterSprite: {fileID: -1451367185, guid: f5a67e3f1759e124fb672ad619d33eb3, type: 3}
     animation: {fileID: 9100000, guid: 69f0b730260876342bbeade4faf4f519, type: 2}
-  - CharacterName: vampire
+    Price: 1
+    Had: 0
+  - CharacterName: Vampire
     CharacterSprite: {fileID: 1533508108, guid: 1283f5f4f5f0b354ebc2a0c6ba675569, type: 3}
     animation: {fileID: 9100000, guid: 1408838e6579f134dbfd2c43dd652bb1, type: 2}
+    Price: 1
+    Had: 0

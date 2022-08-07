@@ -2267,7 +2267,7 @@ GameObject:
   - component: {fileID: 397224724}
   - component: {fileID: 397224727}
   - component: {fileID: 397224726}
-  - component: {fileID: 397224725}
+  - component: {fileID: 397224728}
   m_Layer: 0
   m_Name: CharacterPlayer
   m_TagString: Untagged
@@ -2290,22 +2290,6 @@ Transform:
   m_Father: {fileID: 1651770640}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &397224725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397224723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f383fb608255d149aa6c8d5f3bff55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charactersDB: {fileID: 11400000, guid: 86ffe424d0a91064aa85829851b25543, type: 2}
-  artworkSprite: {fileID: 397224727}
-  check: 1
-  data: {fileID: 11400000, guid: 81d39f789978e534cb775110b4a090d0, type: 2}
 --- !u!95 &397224726
 Animator:
   serializedVersion: 4
@@ -2378,6 +2362,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &397224728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397224723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a15b6162d85404686f923bb3cd5fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charactersDB: {fileID: 11400000, guid: 86ffe424d0a91064aa85829851b25543, type: 2}
+  Sprite: {fileID: 397224727}
 --- !u!1 &469095916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,9 +4231,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 397224725}
-        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
-        m_MethodName: BackOption
+      - m_Target: {fileID: 1863031094}
+        m_TargetAssemblyTypeName: SoundsClick, Assembly-CSharp
+        m_MethodName: click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4245,9 +4243,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1863031094}
-        m_TargetAssemblyTypeName: SoundsClick, Assembly-CSharp
-        m_MethodName: click
+      - m_Target: {fileID: 397224728}
+        m_TargetAssemblyTypeName: CharacterUser, Assembly-CSharp
+        m_MethodName: BackOption
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5429,7 +5427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &980117096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5439,7 +5437,7 @@ RectTransform:
   m_GameObject: {fileID: 980117095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2096145333}
@@ -8648,9 +8646,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 397224725}
-        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
-        m_MethodName: NextOption
+      - m_Target: {fileID: 1863031094}
+        m_TargetAssemblyTypeName: SoundsClick, Assembly-CSharp
+        m_MethodName: click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8660,9 +8658,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1863031094}
-        m_TargetAssemblyTypeName: SoundsClick, Assembly-CSharp
-        m_MethodName: click
+      - m_Target: {fileID: 397224728}
+        m_TargetAssemblyTypeName: CharacterUser, Assembly-CSharp
+        m_MethodName: NextOption
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9109,7 +9107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1651770640
 RectTransform:
   m_ObjectHideFlags: 0

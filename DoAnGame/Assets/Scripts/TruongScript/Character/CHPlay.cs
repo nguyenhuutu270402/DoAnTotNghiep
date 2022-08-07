@@ -89,8 +89,6 @@ public class CHPlay : MonoBehaviour
             {
                 Character[i].SetActive(false);
             }
-            
-            
         }
         
     }

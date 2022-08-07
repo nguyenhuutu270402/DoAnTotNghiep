@@ -50,14 +50,20 @@ MonoBehaviour:
     Price: 0
     Buy: 0
   - _id: 6
+    CharacterName: Sus
+    CharacterSprite: {fileID: -672251367, guid: e4c51b68948bd8e40a85b9b5229dd6f7, type: 3}
+    animation: {fileID: 9100000, guid: 4a516b7433792ac4496a1301aebc49e3, type: 2}
+    Price: 100
+    Buy: 0
+  - _id: 7
     CharacterName: Vampire
     CharacterSprite: {fileID: 1533508108, guid: 1283f5f4f5f0b354ebc2a0c6ba675569, type: 3}
     animation: {fileID: 9100000, guid: 1408838e6579f134dbfd2c43dd652bb1, type: 2}
     Price: 0
     Buy: 0
-  - _id: 7
-    CharacterName: Yasuo
-    CharacterSprite: {fileID: 1533508108, guid: 1283f5f4f5f0b354ebc2a0c6ba675569, type: 3}
-    animation: {fileID: 9100000, guid: 1408838e6579f134dbfd2c43dd652bb1, type: 2}
+  - _id: 8
+    CharacterName: Bear
+    CharacterSprite: {fileID: 1940227619, guid: 6387e06767eb5ab4581691fa17cdb5a0, type: 3}
+    animation: {fileID: 9100000, guid: f2e685d2bf3425c4b915f956449d346b, type: 2}
     Price: 100
     Buy: 0

@@ -11,6 +11,7 @@ public class InfoUser : MonoBehaviour
     public TextMeshProUGUI userPoints;
 
     public DatabaseGameAccount data;
+    public DatabaseCharacter character;
 
     public static InfoUser Instance { get; private set; }
     private void Awake()
@@ -32,6 +33,7 @@ public class InfoUser : MonoBehaviour
     public void quitAccount()
     {
         data.quitAccount();
+        character.reset();
         SceneManager.LoadScene(0);
     }
 }

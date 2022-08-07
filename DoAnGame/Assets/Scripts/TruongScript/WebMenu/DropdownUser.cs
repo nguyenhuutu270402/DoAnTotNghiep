@@ -34,8 +34,13 @@ public class DropdownUser : MonoBehaviour
         Drop.onValueChanged.AddListener(delegate {
             DropdownValueChanged(Drop);
         });
-
+        if(Drop.options.Count > 0)
+        {
+            username.text = dataUser[0] + "";
+            password.text = dataPass[0] + "";
+        }
     }
+    
     void DropdownValueChanged(TMP_Dropdown change)
     {
         username.text = dataUser[change.value] + "";

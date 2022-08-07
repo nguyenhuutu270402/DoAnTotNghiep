@@ -8,8 +8,14 @@ public class CharacterUser : MonoBehaviour
     public SpriteRenderer Sprite;
     private Animator animator;
     private int selectedOption = 0;
+
+    public DatabaseGameAccount DB;
+    private int Points;
+
     void Start()
     {
+       
+
         animator = gameObject.GetComponent<Animator>();
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
@@ -25,7 +31,9 @@ public class CharacterUser : MonoBehaviour
     
     void Update()
     {
-        
+        GameAccounts accounts = DB.GetGameAccounts(0);
+        Points = accounts.points;
+        charactersDB.CheckPoints(Points);
     }
     public void NextOption()
     {
@@ -50,9 +58,8 @@ public class CharacterUser : MonoBehaviour
     public void updateCharacterBack()
     {
         Characters character = charactersDB.GetCharacter(selectedOption);
-        if (character.Price > 0)
+        if (character.Buy == false)
         {
-            Debug.Log(" okee ");
             while (true)
             {
                 selectedOption--;
@@ -61,7 +68,7 @@ public class CharacterUser : MonoBehaviour
                     selectedOption = charactersDB.CharacterCount - 1;
                 }
                 character = charactersDB.GetCharacter(selectedOption);
-                if (character.Price == 0)
+                if (character.Buy == true)
                 {
                     break;
                 }
@@ -75,9 +82,8 @@ public class CharacterUser : MonoBehaviour
     public void updateCharacterNext()
     {
         Characters character = charactersDB.GetCharacter(selectedOption);
-        if (character.Price > 0)
+        if (character.Buy  == false)
         {
-            Debug.Log(" okee ");
             while (true)
             {
                 selectedOption++;
@@ -86,7 +92,7 @@ public class CharacterUser : MonoBehaviour
                     selectedOption = 0;
                 }
                 character = charactersDB.GetCharacter(selectedOption);
-                if (character.Price == 0)
+                if (character.Buy == true)
                 {
                     break;
                 }

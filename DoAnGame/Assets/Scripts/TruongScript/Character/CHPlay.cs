@@ -15,9 +15,16 @@ public class CHPlay : MonoBehaviour
     public Animator[] animator;
     public TextMeshProUGUI[] CharacterPrice;
     public Button Next, Back;
+    public TextMeshProUGUI[] ID;
 
     private int selectedOption = 0;
-    private int MaxCharacter; 
+    private int MaxCharacter;
+
+    public static CHPlay Instance { get; private set; }
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -47,7 +54,6 @@ public class CHPlay : MonoBehaviour
         {
             Back.interactable = true;
         }
-        Debug.Log("có cc: " + selectedOption);
     }
     public void NextOption()
     {
@@ -61,9 +67,8 @@ public class CHPlay : MonoBehaviour
         selectedOption -= 3;
         updateCharacter();
     }
-    private void updateCharacter()
+    public void updateCharacter()
     {
-        
         for (int i = 0; i < 3; i++)
         {
             int check = i + selectedOption;
@@ -76,7 +81,7 @@ public class CHPlay : MonoBehaviour
                 Sprite[i].drawMode = SpriteDrawMode.Sliced;
                 Sprite[i].size = new Vector2(0.15f, 0.17f);
                 animator[i].runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-                if (character.Price == 0)
+                if (character.Buy == true || character.Price == 0)
                 {
                     CharacterPrice[i].text = "";
                 }
@@ -84,12 +89,12 @@ public class CHPlay : MonoBehaviour
                 {
                     CharacterPrice[i].text = character.Price + " RP";
                 }
+                ID[i].text = check + "";
             }
             else
             {
                 Character[i].SetActive(false);
             }
         }
-        
     }
 }

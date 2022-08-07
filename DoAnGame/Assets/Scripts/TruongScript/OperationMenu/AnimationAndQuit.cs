@@ -7,6 +7,7 @@ public class AnimationAndQuit : MonoBehaviour
     float _cu = 0.3f;
     public GameObject dino;
     public DatabaseGameAccount data;
+    public DatabaseCharacter character;
     void Start()
     {
         LeanTween.moveY(dino, 0.5f, _cu).setOnComplete(() =>
@@ -18,5 +19,6 @@ public class AnimationAndQuit : MonoBehaviour
     {
         Application.Quit();
         data.quitAccount();
+        character.reset();
     }
 }

@@ -17,7 +17,8 @@ public class SoundsClick : MonoBehaviour
     }
     public void click()
     {
-        m_sound_click.Play();
+
+        playSound("button");
     }
     public static SoundsClick Instance { get; private set; }
 
@@ -27,5 +28,9 @@ public class SoundsClick : MonoBehaviour
     }
     public void volue(float volume) {
         m_sound_click.volume = volume;
+    }
+    public void playSound(string _file)
+    {
+        m_sound_click.PlayOneShot(Resources.Load<AudioClip>("Sounds/" + _file));
     }
 }

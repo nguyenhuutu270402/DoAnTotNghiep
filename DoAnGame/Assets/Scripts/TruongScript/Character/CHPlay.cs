@@ -36,7 +36,7 @@ public class CHPlay : MonoBehaviour
 
     void Update()
     {
-        if(selectedOption + 3 > MaxCharacter)
+        if(selectedOption + 4 > MaxCharacter)
         {
             Next.interactable = false;
         }

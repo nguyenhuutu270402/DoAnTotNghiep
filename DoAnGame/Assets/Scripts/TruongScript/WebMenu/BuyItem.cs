@@ -24,7 +24,7 @@ public class BuyItem : MonoBehaviour
             Debug.Log(ID + " có thể mua");
             Confirm.SetActive(true);
             Dino.SetActive(false);
-            TextConfirm.text = "you definitely want to use " + characters.Price + " RP to buy a" + characters.CharacterName;
+            TextConfirm.text = "you definitely want to use " + characters.Price + " RP to buy a " + characters.CharacterName;
             BuyItemWeb.Instance.BuyItem(ID);
         }
         else if(characters.Buy == true)

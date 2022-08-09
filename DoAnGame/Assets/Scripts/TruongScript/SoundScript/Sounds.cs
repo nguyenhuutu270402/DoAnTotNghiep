@@ -18,22 +18,22 @@ public class Sounds : MonoBehaviour
         // 0 : map
         // 1 : menu
         // set nhạc nền BGM
-        if (index == 0)
-        {
-            int IndexSound = Random.Range(0, 2);
-            if (IndexSound == 0)
-            {
-                playSound("Game_screen1");
-            }
-            else
-            {
-                playSound("Game_screen2");
-            }
-        }
-        else if (index == 1)
-        {
-            playSound("game_screen_main");
-        }
+        //if (index == 0)
+        //{
+        //    int IndexSound = Random.Range(0, 2);
+        //    if (IndexSound == 0)
+        //    {
+        //        playSound("Game_screen1");
+        //    }
+        //    else
+        //    {
+        //        playSound("Game_screen2");
+        //    }
+        //}
+        //else if (index == 1)
+        //{
+        //    playSound("game_screen_main");
+        //}
 
         SFX_Scrollbar.value = sound[0];
         SFX_befor = sound[0];
@@ -41,6 +41,8 @@ public class Sounds : MonoBehaviour
         BGM_befor = sound[1];
 
         m_sound.volume = sound[1];
+
+        
 
 
         
@@ -71,8 +73,8 @@ public class Sounds : MonoBehaviour
 
         m_sound.volume = BGM_Scrollbar_Value;
     }
-    public void playSound(string _file)
-    {
-        m_sound.PlayOneShot(Resources.Load<AudioClip>("Sounds/" + _file));
-    }
+    //public void playSound(string _file)
+    //{
+    //    m_sound.PlayOneShot(Resources.Load<AudioClip>("Sounds/" + _file));
+    //}
 }

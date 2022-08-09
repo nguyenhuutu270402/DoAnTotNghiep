@@ -67,4 +67,5 @@ public class Characters
     public RuntimeAnimatorController animation;
     public int Price;
     public bool Buy;
+    public string Profile;
 }

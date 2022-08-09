@@ -67,8 +67,12 @@ public class CHPlay : MonoBehaviour
         {
             Back.interactable = true;
         }
-        
-        if(checkFrames[0] == 0)
+
+        CheckUpdate();
+    }
+    public void CheckUpdate()
+    {
+        if (checkFrames[0] == 0)
         {
             LeanTween.rotateY(Character[0], 0f, 0.00001f);
         }
@@ -79,6 +83,19 @@ public class CHPlay : MonoBehaviour
         if (checkFrames[2] == 0)
         {
             LeanTween.rotateY(Character[2], 0f, 0.00001f);
+        }
+
+        if (checkFrames[0] == 1)
+        {
+            LeanTween.rotateY(CharacterProfile[0], 180f, 0.00001f);
+        }
+        if (checkFrames[1] == 1)
+        {
+            LeanTween.rotateY(CharacterProfile[1], 180f, 0.00001f);
+        }
+        if (checkFrames[2] == 1)
+        {
+            LeanTween.rotateY(CharacterProfile[2], 180f, 0.00001f);
         }
     }
 

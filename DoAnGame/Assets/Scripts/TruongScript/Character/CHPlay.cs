@@ -26,12 +26,14 @@ public class CHPlay : MonoBehaviour
     public GameObject[] Character;
     public GameObject[] Frames;
     public GameObject[] CharacterProfile;
+    public Button[] btnClick;
 
     private int selectedOption = 0;
     private int MaxCharacter;
 
   
     public int[] checkFrames;
+
 
     public static CHPlay Instance { get; private set; }
     private void Awake()
@@ -49,7 +51,8 @@ public class CHPlay : MonoBehaviour
 
     void Update()
     {
-        if(selectedOption + 4 > MaxCharacter)
+
+        if (selectedOption + 4 > MaxCharacter)
         {
             Next.interactable = false;
         }
@@ -72,31 +75,12 @@ public class CHPlay : MonoBehaviour
     }
     public void CheckUpdate()
     {
-        if (checkFrames[0] == 0)
+        for (int i = 0; i < 3; i++)
         {
-            LeanTween.rotateY(Character[0], 0f, 0.00001f);
-        }
-        if (checkFrames[1] == 0)
-        {
-            LeanTween.rotateY(Character[1], 0f, 0.00001f);
-        }
-        if (checkFrames[2] == 0)
-        {
-            LeanTween.rotateY(Character[2], 0f, 0.00001f);
+            LeanTween.rotateY(Character[i], 0f, 0.00001f);
+            LeanTween.rotateY(CharacterProfile[i], 0, 0.00001f);
         }
 
-        if (checkFrames[0] == 1)
-        {
-            LeanTween.rotateY(CharacterProfile[0], 180f, 0.00001f);
-        }
-        if (checkFrames[1] == 1)
-        {
-            LeanTween.rotateY(CharacterProfile[1], 180f, 0.00001f);
-        }
-        if (checkFrames[2] == 1)
-        {
-            LeanTween.rotateY(CharacterProfile[2], 180f, 0.00001f);
-        }
     }
 
     public void NextOption()
@@ -144,31 +128,35 @@ public class CHPlay : MonoBehaviour
         }
     }
     public void ClickShow(int index)
-    {   
+    {
+        btnClick[index].interactable = false;
         // 0 1 2 tương ứng với stt từ trái trang phải
         float rotate = 0.3f;
         if (checkFrames[index] == 0)
         {
             LeanTween.rotateY(Character[index], 90f, rotate).setOnComplete(() =>
             {
-                Frames[index].SetActive(false);
-                CharacterProfile[index].SetActive(true);
-                LeanTween.rotateY(Character[index], 180f, rotate);
+                LeanTween.rotateY(Character[index], 180f, rotate).setOnComplete(() =>
+                {
+                    Frames[index].SetActive(false);
+                    CharacterProfile[index].SetActive(true);
+                    checkFrames[index] = 1;
+                    btnClick[index].interactable = true;
+                });
             });
-            checkFrames[index] = 1;
         }
         else if (checkFrames[index] == 1)
         {
             LeanTween.rotateY(Character[index], 270f, rotate).setOnComplete(() =>
             {
-                Frames[index].SetActive(true);
-                CharacterProfile[index].SetActive(false);
                 LeanTween.rotateY(Character[index], 360f, rotate).setOnComplete(() =>
                 {
+                    Frames[index].SetActive(true);
+                    CharacterProfile[index].SetActive(false);
                     checkFrames[index] = 0;
+                    btnClick[index].interactable = true;
                 });
             });
-            
         }
     }
     public void ResetProfile()

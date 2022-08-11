@@ -19,7 +19,7 @@ public class BuyItem : MonoBehaviour
         ID = int.Parse(IDText.text.Trim());
         Debug.Log(ID + "");
         characters = DB.GetCharacter(ID);
-        if(characters.Buy == false)
+        if(characters.Buy == false && characters.Price > 1)
         {
             Debug.Log(ID + " có thể mua");
             Confirm.SetActive(true);

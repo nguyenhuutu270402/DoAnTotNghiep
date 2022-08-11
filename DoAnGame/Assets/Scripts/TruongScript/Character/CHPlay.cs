@@ -109,7 +109,7 @@ public class CHPlay : MonoBehaviour
                 Sprite[i].drawMode = SpriteDrawMode.Sliced;
                 Sprite[i].size = new Vector2(0.15f, 0.17f);
                 animator[i].runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-                if (character.Buy == true || character.Price == 0)
+                if (character.Buy == true || character.Price == 0 || character.Price == 1)
                 {
                     CharacterPrice[i].text = "";
                 }
@@ -136,11 +136,13 @@ public class CHPlay : MonoBehaviour
         {
             LeanTween.rotateY(Character[index], 90f, rotate).setOnComplete(() =>
             {
+                checkFrames[index] = 1;
+                Frames[index].SetActive(false);
+                CharacterProfile[index].SetActive(true);
                 LeanTween.rotateY(Character[index], 180f, rotate).setOnComplete(() =>
                 {
-                    Frames[index].SetActive(false);
-                    CharacterProfile[index].SetActive(true);
-                    checkFrames[index] = 1;
+                    
+                    
                     btnClick[index].interactable = true;
                 });
             });
@@ -149,11 +151,13 @@ public class CHPlay : MonoBehaviour
         {
             LeanTween.rotateY(Character[index], 270f, rotate).setOnComplete(() =>
             {
+                checkFrames[index] = 0;
+                CharacterProfile[index].SetActive(false);
+                Frames[index].SetActive(true);
                 LeanTween.rotateY(Character[index], 360f, rotate).setOnComplete(() =>
                 {
-                    Frames[index].SetActive(true);
-                    CharacterProfile[index].SetActive(false);
-                    checkFrames[index] = 0;
+                    
+                    
                     btnClick[index].interactable = true;
                 });
             });

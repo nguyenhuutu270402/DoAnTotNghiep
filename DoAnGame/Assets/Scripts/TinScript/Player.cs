@@ -89,7 +89,15 @@ public class Player : MonoBehaviour
             }
             transform.GetChild(HoldingWeapon).transform.gameObject.SetActive(false);
             transform.GetChild(PickupWeapon).transform.gameObject.SetActive(true);
-            
+
+                // truong
+
+            WeaponChest.Instance.intdexWeapon(PickupWeapon);
+            ScorePlayer.Instance.IncreaseScore();
+
+                // 
+
+
             if (PickupWeapon == 7)
             {
                 Cam.GetComponent<Volume>().weight = 1;

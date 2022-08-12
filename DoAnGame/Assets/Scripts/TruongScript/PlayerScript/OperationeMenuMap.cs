@@ -11,11 +11,12 @@ public class OperationeMenuMap : MonoBehaviour
     [SerializeField]
 
     public GameObject load1, load2;
+    private float time = 2f;
 
     private void Awake()
     {
-        LeanTween.moveX(load1, 3000f, 3f);
-        LeanTween.moveX(load2, -1000f, 3f);
+        LeanTween.moveX(load1, 3000f, time);
+        LeanTween.moveX(load2, -1000f, time);
     }
     [System.Obsolete]
     void Update()

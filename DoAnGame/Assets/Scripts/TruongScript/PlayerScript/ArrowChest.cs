@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowChest : MonoBehaviour
 {
     public GameObject chest;
-    int score;
+    private int score;
     private int BossAppears = 0;
     public static ArrowChest Instance { get; private set; }
     private void Awake()

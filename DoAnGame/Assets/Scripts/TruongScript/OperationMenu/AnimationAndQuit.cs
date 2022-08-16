@@ -10,7 +10,7 @@ public class AnimationAndQuit : MonoBehaviour
     public DatabaseCharacter character;
     void Start()
     {
-        LeanTween.moveY(dino, 0.5f, _cu).setOnComplete(() =>
+        LeanTween.moveY(dino, 0.3f, _cu).setOnComplete(() =>
         {
             LeanTween.moveY(dino, 0.02f, _cu * 3f).setLoopPingPong();
         });

@@ -8,7 +8,6 @@ public class OperationeMenuMap : MonoBehaviour
 {
     public GameObject MenuPause;
     public GameObject MenuSettings;
-    [SerializeField]
 
     public GameObject load1, load2;
     private float time = 2f;

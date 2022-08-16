@@ -21,9 +21,9 @@ public class InfoUser : MonoBehaviour
     void Start()
     {
         GameAccounts gameAccount = data.GetGameAccounts(0);
-        userName.text = gameAccount.name;
-        userPrice.text = "Price :" + gameAccount.price + "";
-        userPoints.text = "Points :" + gameAccount.points + "";
+        userName.text = "User: " + gameAccount.name;
+        userPrice.text = "" + gameAccount.price + "";
+        userPoints.text = "" + gameAccount.points + "";
     }
 
     public void updateName(string _name)

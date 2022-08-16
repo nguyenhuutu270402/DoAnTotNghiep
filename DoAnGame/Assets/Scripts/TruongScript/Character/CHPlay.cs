@@ -13,6 +13,8 @@ public class CHPlay : MonoBehaviour
     [Header("Button")]
     public Button Next;
     public Button Back;
+    public GameObject next;
+    public GameObject back;
     [Header("UserPrice")]
     public TextMeshProUGUI Price;
     [Header("FrameCharacter")]
@@ -27,6 +29,9 @@ public class CHPlay : MonoBehaviour
     public GameObject[] Frames;
     public GameObject[] CharacterProfile;
     public Button[] btnClick;
+    
+    [Header("FrameIndex")]
+    public TextMeshProUGUI[] FrameIndex;
 
     private int selectedOption = 0;
     private int MaxCharacter;
@@ -44,7 +49,7 @@ public class CHPlay : MonoBehaviour
     void Start()
     {
         GameAccounts gameAccount = data.GetGameAccounts(0);
-        Price.text = gameAccount.price + "  RP";
+        Price.text = gameAccount.price + "";
         MaxCharacter = charactersDB.CharacterCount;
         updateCharacter();
     }
@@ -55,20 +60,25 @@ public class CHPlay : MonoBehaviour
         if (selectedOption + 4 > MaxCharacter)
         {
             Next.interactable = false;
+            next.SetActive(false);
+            
         }
         else
         {
             Next.interactable = true;
+            next.SetActive(true);
         }
 
 
         if(selectedOption - 3 < 0)
         {
             Back.interactable = false;
+            back.SetActive(false);
         }
         else
         {
             Back.interactable = true;
+            back.SetActive(true);
         }
 
         CheckUpdate();
@@ -109,17 +119,23 @@ public class CHPlay : MonoBehaviour
                 Sprite[i].drawMode = SpriteDrawMode.Sliced;
                 Sprite[i].size = new Vector2(0.15f, 0.17f);
                 animator[i].runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-                if (character.Buy == true || character.Price == 0 || character.Price == 1)
+                if (character.Buy == true )
                 {
-                    CharacterPrice[i].text = "";
+                    CharacterPrice[i].text = "Have owned";
+                    Sprite[i].color = new Color(1, 1, 1);
+                }
+                else if(character.Price == 1)
+                {
+                    CharacterPrice[i].text = "Owned't";
+                    Sprite[i].color = new Color(0.01f, 0.01f, 0.01f);
                 }
                 else
                 {
                     CharacterPrice[i].text = character.Price + " RP";
+                    Sprite[i].color = new Color(0.01f, 0.01f, 0.01f);
                 }
                 ID[i].text = check + "";
                 Profile[i].text = character.Profile;
-                
             }
             else
             {
@@ -136,13 +152,12 @@ public class CHPlay : MonoBehaviour
         {
             LeanTween.rotateY(Character[index], 90f, rotate).setOnComplete(() =>
             {
+                FrameIndex[index].text = "2/2";
                 checkFrames[index] = 1;
                 Frames[index].SetActive(false);
                 CharacterProfile[index].SetActive(true);
                 LeanTween.rotateY(Character[index], 180f, rotate).setOnComplete(() =>
                 {
-                    
-                    
                     btnClick[index].interactable = true;
                 });
             });
@@ -151,13 +166,12 @@ public class CHPlay : MonoBehaviour
         {
             LeanTween.rotateY(Character[index], 270f, rotate).setOnComplete(() =>
             {
+                FrameIndex[index].text = "1/2";
                 checkFrames[index] = 0;
                 CharacterProfile[index].SetActive(false);
                 Frames[index].SetActive(true);
                 LeanTween.rotateY(Character[index], 360f, rotate).setOnComplete(() =>
                 {
-                    
-                    
                     btnClick[index].interactable = true;
                 });
             });

@@ -9,7 +9,6 @@ public class CheckAndUpdateName : MonoBehaviour
 {
     public GameObject Menu;
     public GameObject MenuName;
-    public GameObject MenuInfo;
     public DatabaseGameAccount data;
     public Button BtnSave;
 
@@ -22,7 +21,6 @@ public class CheckAndUpdateName : MonoBehaviour
         if (game.name.Length >= 6)
         {
             Menu.SetActive(true);
-            MenuInfo.SetActive(true);
         }
         else
         {
@@ -65,7 +63,6 @@ public class CheckAndUpdateName : MonoBehaviour
                 if (account.status)
                 {
                     Menu.SetActive(true);
-                    MenuInfo.SetActive(true);
                     MenuName.SetActive(false);
                     data.setName(name);
                     InfoUser.Instance.updateName(name);
@@ -75,7 +72,6 @@ public class CheckAndUpdateName : MonoBehaviour
                 else if (!account.status)
                 {
                     Menu.SetActive(false);
-                    MenuInfo.SetActive(false);
                     MenuName.SetActive(true);
                     yield return null;
                 }

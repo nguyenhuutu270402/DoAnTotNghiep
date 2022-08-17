@@ -180,8 +180,9 @@ public class CHPlay : MonoBehaviour
     public void ResetProfile()
     {
         for (int i = 0; i < 3; i++)
-        {
+        {   
             LeanTween.rotateY(Character[i], 0f, 0.00001f);
+            FrameIndex[i].text = "1/2";
             Frames[i].SetActive(true);
             CharacterProfile[i].SetActive(false);
             checkFrames[i] = 0;

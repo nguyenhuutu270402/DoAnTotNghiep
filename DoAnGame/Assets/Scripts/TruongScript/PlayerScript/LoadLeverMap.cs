@@ -11,7 +11,7 @@ public class LoadLeverMap : MonoBehaviour
     public Sprite IMG1, IMG2, IMG3;
     public TextMeshProUGUI NameMap;
     public GameObject load1, load2;
-    private int SceneMap = 2;
+    private int SceneMap = 3;
     public TextMeshProUGUI ModeMap;
     private int Mode = 1;
 
@@ -21,25 +21,21 @@ public class LoadLeverMap : MonoBehaviour
         ModeMap.text = "normal mode";
         PlayerPrefs.SetInt("ModeMap", Mode);
     }
-    void Update()
-    {
-        Debug.Log("mode" + PlayerPrefs.GetInt("ModeMap"));
-    }
     public void ClickNextSceneMap()
     {
         SceneMap++;
-        if(SceneMap > 4)
+        if(SceneMap > 5)
         {
-            SceneMap = 2;
+            SceneMap = 3;
         }
         Switch(SceneMap);
     }
     public void ClickBackSceneMap()
     {
         SceneMap--;
-        if (SceneMap < 2)
+        if (SceneMap < 3)
         {
-            SceneMap = 4;
+            SceneMap = 5;
         }
         Switch(SceneMap);
     }
@@ -47,15 +43,15 @@ public class LoadLeverMap : MonoBehaviour
     {
         switch (map)
         {
-            case 2:
+            case 3:
                 IMG.sprite = IMG1;
                 NameMap.text = "1";
                 break;
-            case 3:
+            case 4:
                 IMG.sprite = IMG2;
                 NameMap.text = "2";
                 break;
-            case 4:
+            case 5:
                 IMG.sprite = IMG3;
                 NameMap.text = "3";
                 break;
@@ -86,5 +82,6 @@ public class LoadLeverMap : MonoBehaviour
         {
             ModeMap.text = "hard mode";
         }
+        Debug.Log("mode" + PlayerPrefs.GetInt("ModeMap"));
     }
 }

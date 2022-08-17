@@ -15,9 +15,11 @@ public class CheckAndUpdateName : MonoBehaviour
     [SerializeField] private TMP_InputField NameUpdate;
     private string path = "http://localhost:3000/api/";
 
+    private GameAccounts game;
+
     void Start()
     {
-        GameAccounts game = data.GetGameAccounts(0);
+        game = data.GetGameAccounts(0);
         if (game.name.Length >= 6)
         {
             Menu.SetActive(true);

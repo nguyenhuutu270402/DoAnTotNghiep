@@ -5,10 +5,15 @@ using UnityEngine;
 public class WebRegister : MonoBehaviour
 {
     public DatabaseCharacter data;
+    public DatabaseGameAccount _data;
+    private void Awake()
+    {
+        data.reset();
+        _data.quitAccount();
+    }
     private void Start()
     {
         Screen.SetResolution(600, 700, false);
-        data.reset();
     }
     public void CickWebRegister()
     {

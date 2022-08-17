@@ -15,6 +15,6 @@ MonoBehaviour:
   gameAccounts:
   - status: 0
     id: 
-    name: 123123123
-    price: 123
-    points: 123
+    name: 
+    price: 0
+    points: 0

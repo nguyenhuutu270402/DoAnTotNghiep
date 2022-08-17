@@ -22,9 +22,7 @@ public class Loading : MonoBehaviour
     void Start()
     {
         animator.SetBool("isMove", isMove);
-        LeanTween.moveX(play, 8f, time);
-
-        dust_coolDown = dust_coolDownlap;
+        LeanTween.moveX(play, 8f, time);        dust_coolDown = dust_coolDownlap;
     }
     void Update()
     {

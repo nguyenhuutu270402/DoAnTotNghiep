@@ -81,7 +81,7 @@ MonoBehaviour:
     CharacterSprite: {fileID: 1533508108, guid: 1283f5f4f5f0b354ebc2a0c6ba675569, type: 3}
     animation: {fileID: 9100000, guid: 1408838e6579f134dbfd2c43dd652bb1, type: 2}
     Price: 100
-    Buy: 1
+    Buy: 0
     Profile: DIno mang phong cach cu chuoi va dino nay thich an hanh DIno mang phong
       cach cu chuoi va dino nay thich an hanh DIno mang phong cach cu chuoi va dino
       nay thich an hanh

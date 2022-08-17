@@ -213,6 +213,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: full
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 480
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925bad4623d3dcf4c9d09f89fb5e4346
+      internalID: -1227773948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -226,6 +247,7 @@ TextureImporter:
     nameFileIdTable:
       shotGun: -296039334
       korth: -50572422
+      full: -1227773948
       pistol: -335692485
       thompson: -44687002
   spritePackingTag: 

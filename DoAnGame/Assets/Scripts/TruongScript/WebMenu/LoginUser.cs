@@ -62,11 +62,11 @@ public class LoginUser : MonoBehaviour
             else
             {
                 GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
-                data.insertAccount(account.status, account.id, account.name, account.price, account.points);
-                
                 if (account.status)
                 {
+                    GameAccounts _account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
                     Screen.SetResolution(1920, 1080, true);
+                    data.insertAccount(_account.status, _account.id, _account.name, _account.price, _account.points);
                     SceneManager.LoadScene(1);
                     CheckSave(toggle.isOn, username, password);
                     yield return null;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyNormal1 : MonoBehaviour
+public class EnemyNormal2 : MonoBehaviour
 {
     // Start is called before the first frame update
     public float timeRe, HP;
@@ -17,11 +17,11 @@ public class EnemyNormal1 : MonoBehaviour
     {
         if (mode == 0)
         {
-            repeat = 2; // normal mode
+            repeat = 1; // normal mode
         }
         else
         {
-            repeat = 3; // hard mode
+            repeat = 2; // hard mode
         }
         repeatLoop = repeat;
         timeLoop = timeRe;
@@ -31,7 +31,7 @@ public class EnemyNormal1 : MonoBehaviour
     void Update()
     {
         attack();
-        if(HP <= 0 & die == false)
+        if (HP <= 0 & die == false)
         {
             animator.SetBool("Die", true);
         }
@@ -40,7 +40,7 @@ public class EnemyNormal1 : MonoBehaviour
     void attack()
     {
         timeLoop -= Time.deltaTime;
-        if(timeLoop <=0 )
+        if (timeLoop <= 0)
         {
             if (repeatLoop > 0)
             {
@@ -49,27 +49,23 @@ public class EnemyNormal1 : MonoBehaviour
                 Instantiate(enemyBullet, transform.position, Quaternion.identity);
                 timeLoop = 0.2f;
 
-            } else
+            }
+            else
             {
                 timeLoop = timeRe;
                 repeatLoop = repeat;
             }
-            
+
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // cham dan chuyen animation
-        if(collision.gameObject.tag == "bullet_classic")
+        if (collision.gameObject.tag == "bullet_classic")
         {
             HP -= 1;
             animator.SetBool("Hurt", true);
         }
     }
-
-    
-
-    
-
 }

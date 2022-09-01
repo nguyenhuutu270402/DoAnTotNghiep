@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3302307164226025825}
   - component: {fileID: 7340997306474949551}
   - component: {fileID: 7340997306474949456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BlueBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1.4
+  explosion: {fileID: 179269498746916040, guid: bd16b8d0084595240956af8e996d2a6c, type: 3}
 --- !u!50 &7340997306474949551
 Rigidbody2D:
   serializedVersion: 4

@@ -8,6 +8,8 @@ public class BlueBullet : MonoBehaviour
     Rigidbody2D rigidbody2D;
     GameObject player;
     Vector2 moveDirection;
+    public GameObject explosion;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,10 @@ public class BlueBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // cham player
+        if (collision.gameObject.tag == "Hiable" || collision.gameObject.tag == "BlockBoder")
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

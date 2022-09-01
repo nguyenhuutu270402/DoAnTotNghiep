@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 404759578420064155}
   - component: {fileID: 404759578420064154}
   - component: {fileID: 7181520545455821493}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyNormal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRe: 3
-  myPrefab: {fileID: 7340997306474949457, guid: a85f4590061a11e4f916a61e3f6180a0, type: 3}
+  HP: 5
+  enemyBullet: {fileID: 7340997306474949457, guid: a85f4590061a11e4f916a61e3f6180a0, type: 3}
+  animator: {fileID: 404759578904963846}
 --- !u!1 &404759578904963842
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyAIPath: {fileID: 404759578420064151}
+  EnemyGameObject: {fileID: 404759578420064149}
+  explosion: {fileID: 8637214645811812135, guid: 1e50821d0a1cf6e4992dec6606de7391, type: 3}
 --- !u!95 &404759578904963846
 Animator:
   serializedVersion: 4

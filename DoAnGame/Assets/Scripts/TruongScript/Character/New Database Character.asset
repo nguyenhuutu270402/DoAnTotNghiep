@@ -94,3 +94,12 @@ MonoBehaviour:
     Profile: DIno mang phong cach cu chuoi va dino nay thich an hanh DIno mang phong
       cach cu chuoi va dino nay thich an hanh DIno mang phong cach cu chuoi va dino
       nay thich an hanh
+  - _id: 8
+    CharacterName: Bear
+    CharacterSprite: {fileID: 1940227619, guid: 6387e06767eb5ab4581691fa17cdb5a0, type: 3}
+    animation: {fileID: 9100000, guid: f2e685d2bf3425c4b915f956449d346b, type: 2}
+    Price: 100
+    Buy: 0
+    Profile: DIno mang phong cach cu chuoi va dino nay thich an hanh DIno mang phong
+      cach cu chuoi va dino nay thich an hanh DIno mang phong cach cu chuoi va dino
+      nay thich an hanh

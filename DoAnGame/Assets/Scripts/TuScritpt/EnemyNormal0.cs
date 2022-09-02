@@ -19,6 +19,7 @@ public class EnemyNormal0 : MonoBehaviour
         if (HP <= 0 & die == false)
         {
             animator.SetBool("Die", true);
+
         }
     }
 

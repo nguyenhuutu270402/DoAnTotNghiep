@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2737350962140505640}
   - component: {fileID: 2737350962140505641}
   - component: {fileID: 2737350962140505638}
+  - component: {fileID: -6318625158924875440}
   m_Layer: 10
   m_Name: RedBullet
   m_TagString: Untagged
@@ -127,9 +128,22 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6318625158924875440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737350962140505639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28abecd07d135cf4f92f1479af9167cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 8637214645811812135, guid: 1e50821d0a1cf6e4992dec6606de7391, type: 3}

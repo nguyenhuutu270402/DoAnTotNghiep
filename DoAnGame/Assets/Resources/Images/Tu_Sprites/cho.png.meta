@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,7 +116,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cho_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1856
+        width: 130
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4261856d9d2ed004fa7b1873eb6bd3bb
+      internalID: -268394128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_1
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1854
+        width: 143
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47368e346cf27a48bf8820818a83da2
+      internalID: -356967588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_2
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1855
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2e73c39b486784383953180176516a
+      internalID: 108450477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_3
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1855
+        width: 131
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831a004a72290704e971275c02d784ba
+      internalID: 1462509481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_4
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 1853
+        width: 131
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f103ae32f6d584d94df94f9bab5915
+      internalID: 914153812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_5
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1853
+        width: 141
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415de6199f65ab64497fdcbc4f85aaa5
+      internalID: 500830749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_6
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1855
+        width: 139
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359040f19a528624eaf00b946876d676
+      internalID: -1144038258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_7
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 1855
+        width: 143
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a23e78457c44e42b0030a9803d421b
+      internalID: 10401179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_8
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1599
+        width: 84
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a66508b32020df45b4ce66322963771
+      internalID: -1750867967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_9
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1586
+        width: 91
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f68b1b60305d44894673b290713af1
+      internalID: -1724159735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1588
+        width: 79
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b45e50c0b1ca94c9941a1bb88b5912
+      internalID: 495054995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_11
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1599
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f01b6306513f1a4f81d6a1d54b4deb0
+      internalID: 1610767805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_12
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 1598
+        width: 84
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036327aab0a136d4680de765bdba367f
+      internalID: -1037378626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_13
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1421
+        width: 114
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848b6aed85e21744ea4a876dc05be939
+      internalID: 891505418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1423
+        width: 114
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4837de23d0bb8f74bb0c88da2414b0bd
+      internalID: -295571836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_15
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1423
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3219cbdfbe2f7e47ab04233054e56f5
+      internalID: 673077039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_16
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1424
+        width: 114
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f98631d03f3f46429e91f033b16e57d
+      internalID: 2058972620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cho_17
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1423
+        width: 114
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81547f8c1318a734f823659e3e7d3877
+      internalID: 1502378193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -127,7 +505,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cho_11: 1610767805
+      cho_2: 108450477
+      cho_3: 1462509481
+      cho_13: 891505418
+      cho_14: -295571836
+      cho_5: 500830749
+      cho_10: 495054995
+      cho_16: 2058972620
+      cho_12: -1037378626
+      cho_6: -1144038258
+      cho_17: 1502378193
+      cho_4: 914153812
+      cho_0: -268394128
+      cho_15: 673077039
+      cho_1: -356967588
+      cho_8: -1750867967
+      cho_9: -1724159735
+      cho_7: 10401179
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

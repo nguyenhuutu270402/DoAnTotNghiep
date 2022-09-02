@@ -16,10 +16,11 @@ public class EnemyNormal3 : MonoBehaviour
 
     AILerp EnemyAIPath;
 
-    //mode
-    float mode = 1;
+
     void Start()
     {
+        int mode = PlayerPrefs.GetInt("ModeMap");
+
         if (mode == 0)
         {
             repeat = 1; // normal mode

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8289272506490991181}
   - component: {fileID: 3331036220802412909}
   - component: {fileID: 7681302980362761113}
+  - component: {fileID: 9174307154090360555}
+  - component: {fileID: -127732695408142405}
   m_Layer: 10
   m_Name: DuckBullet
   m_TagString: Untagged
@@ -111,3 +113,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.04}
   m_EdgeRadius: 0
+--- !u!50 &9174307154090360555
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464523437821890135}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &-127732695408142405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464523437821890135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fea85ad1be1e74aa4ae57ecfa48774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 4948732982010394544, guid: 929e90a80e8bb2a45a66bcdd0d5c0e16, type: 3}

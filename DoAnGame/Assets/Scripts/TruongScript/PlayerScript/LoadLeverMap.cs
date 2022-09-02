@@ -83,5 +83,6 @@ public class LoadLeverMap : MonoBehaviour
             ModeMap.text = "hard mode";
         }
         Debug.Log("mode" + PlayerPrefs.GetInt("ModeMap"));
+        
     }
 }

@@ -15,7 +15,7 @@ public class EnemyNormal6 : MonoBehaviour
     public GameObject enemyBullet, explosion;
     bool die = false;
 
-    float mode = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class EnemyNormal6 : MonoBehaviour
         y = Random.Range(0f, 1f) == 0 ? -1 : 1;
         rigidbody2D.velocity = new Vector2(x * Speed, y * Speed);
 
+        int mode = PlayerPrefs.GetInt("ModeMap");
 
         if (mode == 0)
         {
@@ -52,10 +53,10 @@ public class EnemyNormal6 : MonoBehaviour
 
         }
 
-        if (rigidbody2D.velocity.x < 0.1f & rigidbody2D.velocity.x > -0.1f)
+        if (rigidbody2D.velocity.x < Speed - 0.2f & rigidbody2D.velocity.x > -Speed + 0.2f)
         {
-            x = Random.Range(0, 1) == 0 ? -1 : 1;
-            y = Random.Range(0, 1) == 0 ? -1 : 1;
+            x = Random.Range(-1f, 1f);
+            y = Random.Range(-1f, 1f);
             rigidbody2D.velocity = new Vector2(x * Speed, y * Speed);
 
         }

@@ -11,10 +11,11 @@ public class EnemyNormal1 : MonoBehaviour
     public GameObject enemyBullet;
     public Animator animator;
     bool die = false;
-    //mode
-    float mode = 0;
+
     void Start()
     {
+        int mode = PlayerPrefs.GetInt("ModeMap");
+
         if (mode == 0)
         {
             repeat = 2; // normal mode

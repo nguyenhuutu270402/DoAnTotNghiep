@@ -12,10 +12,12 @@ public class EnemyNormal2 : MonoBehaviour
     public Animator animator;
     bool die = false;
     //mode
-    float mode = 0;
+
     void Start()
     {
-        if (mode == 0)
+        int mode = PlayerPrefs.GetInt("ModeMap");
+
+        if (mode == 1)
         {
             repeat = 1; // normal mode
         }

@@ -10,8 +10,9 @@ public class InfoUser : MonoBehaviour
     public TextMeshProUGUI userPrice;
     public TextMeshProUGUI userPoints;
 
-    public DatabaseGameAccount data;
-    public DatabaseCharacter character;
+    private int UserPrice; 
+    private int UserPoints;
+    private string UserName;
 
     public static InfoUser Instance { get; private set; }
     private void Awake()
@@ -20,10 +21,12 @@ public class InfoUser : MonoBehaviour
     }
     void Start()
     {
-        GameAccounts gameAccount = data.GetGameAccounts(0);
-        userName.text = "User: " + gameAccount.name;
-        userPrice.text = "" + gameAccount.price + "";
-        userPoints.text = "" + gameAccount.points + "";
+        UserName = PlayerPrefs.GetString("UserName");
+        UserPrice = PlayerPrefs.GetInt("UserPrice");
+        UserPoints = PlayerPrefs.GetInt("UserPoints");
+        userName.text = "User: " + UserName;
+        userPrice.text = "" + UserPrice + "";
+        userPoints.text = "" + UserPoints + "";
     }
 
     public void updateName(string _name)
@@ -32,8 +35,6 @@ public class InfoUser : MonoBehaviour
     }
     public void quitAccount()
     {
-        data.quitAccount();
-        character.reset();
         SceneManager.LoadScene(0);
     }
 }

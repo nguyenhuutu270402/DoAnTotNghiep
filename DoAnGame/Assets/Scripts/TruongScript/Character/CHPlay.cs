@@ -1,191 +1,187 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CHPlay : MonoBehaviour
-{   
-
-    [Header("Data")]
-    public DatabaseCharacter charactersDB;
-    public DatabaseGameAccount data;
-    [Header("Button")]
-    public Button Next;
-    public Button Back;
-    public GameObject next;
-    public GameObject back;
-    [Header("UserPrice")]
-    public TextMeshProUGUI Price;
-    [Header("FrameCharacter")]
-    public TextMeshProUGUI[] CharacterName;
-    public SpriteRenderer[] Sprite;
-    public Animator[] animator;
-    public TextMeshProUGUI[] CharacterPrice;
-    public TextMeshProUGUI[] ID;
-    public TextMeshProUGUI[] Profile;
-    [Header("Frame")]
-    public GameObject[] Character;
-    public GameObject[] Frames;
-    public GameObject[] CharacterProfile;
-    public Button[] btnClick;
-    
-    [Header("FrameIndex")]
-    public TextMeshProUGUI[] FrameIndex;
-
+{
     private int selectedOption = 0;
-    private int MaxCharacter;
+    private int MaxselectedOption;
+    private int PointsUser;
+    [Header("Data")]
+    // list trnag phục tốn tiền
+    public List<RuntimeAnimatorController> CharacterBuy = new List<RuntimeAnimatorController>();
+    // list trang phuc cua user
+    public List<RuntimeAnimatorController> PlayerUser = new List<RuntimeAnimatorController>();
+    // list trang phuc cua user tính theo điểm
+    public List<RuntimeAnimatorController> PlayerPoints = new List<RuntimeAnimatorController>();
 
-  
-    public int[] checkFrames;
+    private List<RuntimeAnimatorController> characters;
+    private List<int> prices;
+    [Header("UserPrice")]
+    public TextMeshProUGUI UserPrice;
+    [Header("Btn")]
+    public Button Back;
+    public Button Next;
+    public GameObject ImgBack;
+    public GameObject ImgNext;
+    [Header("character")]
+    public Animator[] animator;
+    public TextMeshProUGUI[] PriceText;
+    public TextMeshProUGUI[] NameText;
+    public TextMeshProUGUI[] IDText;
+    public SpriteRenderer[] Sprite;
+    public GameObject[] Frames;
 
+
+
+    // thuộc buy item
+    private int ID;
+    [Header("Buy Item")]
+    
+    public TextMeshProUGUI TextConfirm;
+    public GameObject Dino;
+    public GameObject Confirm;
 
     public static CHPlay Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
+        characters = new List<RuntimeAnimatorController>();
+        characters.AddRange(PlayerUser);
+        characters.AddRange(PlayerPoints);
+        characters.AddRange(CharacterBuy);
+        ListPrice();
+        MaxselectedOption = characters.Count;
+    }
+    private void ListPrice()
+    {
+        prices = new List<int>();
+        PointsUser = PlayerPrefs.GetInt("UserPoints");
+        for (int i = 0; i < PlayerUser.Count; i++)
+        {
+            prices.Add(0);
+        }
+        for (int i = 0; i < PlayerPoints.Count; i++)
+        {
+            prices.Add(1);
+        }
+        for (int i = 0; i < CharacterBuy.Count; i++)
+        {
+            prices.Add(150);
+        }
+
+        if(PointsUser >= 350)
+        {
+            prices[4] = 0;
+            prices[5] = 0;
+            prices[6] = 0;
+        }
+        else if(PointsUser >= 250)
+        {
+            prices[4] = 0;
+            prices[5] = 0;
+        }
+        else if (PointsUser >= 150)
+        {
+            prices[4] = 0;
+        }
+    }
+    public void UpdatePrice(int _id)
+    {
+        prices[_id] = 0;
     }
 
     void Start()
     {
-        GameAccounts gameAccount = data.GetGameAccounts(0);
-        Price.text = gameAccount.price + "";
-        MaxCharacter = charactersDB.CharacterCount;
+        UserPrice.text = PlayerPrefs.GetInt("UserPrice") + "";
         updateCharacter();
     }
 
     void Update()
     {
-
-        if (selectedOption + 4 > MaxCharacter)
+        if (selectedOption + 4 > MaxselectedOption)
         {
             Next.interactable = false;
-            next.SetActive(false);
-            
+            ImgNext.SetActive(false);
+
         }
         else
         {
             Next.interactable = true;
-            next.SetActive(true);
+            ImgNext.SetActive(true);
         }
 
 
-        if(selectedOption - 3 < 0)
+        if (selectedOption - 3 < 0)
         {
             Back.interactable = false;
-            back.SetActive(false);
+            ImgBack.SetActive(false);
         }
         else
         {
             Back.interactable = true;
-            back.SetActive(true);
+            ImgBack.SetActive(true);
         }
-
-        CheckUpdate();
+        updateCharacter();
     }
-    public void CheckUpdate()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            LeanTween.rotateY(Character[i], 0f, 0.00001f);
-            LeanTween.rotateY(CharacterProfile[i], 0, 0.00001f);
-        }
-
-    }
-
     public void NextOption()
     {
         selectedOption += 3;
         updateCharacter();
-        ResetProfile();
     }
     public void BackOption()
     {
         selectedOption -= 3;
         updateCharacter();
-        ResetProfile();
     }
     public void updateCharacter()
     {
         for (int i = 0; i < 3; i++)
         {
             int check = i + selectedOption;
-            if(check < MaxCharacter)
+            if(check < MaxselectedOption)
             {
-                Character[i].SetActive(true);
-                Characters character = charactersDB.GetCharacter(check);
-                CharacterName[i].text = character.CharacterName + "";
-                Sprite[i].sprite = character.CharacterSprite;
-                Sprite[i].drawMode = SpriteDrawMode.Sliced;
-                Sprite[i].size = new Vector2(0.15f, 0.17f);
-                animator[i].runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-                if (character.Buy == true )
+                Frames[i].SetActive(true);
+                NameText[i].text = characters[check].name;
+                animator[i].runtimeAnimatorController = characters[check] as RuntimeAnimatorController;
+                if(prices[check] == 0)
                 {
-                    CharacterPrice[i].text = "Have owned";
+                    PriceText[i].text = "Have owned";
                     Sprite[i].color = new Color(1, 1, 1);
-                }
-                else if(character.Price == 1)
+                }else if(prices[check] == 1)
                 {
-                    CharacterPrice[i].text = "Owned't";
+                    PriceText[i].text = "Owned't";
                     Sprite[i].color = new Color(0.01f, 0.01f, 0.01f);
                 }
                 else
                 {
-                    CharacterPrice[i].text = character.Price + " RP";
+                    PriceText[i].text = prices[check] + " RP";
                     Sprite[i].color = new Color(0.01f, 0.01f, 0.01f);
                 }
-                ID[i].text = check + "";
-                Profile[i].text = character.Profile;
+                IDText[i].text = check + "";
             }
             else
             {
-                Character[i].SetActive(false);
+                Frames[i].SetActive(true);
             }
+            
         }
     }
-    public void ClickShow(int index)
+    public void BuyItemID(int _id)
     {
-        btnClick[index].interactable = false;
-        // 0 1 2 tương ứng với stt từ trái trang phải
-        float rotate = 0.3f;
-        if (checkFrames[index] == 0)
+        ID = int.Parse(IDText[_id].text.Trim());
+        if (prices[ID] > 1)
         {
-            LeanTween.rotateY(Character[index], 90f, rotate).setOnComplete(() =>
-            {
-                FrameIndex[index].text = "2/2";
-                checkFrames[index] = 1;
-                Frames[index].SetActive(false);
-                CharacterProfile[index].SetActive(true);
-                LeanTween.rotateY(Character[index], 180f, rotate).setOnComplete(() =>
-                {
-                    btnClick[index].interactable = true;
-                });
-            });
+            Debug.Log(ID + " có thể mua");
+            Confirm.SetActive(true);
+            Dino.SetActive(false);
+            TextConfirm.text = "you definitely want to use " + prices[ID] + " RP to buy a " + characters[ID].name;
+            BuyItemWeb.Instance.BuyItem(ID);
         }
-        else if (checkFrames[index] == 1)
+        else
         {
-            LeanTween.rotateY(Character[index], 270f, rotate).setOnComplete(() =>
-            {
-                FrameIndex[index].text = "1/2";
-                checkFrames[index] = 0;
-                CharacterProfile[index].SetActive(false);
-                Frames[index].SetActive(true);
-                LeanTween.rotateY(Character[index], 360f, rotate).setOnComplete(() =>
-                {
-                    btnClick[index].interactable = true;
-                });
-            });
-        }
-    }
-    public void ResetProfile()
-    {
-        for (int i = 0; i < 3; i++)
-        {   
-            LeanTween.rotateY(Character[i], 0f, 0.00001f);
-            FrameIndex[i].text = "1/2";
-            Frames[i].SetActive(true);
-            CharacterProfile[i].SetActive(false);
-            checkFrames[i] = 0;
+            Debug.Log(ID + " đã mua");
         }
     }
 }

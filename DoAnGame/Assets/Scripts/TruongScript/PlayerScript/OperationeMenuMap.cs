@@ -45,7 +45,7 @@ public class OperationeMenuMap : MonoBehaviour
     
     public void BtnBackToTitle()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         TimePause(1);        
     }
 

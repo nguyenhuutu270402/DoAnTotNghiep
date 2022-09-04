@@ -1,114 +1,90 @@
+﻿
 using System.Collections;
 using System.Collections.Generic;
+//using UnityEditor;
 using UnityEngine;
 
 public class CharacterUser : MonoBehaviour
 {
-    public DatabaseCharacter charactersDB;
-    public SpriteRenderer Sprite;
     private Animator animator;
     private int selectedOption = 0;
 
-    public DatabaseGameAccount DB;
+    // list trnag phục tốn tiền
+    [Header("Character Buy")]
+    public List<RuntimeAnimatorController> CharacterBuy = new List<RuntimeAnimatorController>();
+    // list trang phuc cua user
+    [Header("Character User")]
+    public List<RuntimeAnimatorController> PlayerUser = new List<RuntimeAnimatorController>();
+    // list trang phuc cua user tính theo điểm
+    [Header("Character Point")]
+    public List<RuntimeAnimatorController> PlayerPoints = new List<RuntimeAnimatorController>();
+
+
+    private List<RuntimeAnimatorController> characters;
     private int Points;
 
-    void Start()
+    private void Awake()
+    {   
+        characters = new List<RuntimeAnimatorController>();
+        Points = PlayerPrefs.GetInt("UserPoints");
+        characters.AddRange(PlayerUser);
+        addPlayerPoints();
+    }
+    private void addPlayerPoints()
     {
-       
-
+        if (Points >= 350)
+        {
+            characters.Add(PlayerPoints[0]);
+            characters.Add(PlayerPoints[1]);
+            characters.Add(PlayerPoints[2]);
+        }else if(Points >= 250)
+        {
+            characters.Add(PlayerPoints[0]);
+            characters.Add(PlayerPoints[1]);
+        }else if(Points >= 150)
+        {
+            characters.Add(PlayerPoints[0]);
+        }
+    }
+    void Start()
+    {   
         animator = gameObject.GetComponent<Animator>();
+        
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
             selectedOption = 0;
         }
         else
         {
-            Load();
+            selectedOption = PlayerPrefs.GetInt("selectedOption");
+            animator.runtimeAnimatorController = characters[selectedOption] as RuntimeAnimatorController;
         }
-        updateCharacterNext();
     }
-
-    
     void Update()
     {
-        GameAccounts accounts = DB.GetGameAccounts(0);
-        Points = accounts.points;
-        charactersDB.CheckPoints(Points);
     }
     public void NextOption()
     {
         selectedOption++;
-        if(selectedOption >= charactersDB.CharacterCount)
+        if(selectedOption >= characters.Count)
         {
             selectedOption = 0;
         }
-        updateCharacterNext();
-        save();
+        saveOption();
     }
     public void BackOption()
     {
         selectedOption--;
         if (selectedOption < 0)
         {
-            selectedOption = charactersDB.CharacterCount - 1;
+            selectedOption = characters.Count - 1;
         }
-        updateCharacterBack();
-        save();
+        saveOption();
     }
-    public void updateCharacterBack()
+    private void saveOption()
     {
-        Characters character = charactersDB.GetCharacter(selectedOption);
-        if (character.Buy == false)
-        {
-            while (true)
-            {
-                selectedOption--;
-                if (selectedOption < 0)
-                {
-                    selectedOption = charactersDB.CharacterCount - 1;
-                }
-                character = charactersDB.GetCharacter(selectedOption);
-                if (character.Buy == true)
-                {
-                    break;
-                }
-            }
-        }
-        Sprite.sprite = character.CharacterSprite;
-        animator.runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-        Sprite.drawMode = SpriteDrawMode.Sliced;
-        Sprite.size = new Vector2(0.15f, 0.17f);
-    }
-    public void updateCharacterNext()
-    {
-        Characters character = charactersDB.GetCharacter(selectedOption);
-        if (character.Buy  == false)
-        {
-            while (true)
-            {
-                selectedOption++;
-                if (selectedOption >= charactersDB.CharacterCount)
-                {
-                    selectedOption = 0;
-                }
-                character = charactersDB.GetCharacter(selectedOption);
-                if (character.Buy == true)
-                {
-                    break;
-                }
-            }
-        }
-        Sprite.sprite = character.CharacterSprite;
-        animator.runtimeAnimatorController = character.animation as RuntimeAnimatorController;
-        Sprite.drawMode = SpriteDrawMode.Sliced;
-        Sprite.size = new Vector2(0.15f, 0.17f);
-    }
-    private void Load()
-    {
-        selectedOption = PlayerPrefs.GetInt("selectedOption");
-    }
-    private void save()
-    {
+        animator.runtimeAnimatorController = characters[selectedOption] as RuntimeAnimatorController;
         PlayerPrefs.SetInt("selectedOption", selectedOption);
     }
+
 }

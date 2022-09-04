@@ -7,7 +7,6 @@ public class BuyItemWeb : MonoBehaviour
     private int id;
     public GameObject Dino;
     public GameObject Confirm;
-    public DatabaseCharacter DB;
     public static BuyItemWeb Instance { get; private set; }
     private void Awake()
     {
@@ -32,7 +31,8 @@ public class BuyItemWeb : MonoBehaviour
         Confirm.SetActive(false);
         Dino.SetActive(true);
         Debug.Log("mua thành công rồi nhhe");
-        DB.BuyID(id);
+        CHPlay.Instance.UpdatePrice(id);
         CHPlay.Instance.updateCharacter();
+        
     }
 }

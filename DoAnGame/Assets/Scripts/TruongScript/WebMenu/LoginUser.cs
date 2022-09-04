@@ -10,26 +10,23 @@ public class LoginUser : MonoBehaviour
     [SerializeField] private TMP_InputField UserNameInput;
     [SerializeField] private TMP_InputField PassWordInput;
 
-    public DatabaseGameAccount data;
     public Button BtnLogin;
     public GameObject TextErro;
     private bool isLogin = false;
     private float startTime = 0.0f;
-
-
     public Toggle toggle;
+
     void Start()
     {
         TextErro.SetActive(false);
-        
+        PlayerPrefs.DeleteAll();
     }
     void Update()
     {
-        
         if(isLogin == true)
         {
             startTime += Time.deltaTime;
-            if(startTime >= 5)
+            if(startTime >= 3f)
             {
                 BtnLogin.interactable = true;
                 isLogin = false;
@@ -64,9 +61,12 @@ public class LoginUser : MonoBehaviour
                 GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
                 if (account.status)
                 {
-                    GameAccounts _account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
+                    PlayerPrefs.SetString("UserID", account.id);
+                    PlayerPrefs.SetString("UserName", account.name);
+                    PlayerPrefs.SetInt("UserPrice", account.price);
+                    PlayerPrefs.SetInt("UserPoints", account.points);
+
                     Screen.SetResolution(1920, 1080, true);
-                    data.insertAccount(_account.status, _account.id, _account.name, _account.price, _account.points);
                     SceneManager.LoadScene(1);
                     CheckSave(toggle.isOn, username, password);
                     yield return null;

@@ -5,11 +5,9 @@ using UnityEngine;
 public class WebRegister : MonoBehaviour
 {
     public DatabaseCharacter data;
-    public DatabaseGameAccount _data;
     private void Awake()
     {
         data.reset();
-        _data.quitAccount();
     }
     private void Start()
     {

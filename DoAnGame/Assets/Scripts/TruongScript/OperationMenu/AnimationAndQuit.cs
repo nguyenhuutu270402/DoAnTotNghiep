@@ -6,7 +6,6 @@ public class AnimationAndQuit : MonoBehaviour
 {
     float _cu = 0.3f;
     public GameObject dino;
-    public DatabaseGameAccount data;
     public DatabaseCharacter character;
     void Start()
     {
@@ -18,7 +17,6 @@ public class AnimationAndQuit : MonoBehaviour
     public void quit()
     {
         Application.Quit();
-        data.quitAccount();
         character.reset();
     }
 }

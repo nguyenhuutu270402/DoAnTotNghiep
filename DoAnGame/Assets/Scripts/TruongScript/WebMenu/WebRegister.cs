@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class WebRegister : MonoBehaviour
 {
-    public DatabaseCharacter data;
     private void Awake()
     {
-        data.reset();
+
     }
     private void Start()
     {

@@ -6116,7 +6116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &980117096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6126,7 +6126,7 @@ RectTransform:
   m_GameObject: {fileID: 980117095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2096145333}
@@ -10357,7 +10357,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dino: {fileID: 649384290}
-  character: {fileID: 11400000, guid: 86ffe424d0a91064aa85829851b25543, type: 2}
 --- !u!1 &1663055075
 GameObject:
   m_ObjectHideFlags: 0

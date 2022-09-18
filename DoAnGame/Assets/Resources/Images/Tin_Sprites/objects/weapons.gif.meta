@@ -179,8 +179,8 @@ TextureImporter:
         y: 202
         width: 64
         height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,7 +222,7 @@ TextureImporter:
         width: 480
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,6 +230,69 @@ TextureImporter:
       bones: []
       spriteID: 925bad4623d3dcf4c9d09f89fb5e4346
       internalID: -1227773948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smg
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 74
+        width: 82
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c50179e21e18d45b77b36fc0af44c0
+      internalID: -1996172319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifle
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 70
+        width: 99
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1c1ee38b5b2234a94f3acff6bebd3e
+      internalID: 1387496904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uzi
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 184
+        width: 66
+        height: 58
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07caaf8cab19e04393ce0eee6d99b0f
+      internalID: -823514326
       vertices: []
       indices: 
       edges: []
@@ -248,8 +311,11 @@ TextureImporter:
       shotGun: -296039334
       korth: -50572422
       full: -1227773948
+      uzi: -823514326
+      smg: -1996172319
       pistol: -335692485
       thompson: -44687002
+      rifle: 1387496904
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

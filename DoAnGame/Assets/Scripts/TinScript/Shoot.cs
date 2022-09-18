@@ -11,6 +11,7 @@ public class Shoot : MonoBehaviour
     public float bulletForce;
     private AudioSource audioSource;
     public float recoilForce;
+    public float accurate;
 
 
 
@@ -68,7 +69,7 @@ public class Shoot : MonoBehaviour
             case "Shotgun":
                 for (int i = 0; i <= 5; i++)
                 {
-                    Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), 0);
+                    Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-accurate, accurate), Random.Range(-accurate, accurate), 0);
                     CreateBullet(shortGunFlyingDirection, 3, 0.7f);
                 }
 
@@ -76,7 +77,16 @@ public class Shoot : MonoBehaviour
             case "Miner":
                 CreateBullet(Vector3.zero, 0, 1000f);
                 break;
-                    
+
+            case "Uzi":
+                Vector3 smgFlyingDirection = new Vector3(Random.Range(-accurate, accurate), Random.Range(-accurate, accurate), 0);
+                CreateBullet(smgFlyingDirection, 0, 3f);
+                break;
+
+            case "3Shot":
+                StartCoroutine(CreateThreeBullet());
+                break;
+
             default:
                 CreateBullet(Vector3.zero, 0, 3f);
                 break;
@@ -124,6 +134,17 @@ public class Shoot : MonoBehaviour
         audioSource.volume = volume;
     }
 
+    private IEnumerator CreateThreeBullet()
+    {
+        int count = 0;
+
+        while(count < 3)
+        {
+            CreateBullet(Vector3.zero, 0, 3f);
+            yield return new WaitForSeconds(0.05f);
+            count++;
+        }
+    }
 
     //
 }

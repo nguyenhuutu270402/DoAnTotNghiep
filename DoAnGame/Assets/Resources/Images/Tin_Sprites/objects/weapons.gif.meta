@@ -297,6 +297,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sniper
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 72
+        width: 102
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439126e7f69fb36428b6ad3d1fac6553
+      internalID: 1631156888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -314,6 +335,7 @@ TextureImporter:
       uzi: -823514326
       smg: -1996172319
       pistol: -335692485
+      sniper: 1631156888
       thompson: -44687002
       rifle: 1387496904
   spritePackingTag: 

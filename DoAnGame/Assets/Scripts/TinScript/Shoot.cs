@@ -91,21 +91,6 @@ public class Shoot : MonoBehaviour
                 CreateBullet(Vector3.zero, 0, 3f);
                 break;
         }
-        //if(transform.gameObject.name == SHOTGUN)
-        //{
-
-            //for (int i = 0; i <= 5; i++)
-            //{
-            //    Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), 0);
-            //    CreateBullet(shortGunFlyingDirection, 3, 0.7f);
-            //}
-          
-        //}
-        //else
-        //{
-        //    CreateBullet( Vector3.zero, 0, 3f);
-        //}
-
         audioSource.Play();
         //Recoil
         transform.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(firePoint.right * -recoilForce, ForceMode2D.Force);
@@ -134,17 +119,20 @@ public class Shoot : MonoBehaviour
         audioSource.volume = volume;
     }
 
+
+
+    //
     private IEnumerator CreateThreeBullet()
     {
         int count = 0;
 
-        while(count < 3)
+        while (count < 3)
         {
             CreateBullet(Vector3.zero, 0, 3f);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.07f);
             count++;
         }
     }
 
-    //
+ 
 }

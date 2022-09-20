@@ -26,7 +26,7 @@ public class BombMinerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 8 && gameObject.tag == "Enemies")
+        if (collision.gameObject.layer == 8 && collision.gameObject.tag == "Enemies")
         {
             explosion();
             gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);

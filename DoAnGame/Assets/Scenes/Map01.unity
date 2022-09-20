@@ -2362,6 +2362,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2122243382, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_Name
+      value: Korth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122243382, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122243387, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -50572422, guid: 8861f02a5da38994dba7b8631f7a297a, type: 3}
     - target: {fileID: 5960307948692135259, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: chest
       value: 
@@ -2430,7 +2442,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2122243385, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
 --- !u!1001 &383154067

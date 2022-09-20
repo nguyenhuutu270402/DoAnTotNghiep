@@ -6,17 +6,7 @@ public class Lazer : MonoBehaviour
 {
     public Transform laserFirePoint;
     public LineRenderer m_lineRenderer;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-       
-    }
     private void LateUpdate()
     {
         //m_lineRenderer.enabled = true;

@@ -1340,9 +1340,9 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8207547, g: 0.22764327, b: 0.22764327, a: 1}
     m_PressedColor: {r: 0.8235294, g: 0.23137255, b: 0.23137255, a: 1}
     m_SelectedColor: {r: 0.8235294, g: 0.23137255, b: 0.23137255, a: 1}
@@ -1351,9 +1351,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: -399147044, guid: a9ac1c5b39c6fb049984f5e00a5732b2, type: 3}
+    m_SelectedSprite: {fileID: 371697156, guid: a9ac1c5b39c6fb049984f5e00a5732b2, type: 3}
+    m_DisabledSprite: {fileID: -399147044, guid: a9ac1c5b39c6fb049984f5e00a5732b2, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1397,8 +1397,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -234157994, guid: a9ac1c5b39c6fb049984f5e00a5732b2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2814,8 +2814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03300f8f126f82d4aac268a0ff266ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 86ffe424d0a91064aa85829851b25543, type: 2}
-  _data: {fileID: 11400000, guid: 81d39f789978e534cb775110b4a090d0, type: 2}
 --- !u!114 &946936699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2830,7 +2828,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UserNameInput: {fileID: 244899155}
   PassWordInput: {fileID: 203383886}
-  data: {fileID: 11400000, guid: 81d39f789978e534cb775110b4a090d0, type: 2}
   BtnLogin: {fileID: 280450624}
   TextErro: {fileID: 900419798}
   toggle: {fileID: 542851642}
@@ -3721,7 +3718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 714187450, guid: db110210349494b4dab50423edd997c9, type: 3}
+  m_Sprite: {fileID: 1709858591, guid: a9ac1c5b39c6fb049984f5e00a5732b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

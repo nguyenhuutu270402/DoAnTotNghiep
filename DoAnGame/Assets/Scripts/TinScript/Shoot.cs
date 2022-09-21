@@ -87,8 +87,12 @@ public class Shoot : MonoBehaviour
                 StartCoroutine(CreateThreeBullet());
                 break;
 
+            case "Crossbow":
+                CreateBullet(Vector3.zero, 0, 7f);
+                break;
+
             default:
-                CreateBullet(Vector3.zero, 0, 3f);
+                CreateBullet(Vector3.zero, 0, 7f);
                 break;
         }
         audioSource.Play();

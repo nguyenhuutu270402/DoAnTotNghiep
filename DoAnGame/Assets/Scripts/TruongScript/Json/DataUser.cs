@@ -17,8 +17,14 @@ public class GameAccounts
 }
 
 [System.Serializable]
+public class GameAccountPoint
+{
+    public int[] point;
+}
+
+[System.Serializable]
 public class GameAccountCharacter
 {
-    public List<int> listID = new List<int>();
+    public int[] data;
 }
 

@@ -15,6 +15,25 @@ public class LoadLeverMap : MonoBehaviour
     public TextMeshProUGUI ModeMap;
     private int Mode = 1;
 
+    private int M01_1 = 0;
+    private int M01_2 = 0;
+    private int M02_1 = 0;
+    private int M02_2 = 0;
+    private int M03_1 = 0;
+    private int M03_2 = 0;
+
+    public TextMeshProUGUI PointsMax;
+
+    private void Awake()
+    {
+        M01_1 = PlayerPrefs.GetInt("M01_1");
+        M01_2 = PlayerPrefs.GetInt("M01_2");
+        M02_1 = PlayerPrefs.GetInt("M02_1");
+        M02_2 = PlayerPrefs.GetInt("M02_2");
+        M03_1 = PlayerPrefs.GetInt("M03_1");
+        M03_2 = PlayerPrefs.GetInt("M03_2");
+    }
+
     void Start()
     {   
         Switch(SceneMap);
@@ -45,20 +64,35 @@ public class LoadLeverMap : MonoBehaviour
         {
             case 3:
                 IMG.sprite = IMG1;
-                NameMap.text = "1";
+                NameMap.text = "M01";
+                setPointsMax(M01_1, M01_2);
                 break;
             case 4:
                 IMG.sprite = IMG2;
-                NameMap.text = "2";
+                NameMap.text = "M02";
+                setPointsMax(M02_1, M02_2);
                 break;
             case 5:
                 IMG.sprite = IMG3;
-                NameMap.text = "3";
+                NameMap.text = "M03";
+                setPointsMax(M03_1, M03_2);
                 break;
             default:
                 break;
         }
     }
+    public void setPointsMax(int normal, int hard)
+    {
+        if (Mode == 1)
+        {
+            PointsMax.text = normal + "";
+        }
+        else
+        {
+            PointsMax.text = hard + "";
+        }
+    }
+
     public void StartSceneMap()
     {
         load1.SetActive(true);
@@ -82,6 +116,8 @@ public class LoadLeverMap : MonoBehaviour
         {
             ModeMap.text = "hard mode";
         }
+        Switch(SceneMap);
+
         Debug.Log("mode" + PlayerPrefs.GetInt("ModeMap"));
         
     }

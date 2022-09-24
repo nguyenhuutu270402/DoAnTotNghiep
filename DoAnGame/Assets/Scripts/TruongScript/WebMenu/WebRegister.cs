@@ -18,6 +18,6 @@ public class WebRegister : MonoBehaviour
     }
     public void CickWebForgot()
     {
-        Application.OpenURL("http://localhost:3000/register-user");
+        Application.OpenURL("http://localhost:3000/check-user");
     }
 }

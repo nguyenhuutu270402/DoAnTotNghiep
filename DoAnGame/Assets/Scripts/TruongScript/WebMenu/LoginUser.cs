@@ -59,6 +59,7 @@ public class LoginUser : MonoBehaviour
             else
             {
                 GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
+                Debug.Log(account.status + " : " + account.id + " : " + account.name + " : " + +account.price + " : " + account.points);
                 if (account.status)
                 {
                     PlayerPrefs.SetString("UserID", account.id);
@@ -69,6 +70,10 @@ public class LoginUser : MonoBehaviour
                     Screen.SetResolution(1920, 1080, true);
                     SceneManager.LoadScene(1);
                     CheckSave(toggle.isOn, username, password);
+
+
+
+                   // GetData.Instance.GET();
                     yield return null;
                 }else if(!account.status)
                 {

@@ -10,6 +10,7 @@ public class CheckAndUpdateName : MonoBehaviour
     public GameObject Menu;
     public GameObject MenuName;
     public Button BtnSave;
+    public GameObject erro;
 
     [SerializeField] private TMP_InputField NameUpdate;
     private string path = "http://localhost:3000/api/";
@@ -34,7 +35,7 @@ public class CheckAndUpdateName : MonoBehaviour
     void Update()
     {
         string name = NameUpdate.text.Trim();
-        if (name.Length < 6)
+        if (name.Length < 6 || name.Length > 20)
         {
             BtnSave.interactable = false;
         }
@@ -52,7 +53,7 @@ public class CheckAndUpdateName : MonoBehaviour
         string name = NameUpdate.text.Trim();
         WWWForm form = new WWWForm();
         form.AddField("name", name);
-        using (UnityWebRequest www = UnityWebRequest.Post($"{path}{UserID}/edit", form))
+        using (UnityWebRequest www = UnityWebRequest.Post($"{path}{UserID}/name", form))
         {
             yield return www.SendWebRequest();
             if (www.result != UnityWebRequest.Result.Success)
@@ -72,8 +73,7 @@ public class CheckAndUpdateName : MonoBehaviour
                 }
                 else if (!account.status)
                 {
-                    Menu.SetActive(false);
-                    MenuName.SetActive(true);
+                    erro.SetActive(true);
                     yield return null;
                 }
             }

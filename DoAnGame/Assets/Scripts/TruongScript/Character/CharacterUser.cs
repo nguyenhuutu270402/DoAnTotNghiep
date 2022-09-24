@@ -23,13 +23,33 @@ public class CharacterUser : MonoBehaviour
     private List<RuntimeAnimatorController> characters;
     private int Points;
 
+
+    public static CharacterUser Instance { get; private set; }
+
+
     private void Awake()
-    {   
+    {
+        Instance = this;
         characters = new List<RuntimeAnimatorController>();
         Points = PlayerPrefs.GetInt("UserPoints");
+        Debug.Log(Points + "");
         characters.AddRange(PlayerUser);
         addPlayerPoints();
+        addPlayerBuy();
     }
+    public void updteCharacter(int _skin)
+    {
+        if (_skin == 7)
+        {
+            characters.Add(CharacterBuy[0]);
+        }
+        if (_skin == 8)
+        {
+            characters.Add(CharacterBuy[1]);
+        }
+
+    }
+
     private void addPlayerPoints()
     {
         if (Points >= 350)
@@ -44,6 +64,19 @@ public class CharacterUser : MonoBehaviour
         }else if(Points >= 150)
         {
             characters.Add(PlayerPoints[0]);
+        }
+    }
+    private void addPlayerBuy()
+    {
+        int skin1 = PlayerPrefs.GetInt("skin1");
+        int skin2 = PlayerPrefs.GetInt("skin2");
+        if (skin1 == 7 || skin2 == 7)
+        {
+            characters.Add(CharacterBuy[0]);
+        }
+        if (skin1 == 8 || skin2 == 8)
+        {
+            characters.Add(CharacterBuy[1]);
         }
     }
     void Start()

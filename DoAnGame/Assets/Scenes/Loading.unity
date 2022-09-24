@@ -862,6 +862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855278860}
   - component: {fileID: 1855278859}
+  - component: {fileID: 1855278861}
   m_Layer: 0
   m_Name: Loading
   m_TagString: Untagged
@@ -881,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a21873f3c385744811cccc8552ee96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 7
+  time: 3
   slider: {fileID: 2050344767}
   animator: {fileID: 1026847254}
   play: {fileID: 1026847252}
@@ -902,6 +903,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1855278861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855278858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2196063429f9ae24a9075be4c87ff103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2050344765
 GameObject:
   m_ObjectHideFlags: 0

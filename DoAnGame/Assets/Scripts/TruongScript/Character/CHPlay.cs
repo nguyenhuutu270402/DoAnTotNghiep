@@ -42,6 +42,7 @@ public class CHPlay : MonoBehaviour
     public TextMeshProUGUI TextConfirm;
     public GameObject Dino;
     public GameObject Confirm;
+    public GameObject Erro;
 
     public static CHPlay Instance { get; private set; }
     private void Awake()
@@ -70,8 +71,18 @@ public class CHPlay : MonoBehaviour
         {
             prices.Add(150);
         }
+        int skin1 = PlayerPrefs.GetInt("skin1");
+        int skin2 = PlayerPrefs.GetInt("skin2");
+        if (skin1 == 8 || skin2 == 8)
+        {
+            prices[8] = 0;
+        }
+        if (skin1 == 7 || skin2 == 7)
+        {
+            prices[7] = 0;
+        }
 
-        if(PointsUser >= 350)
+        if (PointsUser >= 350)
         {
             prices[4] = 0;
             prices[5] = 0;
@@ -97,7 +108,10 @@ public class CHPlay : MonoBehaviour
         UserPrice.text = PlayerPrefs.GetInt("UserPrice") + "";
         updateCharacter();
     }
-
+    public void updatePrice(int _price)
+    {
+        UserPrice.text = _price + "";
+    }
     void Update()
     {
         if (selectedOption + 4 > MaxselectedOption)
@@ -147,7 +161,7 @@ public class CHPlay : MonoBehaviour
                 animator[i].runtimeAnimatorController = characters[check] as RuntimeAnimatorController;
                 if(prices[check] == 0)
                 {
-                    PriceText[i].text = "Have owned";
+                    PriceText[i].text = "Owned";
                     Sprite[i].color = new Color(1, 1, 1);
                 }else if(prices[check] == 1)
                 {
@@ -176,6 +190,7 @@ public class CHPlay : MonoBehaviour
             Debug.Log(ID + " có thể mua");
             Confirm.SetActive(true);
             Dino.SetActive(false);
+            Erro.SetActive(false);
             TextConfirm.text = "you definitely want to use " + prices[ID] + " RP to buy a " + characters[ID].name;
             BuyItemWeb.Instance.BuyItem(ID);
         }

@@ -33,6 +33,14 @@ public class InfoUser : MonoBehaviour
     {
         userName.text = _name;
     }
+    public void updatePrice(int _price)
+    {
+        userPrice.text = "" + _price + "";
+    }
+    public void updatePoint(int _point)
+    {
+        userPoints.text = "" + _point + "";
+    }
     public void quitAccount()
     {
         SceneManager.LoadScene(0);

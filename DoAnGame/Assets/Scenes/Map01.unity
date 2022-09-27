@@ -2315,7 +2315,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &342955940
 GameObject:
@@ -2402,6 +2402,14 @@ PrefabInstance:
       propertyPath: recoilForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5960307948444524936, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960307948640214154, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5960307948692135259, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: chest
       value: 
@@ -2428,7 +2436,7 @@ PrefabInstance:
       objectReference: {fileID: 1477569337}
     - target: {fileID: 5960307950089987095, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5960307950089987095, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2476,7 +2484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5960307950419533765, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2491,7 +2499,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7607660382093183601, guid: f4f23ee8b1b36af4788b71d589e5dd2a, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7607660382093183601, guid: f4f23ee8b1b36af4788b71d589e5dd2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95507,7 +95515,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7607660382093183601, guid: f4f23ee8b1b36af4788b71d589e5dd2a, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7607660382093183601, guid: f4f23ee8b1b36af4788b71d589e5dd2a, type: 3}
       propertyPath: m_LocalPosition.x

@@ -13,6 +13,8 @@ public class EnemyNormal5 : MonoBehaviour
     float repeat, timeLoop;
     float repeatLoop;
     public GameObject enemyBullet, explosion;
+    public GameObject explosionClassic, explosionBazoka;
+
     bool die = false;
 
 
@@ -100,14 +102,40 @@ public class EnemyNormal5 : MonoBehaviour
     {
         animator.SetBool("Hurt", false);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // cham dan chuyen animation
         if (collision.gameObject.tag == "bullet_classic")
         {
             HP -= 1;
             animator.SetBool("Hurt", true);
+            GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
+            Destroy(effect, 0.25f);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "bullet_bazooka" | collision.gameObject.tag == "bullet_miner")
+        {
+            animator.SetBool("Hurt", true);
+            GameObject effect = Instantiate(explosionBazoka, transform.position, Quaternion.identity);
+            Destroy(effect, 0.25f);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "arrowforbow")
+        {
+            HP -= 1;
+            if (HP > 0)
+            {
+                animator.SetBool("Hurt", true);
+            }
+            Debug.Log("cham, ");
+        }
+
+        if (collision.gameObject.tag == "eplBazooka")
+        {
+            HP -= 10;
+            animator.SetBool("Hurt", true);
         }
     }
+
 }

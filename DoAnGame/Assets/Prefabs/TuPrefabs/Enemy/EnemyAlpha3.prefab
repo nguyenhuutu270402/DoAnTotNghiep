@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2026927523
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 03cd1191fa3a38a42ac26b37585f9df9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,7 +121,7 @@ Transform:
   - {fileID: 7191964993130619504}
   - {fileID: 7191964991909976291}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7191964992030040510
 BoxCollider2D:
@@ -255,9 +255,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRe: 0.05
   HP: 5
-  SpeedBullet: 0.12
-  SpeedRotation: 10
+  SpeedBullet: 0.1
+  SpeedRotation: 9
   enemyBullet: {fileID: 2737350962140505639, guid: 03c8541c66cb51541b83d829ada17849, type: 3}
+  explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
+  explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
   animator: {fileID: 7191964993130619519}
 --- !u!1 &7191964993130619505
 GameObject:

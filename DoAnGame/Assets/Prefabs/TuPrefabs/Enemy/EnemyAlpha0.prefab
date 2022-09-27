@@ -124,6 +124,8 @@ MonoBehaviour:
   Speed: 1.2
   HP: 4
   explosion: {fileID: 788943414665018995, guid: aab34dab1b915204db329ff1c1294f12, type: 3}
+  explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
+  explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
 --- !u!58 &544491089225725548
 CircleCollider2D:
   m_ObjectHideFlags: 0

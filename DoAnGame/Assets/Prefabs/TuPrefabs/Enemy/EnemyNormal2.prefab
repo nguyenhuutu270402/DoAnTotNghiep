@@ -330,6 +330,8 @@ MonoBehaviour:
   timeRe: 3
   HP: 5
   enemyBullet: {fileID: 1755829521016270668, guid: 4b9ae419aabbf224486bee79021596cc, type: 3}
+  explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
+  explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
   animator: {fileID: 8962759373925234049}
 --- !u!50 &448707938668774520
 Rigidbody2D:

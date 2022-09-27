@@ -171,6 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 3
   animator: {fileID: 4315226243347813340}
+  explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
+  explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
 --- !u!1 &3670042782551528594
 GameObject:
   m_ObjectHideFlags: 0

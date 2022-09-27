@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
+
 
 public class EnemyNormal1 : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class EnemyNormal1 : MonoBehaviour
 
     public Animator animator;
     bool die = false;
+    public AILerp aILerp;
 
     void Start()
     {
@@ -36,6 +39,8 @@ public class EnemyNormal1 : MonoBehaviour
         attack();
         if(HP <= 0 & die == false)
         {
+            aILerp.speed = 0;
+            die = true;
             animator.SetBool("Die", true);
         }
     }
@@ -43,7 +48,7 @@ public class EnemyNormal1 : MonoBehaviour
     void attack()
     {
         timeLoop -= Time.deltaTime;
-        if(timeLoop <=0 )
+        if(timeLoop <=0 & die == false)
         {
             if (repeatLoop > 0)
             {

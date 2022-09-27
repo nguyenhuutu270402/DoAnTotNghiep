@@ -16,7 +16,8 @@ public class EnemyNormal3 : MonoBehaviour
     public Animator animator;
     bool die = false;
 
-    AILerp EnemyAIPath;
+    public AILerp aILerp;
+
 
 
     void Start()
@@ -33,7 +34,6 @@ public class EnemyNormal3 : MonoBehaviour
         }
         repeatLoop = repeat;
         timeLoop = timeRe;
-        EnemyAIPath = GetComponent<AILerp>();
     }
 
     // Update is called once per frame
@@ -42,6 +42,8 @@ public class EnemyNormal3 : MonoBehaviour
         attack();
         if (HP <= 0 & die == false)
         {
+            aILerp.speed = 0;
+            die = true;
             animator.SetBool("Die", true);
         }
     }
@@ -51,10 +53,10 @@ public class EnemyNormal3 : MonoBehaviour
         timeLoop -= Time.deltaTime;
         if (timeLoop <= 0)
         {
-            if (repeatLoop > 0)
+            if (repeatLoop > 0 & die == false)
             {
                 repeatLoop--;
-                Vector2 direction = EnemyAIPath.velocity;
+                Vector2 direction = aILerp.velocity;
                 if (direction.x > 0)
                 {
                     GameObject bullet1 = Instantiate(enemyBullet, transform.position, Quaternion.identity);

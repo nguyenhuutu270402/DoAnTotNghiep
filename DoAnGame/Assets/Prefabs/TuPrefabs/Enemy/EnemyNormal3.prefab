@@ -259,6 +259,7 @@ MonoBehaviour:
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
   animator: {fileID: 7849290824494752835}
+  aILerp: {fileID: 7849290823730688308}
 --- !u!1 &7849290824494752832
 GameObject:
   m_ObjectHideFlags: 0

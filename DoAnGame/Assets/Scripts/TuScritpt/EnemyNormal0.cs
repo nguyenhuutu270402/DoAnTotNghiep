@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemyNormal0 : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class EnemyNormal0 : MonoBehaviour
     public Animator animator;
     bool die = false;
     public GameObject explosionClassic, explosionBazoka;
+    public AILerp aILerp;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +23,8 @@ public class EnemyNormal0 : MonoBehaviour
     {
         if (HP <= 0 & die == false)
         {
+            aILerp.speed = 0;
             animator.SetBool("Die", true);
-
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemyNormal2 : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class EnemyNormal2 : MonoBehaviour
 
     public Animator animator;
     bool die = false;
-    //mode
+    public AILerp aILerp;
+
 
     void Start()
     {
@@ -35,8 +37,10 @@ public class EnemyNormal2 : MonoBehaviour
     void Update()
     {
         attack();
-        if (HP <= 0 & die == false)
+        if (HP <= 0 & die == false )
         {
+            aILerp.speed = 0;
+            die = true;
             animator.SetBool("Die", true);
         }
     }
@@ -46,7 +50,7 @@ public class EnemyNormal2 : MonoBehaviour
         timeLoop -= Time.deltaTime;
         if (timeLoop <= 0)
         {
-            if (repeatLoop > 0)
+            if (repeatLoop > 0 & die == false)
             {
                 repeatLoop--;
                 //GameObject bullet = Instantiate(myPrefab, transform.position, Quaternion.identity);

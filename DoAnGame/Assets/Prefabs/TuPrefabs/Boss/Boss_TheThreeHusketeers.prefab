@@ -378,4 +378,9 @@ MonoBehaviour:
   aILerp: {fileID: 8388956484692874640}
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
+  effSkill1: {fileID: 1965416427597371763, guid: 0c4939b101b050245849a508db8c03d0, type: 3}
+  effForMoonBullet: {fileID: 4565149505704508976, guid: cf28b4bb2e9fe50409190a0e0a610771, type: 3}
+  MoonBullet: {fileID: 5776519916164552469, guid: 9d1ef6ad2525fd946b8ccb79b7e80328, type: 3}
+  pointForMoonBullet: {fileID: 5498731064138517048, guid: 0c88ec629b3a9924b8862ac5e2a6683a, type: 3}
   animator: {fileID: 8388956484192966499}
+  timeRe: 5

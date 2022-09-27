@@ -15,7 +15,7 @@ public class PointForMoonBullet : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 7f);
         player = GameObject.FindWithTag("Player");
         moveDirection = (player.transform.position - transform.position).normalized;
     }

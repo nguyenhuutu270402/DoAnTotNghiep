@@ -10,14 +10,17 @@ public class BossTheThreeHusketeers : MonoBehaviour
     public AILerp aILerp;
     //public GameObject enemyBullet;
     public GameObject explosionClassic, explosionBazoka;
+    public GameObject effSkill1, effForMoonBullet, MoonBullet, pointForMoonBullet;
     public Animator animator;
     bool die = false;
-
+    public float timeRe;
+    float timeLoop;
+    int skill1 = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        timeLoop = timeRe;
     }
 
     // Update is called once per frame
@@ -34,7 +37,25 @@ public class BossTheThreeHusketeers : MonoBehaviour
 
     void attack()
     {
+        timeLoop -= Time.deltaTime;
+        if(timeLoop <= 0 & skill1 == 0 & die == false)
+        {
+            GameObject effectSkill1 = Instantiate(effSkill1, transform.position, Quaternion.identity);
+            Instantiate(effForMoonBullet, transform.position, Quaternion.identity);
+            Instantiate(pointForMoonBullet, transform.position, Quaternion.identity);
 
+            Destroy(effectSkill1, 3);
+            skill1 = 1;
+            aILerp.speed = 0;
+        }
+        if(timeLoop <= -3)
+        {
+            Instantiate(MoonBullet, transform.position, Quaternion.identity);
+            skill1 = 0;
+            timeLoop = timeRe;
+            aILerp.speed = 0.3f;
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

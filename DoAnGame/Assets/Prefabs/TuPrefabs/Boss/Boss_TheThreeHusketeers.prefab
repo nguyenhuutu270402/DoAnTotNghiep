@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8388956483980891854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.088, z: 0.044778157}
-  m_LocalScale: {x: 5.97, y: 5.97, z: 5.97}
+  m_LocalPosition: {x: 0.009, y: 0.196, z: 0.044778157}
+  m_LocalScale: {x: 7.2599998, y: 7.2599998, z: 7.2599998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8388956484692874642}
@@ -242,7 +242,7 @@ Transform:
   - {fileID: 8388956484192966301}
   - {fileID: 8388956483980891855}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8388956484692874641
 MonoBehaviour:
@@ -378,9 +378,13 @@ MonoBehaviour:
   aILerp: {fileID: 8388956484692874640}
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
+  bullet1: {fileID: 8525756417798940864, guid: 92f688df22d77294692f34182d921118, type: 3}
+  bullet2: {fileID: 4845489882675441589, guid: 371b65b9e7a32554698406ebf8b55679, type: 3}
   effSkill1: {fileID: 1965416427597371763, guid: 0c4939b101b050245849a508db8c03d0, type: 3}
   effForMoonBullet: {fileID: 4565149505704508976, guid: cf28b4bb2e9fe50409190a0e0a610771, type: 3}
   MoonBullet: {fileID: 5776519916164552469, guid: 9d1ef6ad2525fd946b8ccb79b7e80328, type: 3}
   pointForMoonBullet: {fileID: 5498731064138517048, guid: 0c88ec629b3a9924b8862ac5e2a6683a, type: 3}
   animator: {fileID: 8388956484192966499}
-  timeRe: 5
+  timeRe1: 5
+  timeRe2: 3
+  numberBullet2: 30

@@ -360,7 +360,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.62}
+  m_Size: {x: 0.79, y: 0.85}
   m_EdgeRadius: 0
 --- !u!114 &8388956484692874643
 MonoBehaviour:
@@ -385,6 +385,6 @@ MonoBehaviour:
   MoonBullet: {fileID: 5776519916164552469, guid: 9d1ef6ad2525fd946b8ccb79b7e80328, type: 3}
   pointForMoonBullet: {fileID: 5498731064138517048, guid: 0c88ec629b3a9924b8862ac5e2a6683a, type: 3}
   animator: {fileID: 8388956484192966499}
-  timeRe1: 5
+  timeRe1: 3
   timeRe2: 3
-  numberBullet2: 30
+  numberBullet2: 10

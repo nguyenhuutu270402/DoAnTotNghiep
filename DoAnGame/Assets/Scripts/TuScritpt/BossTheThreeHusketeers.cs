@@ -33,6 +33,7 @@ public class BossTheThreeHusketeers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        attack1();
         attack2();
         if (HP <= 0 & die == false)
         {
@@ -55,7 +56,7 @@ public class BossTheThreeHusketeers : MonoBehaviour
             skill1 = 1;
             aILerp.speed = 0;
         }
-        if(timeLoop1 <= -3)
+        if(timeLoop1 <= -2)
         {
             Instantiate(MoonBullet, transform.position, Quaternion.identity);
             skill1 = 0;
@@ -96,7 +97,7 @@ public class BossTheThreeHusketeers : MonoBehaviour
         {
             Instantiate(bullet2, transform.position, Quaternion.identity);
             numberBullet2--;
-            timeLoop2 = 0.2f;
+            timeLoop2 = 0.15f;
         } else if (numberBullet2 <= 0)
         {
             numberBullet2 = numBl2;

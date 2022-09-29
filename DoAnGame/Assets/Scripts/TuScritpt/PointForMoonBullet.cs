@@ -15,7 +15,7 @@ public class PointForMoonBullet : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 7f);
+        Destroy(gameObject, 4.5f);
         player = GameObject.FindWithTag("Player");
         moveDirection = (player.transform.position - transform.position).normalized;
     }
@@ -29,7 +29,7 @@ public class PointForMoonBullet : MonoBehaviour
         if(timeLoop <= 0 )
         {
             Instantiate(effectMoon, transform.position, Quaternion.identity);
-            timeLoop = 0.5f;
+            timeLoop = 0.2f;
         }
     }
 }

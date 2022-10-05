@@ -53,8 +53,7 @@ public class Updata : MonoBehaviour
     {
         string UserID = PlayerPrefs.GetString("UserID");
         WWWForm form = new WWWForm();
-        form.AddField("price", PlayerPrefs.GetInt("UserPrice"));
-        Debug.Log(PlayerPrefs.GetInt("UserPrice") + "Update");
+        form.AddField("points", PlayerPrefs.GetInt("UserPoints"));
         using (UnityWebRequest www = UnityWebRequest.Post($"{path}{UserID}/edit", form))
         {
             yield return www.SendWebRequest();
@@ -65,6 +64,38 @@ public class Updata : MonoBehaviour
             else
             {
                 GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
+                if (account.status)
+                {
+                    yield return null;
+                }
+                else
+                {
+                    yield return null;
+                }
+            }
+        }
+    }
+
+    public void upPriceBoss()
+    {
+        StartCoroutine(updatePriceBoss());
+    }
+    private IEnumerator updatePriceBoss()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("user_id", PlayerPrefs.GetString("UserID"));
+        form.AddField("price", PlayerPrefs.GetInt("PriceBoss"));
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/add-price", form))
+        {
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
+
                 if (account.status)
                 {
                     yield return null;

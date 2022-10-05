@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private float dust_coolDown = 0;
     private float dust_coolDownlap = 0.2f;
 
-
+    private int price_boss = 0;
 
     void Start()
     {
@@ -116,8 +116,9 @@ public class Player : MonoBehaviour
             HoldingWeapon = PickupWeapon;
             if (collision.gameObject.name == "chest_Boss_0")
             {
-                int frice = Random.Range(1, 3);
-                Debug.Log(frice + "");
+                price_boss += Random.Range(1, 3);
+                PlayerPrefs.SetInt("PriceBoss", price_boss);
+                Debug.Log(price_boss + " player");
                 Destroy(collision.gameObject);
                 ArrowChest.Instance.setactive();
             }

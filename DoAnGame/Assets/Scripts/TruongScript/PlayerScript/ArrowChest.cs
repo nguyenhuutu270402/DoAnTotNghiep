@@ -26,7 +26,6 @@ public class ArrowChest : MonoBehaviour
         }
         else
         {
-            Debug.Log("boss ne " + BossAppears);
             //transform.gameObject.SetActive(false);
             chest.SetActive(false);
             if (checkChest)

@@ -19,11 +19,11 @@ public class DestroyPlayer : MonoBehaviour
     private int Point = 0;
     private int HighPoint = 0;
     private string texthighPoint = "";
-    private int userPrice;
+    private int userPoints;
     private bool check = false;
     private void Awake()
     {
-        userPrice = PlayerPrefs.GetInt("UserPrice");
+        userPoints = PlayerPrefs.GetInt("UserPoints");
         GetHighPoint();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,14 +55,13 @@ public class DestroyPlayer : MonoBehaviour
         
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         // c?p nh?t price t?ng
-        userPrice += Point;
-        Debug.Log(userPrice + "Desstroy");
-        PlayerPrefs.SetInt("UserPrice", userPrice);
-        Debug.Log(PlayerPrefs.GetInt("UserPrice") + "Desstroy1");
+        userPoints += Point;
+        PlayerPrefs.SetInt("UserPoints", userPoints);
         // check ?i?m màn ch?i này có cao h?n ?i?m cao nh?t không
         checkPoint(Point, HighPoint);
         
-        Instantiate(explode, gameObject.transform.position, Quaternion.identity);
+        GameObject explode_ = Instantiate(explode, gameObject.transform.position, Quaternion.identity);
+        Destroy(explode_, 0.05f);
         yield return new WaitForSeconds(0.5f);
         GameOver.SetActive(true);
         Destroy(gameObject);
@@ -80,6 +79,7 @@ public class DestroyPlayer : MonoBehaviour
             PlayerPrefs.SetInt("texthighPoint", _point);
             Updata.Instance.upPoint(); 
             Updata.Instance.upPointUser();
+            Updata.Instance.upPriceBoss();
         }
         else
         {
@@ -87,6 +87,7 @@ public class DestroyPlayer : MonoBehaviour
             TextScore.color = Color.black;
             Debug.Log("Destroy black: " + Point);
             Updata.Instance.upPointUser();
+            Updata.Instance.upPriceBoss();
         }
 
     }

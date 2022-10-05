@@ -36,10 +36,11 @@ public class BossTheThreeHusketeers : MonoBehaviour
         attack1();
         attack2();
         if (HP <= 0 & die == false)
-        {
+        {   
             aILerp.speed = 0;
             animator.SetBool("Die", true);
             die = true;
+            ArrowChest.Instance.getPositionBoss(transform.position, true);
         }
     }
 

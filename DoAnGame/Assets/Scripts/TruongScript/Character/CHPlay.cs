@@ -191,7 +191,7 @@ public class CHPlay : MonoBehaviour
             Confirm.SetActive(true);
             Dino.SetActive(false);
             Erro.SetActive(false);
-            TextConfirm.text = "you definitely want to use " + prices[ID] + " RP to buy a " + characters[ID].name;
+            TextConfirm.text = "You definitely want to use " + prices[ID] + " RP to buy a " + characters[ID].name;
             BuyItemWeb.Instance.BuyItem(ID);
         }
         else

@@ -63,7 +63,7 @@ public class GetData : MonoBehaviour
                 PlayerPrefs.SetInt("skin1", character.data[0]);
                 PlayerPrefs.SetInt("skin2", character.data[1]);
             }
-            Debug.Log(PlayerPrefs.GetInt("skin1") + " : " +  PlayerPrefs.GetInt("skin2") + "?a ");
+            Debug.Log(PlayerPrefs.GetInt("skin1") + " : " +  PlayerPrefs.GetInt("skin2") + " :getData: ");
             
         }
     }

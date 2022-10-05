@@ -14,6 +14,10 @@ public class OperationeMenuMap : MonoBehaviour
 
     private void Awake()
     {
+       
+    }
+    private void Start()
+    {
         LeanTween.moveX(load1, 3000f, time);
         LeanTween.moveX(load2, -1000f, time);
     }

@@ -21,11 +21,7 @@ public class ArrowChest : MonoBehaviour
         else
         {
             Debug.Log("boss ne " + BossAppears);
-<<<<<<< HEAD
             transform.gameObject.SetActive(false);
-=======
-            //transform.gameObject.SetActive(false);
->>>>>>> parent of e1e56da (truong47)
             chest.SetActive(false);
         }
     }

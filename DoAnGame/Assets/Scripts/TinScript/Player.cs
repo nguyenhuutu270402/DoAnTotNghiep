@@ -111,6 +111,17 @@ public class Player : MonoBehaviour
             ChestRandom.Instance.RandomPosition();
 
             HoldingWeapon = PickupWeapon;
+<<<<<<< HEAD
+=======
+            if (collision.gameObject.name == "chest_Boss_0")
+            {
+                int frice = Random.Range(1, 3);
+                Debug.Log(frice + "");
+                Destroy(collision.gameObject);
+                ArrowChest.Instance.setactive();
+            }
+            
+>>>>>>> parent of e1e56da (truong47)
         }
     }
 

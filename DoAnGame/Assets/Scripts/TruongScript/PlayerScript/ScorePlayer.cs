@@ -19,15 +19,12 @@ public class ScorePlayer : MonoBehaviour
         TextScore.text = Score + "";
     }
 
-    void Update()
-    {
-        
-    }
     
     public void IncreaseScore()
     {
         Score++;
         TextScore.text = Score + "";
+        PlayerPrefs.SetInt("Score", Score);
     }
 
 

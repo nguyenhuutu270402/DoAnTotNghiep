@@ -47,7 +47,6 @@ public class LoginUser : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", username);
         form.AddField("password", password);
-
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/login-user", form))
         {
             yield return www.SendWebRequest();
@@ -70,10 +69,6 @@ public class LoginUser : MonoBehaviour
                     Screen.SetResolution(1920, 1080, true);
                     SceneManager.LoadScene(1);
                     CheckSave(toggle.isOn, username, password);
-
-
-
-                   // GetData.Instance.GET();
                     yield return null;
                 }else if(!account.status)
                 {

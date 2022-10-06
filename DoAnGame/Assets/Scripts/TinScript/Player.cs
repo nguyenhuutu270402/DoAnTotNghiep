@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private float dust_coolDown = 0;
     private float dust_coolDownlap = 0.2f;
 
-
+    private int price_boss = 0;
 
     void Start()
     {
@@ -80,8 +80,11 @@ public class Player : MonoBehaviour
     // COLLISION WITH THE CHEST
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "chest_0")
-        {
+        if(collision.gameObject.name == "chest_0" || collision.gameObject.name == "chest_Boss_0")
+        {   
+            
+
+
             //PickupWeapon = Random.Range(3, 8);
             while (PickupWeapon == HoldingWeapon)
             {
@@ -98,19 +101,28 @@ public class Player : MonoBehaviour
                 // 
 
 
-            if (PickupWeapon == 7)
-            {
-                Cam.GetComponent<Volume>().weight = 1;
-            }
-            else
-            {
-                Cam.GetComponent<Volume>().weight = 0;
+            //if (PickupWeapon == 7)
+            //{
+            //    Cam.GetComponent<Volume>().weight = 1;
+            //}
+            //else
+            //{
+            //    Cam.GetComponent<Volume>().weight = 0;
 
-            }
+            //}
 
             ChestRandom.Instance.RandomPosition();
 
             HoldingWeapon = PickupWeapon;
+            if (collision.gameObject.name == "chest_Boss_0")
+            {
+                price_boss += Random.Range(1, 3);
+                PlayerPrefs.SetInt("PriceBoss", price_boss);
+                Debug.Log(price_boss + " player");
+                Destroy(collision.gameObject);
+                ArrowChest.Instance.setactive();
+            }
+            
         }
     }
 

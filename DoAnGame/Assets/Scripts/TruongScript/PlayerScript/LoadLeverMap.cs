@@ -39,24 +39,32 @@ public class LoadLeverMap : MonoBehaviour
         Switch(SceneMap);
         ModeMap.text = "normal mode";
         PlayerPrefs.SetInt("ModeMap", Mode);
+        PlayerPrefs.SetString("map_id", "M01");
+        PlayerPrefs.SetInt("SceneMap", SceneMap);
+
+        Debug.Log("map_id: " + PlayerPrefs.GetString("map_id"));
     }
     public void ClickNextSceneMap()
     {
         SceneMap++;
-        if(SceneMap > 5)
+        PlayerPrefs.SetInt("SceneMap", SceneMap);
+        if (SceneMap > 5)
         {
             SceneMap = 3;
         }
         Switch(SceneMap);
+        Debug.Log("map_id: " + PlayerPrefs.GetString("map_id"));
     }
     public void ClickBackSceneMap()
     {
         SceneMap--;
+        PlayerPrefs.SetInt("SceneMap", SceneMap);
         if (SceneMap < 3)
         {
             SceneMap = 5;
         }
         Switch(SceneMap);
+        Debug.Log("map_id: " + PlayerPrefs.GetString("map_id"));
     }
     public void Switch(int map)
     {
@@ -65,16 +73,19 @@ public class LoadLeverMap : MonoBehaviour
             case 3:
                 IMG.sprite = IMG1;
                 NameMap.text = "M01";
+                PlayerPrefs.SetString("map_id", "M01");
                 setPointsMax(M01_1, M01_2);
                 break;
             case 4:
                 IMG.sprite = IMG2;
                 NameMap.text = "M02";
+                PlayerPrefs.SetString("map_id", "M02");
                 setPointsMax(M02_1, M02_2);
                 break;
             case 5:
                 IMG.sprite = IMG3;
                 NameMap.text = "M03";
+                PlayerPrefs.SetString("map_id", "M03");
                 setPointsMax(M03_1, M03_2);
                 break;
             default:

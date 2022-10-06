@@ -30,6 +30,7 @@ public class ChestRandom : MonoBehaviour
     }
     public void RandomPosition()
     {
+        Debug.Log("abcdefgh :");
         CurrentPosition = PreviousPosition;
         PreviousPosition = Random.Range(0, chests.Count - 1);
         while (CurrentPosition == PreviousPosition)

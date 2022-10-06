@@ -25,7 +25,6 @@ public class Muzzle : MonoBehaviour
         anim.SetBool("isMuzzle", isMuzzle);
         if (isMuzzle == true)
         {
-            Debug.Log("muzzle");
             anim.Play("muzzle");
         }
          

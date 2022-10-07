@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     private bool isMove;
     private GameObject Cam;
-    private int PickupWeapon = 2, HoldingWeapon = 2;
+    private int PickupWeapon = 10 , HoldingWeapon = 10;
 
     public GameObject dust;
     private float dust_coolDown = 0;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         Cam = GameObject.FindWithTag("MainCamera");
-        transform.GetChild(2).gameObject.SetActive(true);
+        transform.GetChild(10).gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
             //PickupWeapon = Random.Range(3, 8);
             while (PickupWeapon == HoldingWeapon)
             {
-                PickupWeapon = Random.Range(3, 8);
+                PickupWeapon = Random.Range(0, 9);
             }
             transform.GetChild(HoldingWeapon).transform.gameObject.SetActive(false);
             transform.GetChild(PickupWeapon).transform.gameObject.SetActive(true);

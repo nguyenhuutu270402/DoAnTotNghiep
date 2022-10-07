@@ -30,19 +30,7 @@ public class Updata : MonoBehaviour
             {
                 Debug.Log(www.error);
             }
-            else
-            {
-                GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
-               
-                if (account.status)
-                {
-                    yield return null;
-                }
-                else
-                {
-                    yield return null;
-                }
-            }
+            yield return null;
         }
     }
     public void upPointUser()
@@ -61,18 +49,7 @@ public class Updata : MonoBehaviour
             {
                 Debug.Log(www.error);
             }
-            else
-            {
-                GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
-                if (account.status)
-                {
-                    yield return null;
-                }
-                else
-                {
-                    yield return null;
-                }
-            }
+            yield return null;
         }
     }
 
@@ -82,9 +59,10 @@ public class Updata : MonoBehaviour
     }
     private IEnumerator updatePriceBoss()
     {
+        int PriceBoss = PlayerPrefs.GetInt("PriceBoss");
         WWWForm form = new WWWForm();
         form.AddField("user_id", PlayerPrefs.GetString("UserID"));
-        form.AddField("price", PlayerPrefs.GetInt("PriceBoss"));
+        form.AddField("price", PriceBoss);
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/add-price", form))
         {
             yield return www.SendWebRequest();
@@ -92,19 +70,7 @@ public class Updata : MonoBehaviour
             {
                 Debug.Log(www.error);
             }
-            else
-            {
-                GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
-
-                if (account.status)
-                {
-                    yield return null;
-                }
-                else
-                {
-                    yield return null;
-                }
-            }
+            yield return null;
         }
     }
 }

@@ -26,7 +26,6 @@ public class ArrowChest : MonoBehaviour
         }
         else
         {
-            //transform.gameObject.SetActive(false);
             chest.SetActive(false);
             if (checkChest)
             {
@@ -39,7 +38,6 @@ public class ArrowChest : MonoBehaviour
                     transform.up = new Vector2(Depot.transform.GetChild(0).transform.position.x - transform.position.x, Depot.transform.GetChild(0).transform.position.y - transform.position.y);
                 }
             }
-            
         }
         if (checkDie)
         {
@@ -59,7 +57,7 @@ public class ArrowChest : MonoBehaviour
         score = _score;
         switch (score)
         {
-            case 2: case 23: case 35: case 46: case 59: case 71: case 83: case 95: case 107: case 119: case 131:
+            case 11: case 23: case 35: case 46: case 59: case 71: case 83: case 95: case 107: case 119: case 131:
 
                 BossAppears = 1;
                 BossRandom.Instance.RandomBossAndPosition();

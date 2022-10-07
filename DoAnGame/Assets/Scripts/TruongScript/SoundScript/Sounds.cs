@@ -60,6 +60,7 @@ public class Sounds : MonoBehaviour
             if(index == 0)
             {
                 Shoot.Instance.volue(SFX_Scrollbar_Value);
+                StoreBullet.Instance.volue(SFX_Scrollbar_Value);
             }
             
         }

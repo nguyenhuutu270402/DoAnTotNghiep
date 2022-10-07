@@ -67,10 +67,12 @@ public class CHPlay : MonoBehaviour
         {
             prices.Add(1);
         }
-        for (int i = 0; i < CharacterBuy.Count; i++)
-        {
-            prices.Add(150);
-        }
+        prices.Add((int)PlayerPrefs.GetInt("arrPrice_1"));
+        prices.Add((int)PlayerPrefs.GetInt("arrPrice_2"));
+        //for (int i = 0; i < CharacterBuy.Count; i++)
+        //{
+        //    prices.Add(150);
+        //}
         int skin1 = PlayerPrefs.GetInt("skin1");
         int skin2 = PlayerPrefs.GetInt("skin2");
         if (skin1 == 8 || skin2 == 8)
@@ -81,21 +83,47 @@ public class CHPlay : MonoBehaviour
         {
             prices[7] = 0;
         }
-
-        if (PointsUser >= 350)
+        if (PointsUser >= PlayerPrefs.GetInt("OpenCharacter_6"))
         {
-            prices[4] = 0;
-            prices[5] = 0;
-            prices[6] = 0;
+            for (int i = 1; i < 7; i++)
+            {
+                prices[i] = 0;
+            }
         }
-        else if(PointsUser >= 250)
+        else if (PointsUser >= PlayerPrefs.GetInt("OpenCharacter_5"))
         {
-            prices[4] = 0;
-            prices[5] = 0;
+            for (int i = 1; i < 6; i++)
+            {
+                prices[i] = 0;
+            }
         }
-        else if (PointsUser >= 150)
+        else if (PointsUser >= PlayerPrefs.GetInt("OpenCharacter_4"))
         {
-            prices[4] = 0;
+            for (int i = 1; i < 5; i++)
+            {
+                prices[i] = 0;
+            }
+        }
+        else if (PointsUser >= PlayerPrefs.GetInt("OpenCharacter_3"))
+        {
+            for (int i = 1; i < 4; i++)
+            {
+                prices[i] = 0;
+            }
+        }
+        else if (PointsUser >= PlayerPrefs.GetInt("OpenCharacter_2"))
+        {
+            for (int i = 1; i < 3; i++)
+            {
+                prices[i] = 0;
+            }
+        }
+        else if (PointsUser >= PlayerPrefs.GetInt("OpenCharacter_1"))
+        {
+            for(int i = 1; i < 2; i++)
+            {
+                prices[i] = 0;
+            }
         }
     }
     public void UpdatePrice(int _id)

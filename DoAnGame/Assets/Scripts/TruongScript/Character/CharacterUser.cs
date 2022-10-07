@@ -52,18 +52,47 @@ public class CharacterUser : MonoBehaviour
 
     private void addPlayerPoints()
     {
-        if (Points >= 350)
+        if (Points >= PlayerPrefs.GetInt("OpenCharacter_6"))
         {
-            characters.Add(PlayerPoints[0]);
-            characters.Add(PlayerPoints[1]);
-            characters.Add(PlayerPoints[2]);
-        }else if(Points >= 250)
+            for (int i = 0; i < 6; i++)
+            {
+                characters.Add(PlayerPoints[i]);
+            }
+        }
+        else if (Points >= PlayerPrefs.GetInt("OpenCharacter_5"))
         {
-            characters.Add(PlayerPoints[0]);
-            characters.Add(PlayerPoints[1]);
-        }else if(Points >= 150)
+            for (int i = 0; i < 5; i++)
+            {
+                characters.Add(PlayerPoints[i]);
+            }
+        }
+        else if (Points >= PlayerPrefs.GetInt("OpenCharacter_4"))
         {
-            characters.Add(PlayerPoints[0]);
+            for (int i = 0; i < 4; i++)
+            {
+                characters.Add(PlayerPoints[i]);
+            }
+        }
+        else if (Points >= PlayerPrefs.GetInt("OpenCharacter_3"))
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                characters.Add(PlayerPoints[i]);
+            }
+        }
+        else if (Points >= PlayerPrefs.GetInt("OpenCharacter_2"))
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                characters.Add(PlayerPoints[i]);
+            }
+        }
+        else if (Points >= PlayerPrefs.GetInt("OpenCharacter_1"))
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                characters.Add(PlayerPoints[i]);
+            }
         }
     }
     private void addPlayerBuy()

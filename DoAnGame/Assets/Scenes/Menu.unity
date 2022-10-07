@@ -1153,10 +1153,10 @@ MonoBehaviour:
   - {fileID: 9100000, guid: f2e685d2bf3425c4b915f956449d346b, type: 2}
   PlayerUser:
   - {fileID: 9100000, guid: eee96607779c0b84e99f4b871fdefb1d, type: 2}
+  PlayerPoints:
   - {fileID: 9100000, guid: e69c42688bb8e384fb120f869568e4d2, type: 2}
   - {fileID: 9100000, guid: 5f8da9ca59ef106439ff517aafe156c5, type: 2}
   - {fileID: 9100000, guid: 60b37176f8f21d24fb153248872c8c65, type: 2}
-  PlayerPoints:
   - {fileID: 9100000, guid: 7c14f26876897c04d8e61451bf865769, type: 2}
   - {fileID: 9100000, guid: 69f0b730260876342bbeade4faf4f519, type: 2}
   - {fileID: 9100000, guid: 4a516b7433792ac4496a1301aebc49e3, type: 2}
@@ -5792,13 +5792,13 @@ Transform:
   - {fileID: 1487157807}
   - {fileID: 33526389}
   - {fileID: 1753127629}
+  - {fileID: 1358845902}
   - {fileID: 573690257}
   - {fileID: 594884815}
   - {fileID: 931167029}
   - {fileID: 1032153130}
   - {fileID: 1519279360}
   - {fileID: 1336037731}
-  - {fileID: 1358845902}
   - {fileID: 75762583}
   m_Father: {fileID: 332099593}
   m_RootOrder: 0
@@ -9180,10 +9180,10 @@ MonoBehaviour:
   - {fileID: 9100000, guid: f2e685d2bf3425c4b915f956449d346b, type: 2}
   PlayerUser:
   - {fileID: 9100000, guid: eee96607779c0b84e99f4b871fdefb1d, type: 2}
+  PlayerPoints:
   - {fileID: 9100000, guid: e69c42688bb8e384fb120f869568e4d2, type: 2}
   - {fileID: 9100000, guid: 5f8da9ca59ef106439ff517aafe156c5, type: 2}
   - {fileID: 9100000, guid: 60b37176f8f21d24fb153248872c8c65, type: 2}
-  PlayerPoints:
   - {fileID: 9100000, guid: 7c14f26876897c04d8e61451bf865769, type: 2}
   - {fileID: 9100000, guid: 69f0b730260876342bbeade4faf4f519, type: 2}
   - {fileID: 9100000, guid: 4a516b7433792ac4496a1301aebc49e3, type: 2}

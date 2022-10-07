@@ -13,12 +13,33 @@ public class StoreBullet : MonoBehaviour
     private AudioSource audioSource;
 
     SpellCoolDownCicle spell;
+    // truong
+    public static StoreBullet Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    public void volue(float volume)
+    {
+        audioSource.volume = volume;
+    }
+
+
+
+    //
     void Start()
     {
         storeBullet = bulletNumber;
         coolDown = 0;
         audioSource = GetComponent<AudioSource>();
         spell = FindObjectOfType<SpellCoolDownCicle>();
+
+
+        // truong
+        float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
+        audioSource.volume = sound[0];
+        //
     }
 
 

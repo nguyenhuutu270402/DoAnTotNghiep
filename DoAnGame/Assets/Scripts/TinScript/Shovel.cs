@@ -13,11 +13,15 @@ public class Shovel : MonoBehaviour
     public float radius;
 
     private bool isDectect = false;
+
+
+
+
     void Start()
     {
         coolDown = coolDownLap;
         animator = GetComponent<Animator>();
-        
+
     }
     void Update()
     {

@@ -27,4 +27,13 @@ public class GameAccountCharacter
 {
     public int[] data;
 }
-
+[System.Serializable]
+public class GameAccountOpenCharacter
+{
+    public int[] open;
+}
+[System.Serializable]
+public class GameAccountArrPriceCharacter
+{
+    public int[] arrPrice;
+}

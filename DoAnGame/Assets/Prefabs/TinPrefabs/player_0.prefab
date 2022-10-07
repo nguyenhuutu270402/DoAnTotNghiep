@@ -3956,13 +3956,13 @@ Transform:
   - {fileID: 5960307949620752352}
   - {fileID: 5960307949111601127}
   - {fileID: 5960307948640214153}
+  - {fileID: 1669442041}
   - {fileID: 5960307949577242284}
   - {fileID: 694833313}
   - {fileID: 2019648332}
   - {fileID: 359601315}
   - {fileID: 1624847740}
   - {fileID: 1842961768}
-  - {fileID: 1669442041}
   - {fileID: 5960307950419533764}
   - {fileID: 5960307948444524943}
   - {fileID: 5960307949805769074}
@@ -4032,7 +4032,7 @@ Animator:
   m_GameObject: {fileID: 5960307950089987112}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 60b37176f8f21d24fb153248872c8c65, type: 2}
+  m_Controller: {fileID: 9100000, guid: eee96607779c0b84e99f4b871fdefb1d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4087,10 +4087,10 @@ MonoBehaviour:
   - {fileID: 9100000, guid: f2e685d2bf3425c4b915f956449d346b, type: 2}
   PlayerUser:
   - {fileID: 9100000, guid: eee96607779c0b84e99f4b871fdefb1d, type: 2}
+  PlayerPoints:
   - {fileID: 9100000, guid: e69c42688bb8e384fb120f869568e4d2, type: 2}
   - {fileID: 9100000, guid: 5f8da9ca59ef106439ff517aafe156c5, type: 2}
   - {fileID: 9100000, guid: 60b37176f8f21d24fb153248872c8c65, type: 2}
-  PlayerPoints:
   - {fileID: 9100000, guid: 7c14f26876897c04d8e61451bf865769, type: 2}
   - {fileID: 9100000, guid: 69f0b730260876342bbeade4faf4f519, type: 2}
   - {fileID: 9100000, guid: 4a516b7433792ac4496a1301aebc49e3, type: 2}

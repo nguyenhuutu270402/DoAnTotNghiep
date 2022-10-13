@@ -78,8 +78,8 @@ public class EnemyAlpha2 : MonoBehaviour
         timeLoop -= Time.deltaTime;
         if (timeLoop <= 0)
         {
-            float xBullet = Random.Range(-1f, 1f);
-            float yBullet = Random.Range(-1f, 1f);
+            float xBullet = Random.Range(-0.1f, 0.1f);
+            float yBullet = Random.Range(-0.1f, 0.1f);
 
 
             GameObject bullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);

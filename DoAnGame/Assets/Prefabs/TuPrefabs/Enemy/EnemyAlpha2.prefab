@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1.5
-  SpeedBullet: 1
+  SpeedBullet: 8
   timeRe: 0.2
   HP: 5
   enemyBullet: {fileID: 8464523437821890135, guid: b3365c676b4d26c4e998512e58fff28e, type: 3}

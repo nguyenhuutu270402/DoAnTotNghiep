@@ -7,18 +7,33 @@ public class CHWeapon : MonoBehaviour
 {
     private int index = 10;
     public TextMeshProUGUI NameWeapon;
+    private int maxWeapon = 3;
     void Start()
     {   
         index = 10;
         transform.position = new Vector3(0, -60, 0);
         upWeapon();
     }
-
+    private void FixedUpdate()
+    {
+        maxWeapon = PlayerPrefs.GetInt("maxWeapon");
+        Debug.Log(maxWeapon + "CHWeapon");
+    }
 
     private void upWeapon()
     {
         NameWeapon.text = transform.GetChild(index).name;
         transform.GetChild(index).transform.gameObject.SetActive(true);
+        if(index > maxWeapon)
+        {
+            NameWeapon.text = "???";
+            transform.GetChild(index).transform.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+        }
+        if (index == 10)
+        {
+            NameWeapon.text = transform.GetChild(index).name;
+            transform.GetChild(index).transform.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
     public void next() {
         transform.GetChild(index).transform.gameObject.SetActive(false);

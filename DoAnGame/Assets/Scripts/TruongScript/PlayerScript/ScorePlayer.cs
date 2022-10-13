@@ -7,12 +7,13 @@ using TMPro;
 public class ScorePlayer : MonoBehaviour
 {
     public TextMeshProUGUI TextScore;
-    private int Score;
+    private int Score = 0;
 
     public static ScorePlayer Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
+        PlayerPrefs.SetInt("Score", 0);
     }
     void Start()
     {

@@ -688,7 +688,7 @@ namespace Pathfinding {
 
 			var text = new System.Text.StringBuilder();
 
-			DebugStringPrefix(logMode, text);
+			//DebugStringPrefix(logMode, text);
 
 			if (!error && logMode == PathLog.Heavy) {
 				if (hasEndPoint && endNode != null) {
@@ -713,7 +713,7 @@ namespace Pathfinding {
 				else text.Append("< null startNode >");
 			}
 
-			DebugStringSuffix(logMode, text);
+			//DebugStringSuffix(logMode, text);
 
 			return text.ToString();
 		}

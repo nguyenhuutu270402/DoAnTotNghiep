@@ -28,7 +28,7 @@ public class GameAccountCharacter
     public int[] data;
 }
 [System.Serializable]
-public class GameAccountOpenCharacter
+public class GameAccountOpen
 {
     public int[] open;
 }

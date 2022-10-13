@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -10,13 +11,14 @@ public class GetData : MonoBehaviour
     private string pathCharacter = "http://localhost:3000/api/product-user/";
     private string pathOpenCharacter = "http://localhost:3000/api/open-character";
     private string pathArrPriceCharacter = "http://localhost:3000/api/price-character";
-
+    private string pathOpenWeapon = "http://localhost:3000/api/open-weapons";
 
 
     private IEnumerator coroutinePoint;
     private IEnumerator coroutineCharacter;
     private IEnumerator coroutineOpenCharacter;
     private IEnumerator coroutineArrPriceCharacter;
+    private IEnumerator coroutineOpenWeapon;
 
     void Start()
     {
@@ -32,6 +34,9 @@ public class GetData : MonoBehaviour
 
         coroutineArrPriceCharacter = GetArrPriceCharacters();
         StartCoroutine(coroutineArrPriceCharacter);
+
+        coroutineOpenWeapon = GetOpenWeapon();
+        StartCoroutine(coroutineOpenWeapon);
     }
 
     private IEnumerator GetPoints()
@@ -46,6 +51,15 @@ public class GetData : MonoBehaviour
             PlayerPrefs.SetInt("M02_2", Points.point[3]);
             PlayerPrefs.SetInt("M03_1", Points.point[4]);
             PlayerPrefs.SetInt("M03_2", Points.point[5]);
+            int M00_0 = 0;
+            for (int i = 0; i < Points.point.Length; i++)
+            {
+                if(M00_0 < Points.point[i])
+                {
+                    M00_0 = Points.point[i];
+                }
+            }
+            PlayerPrefs.SetInt("M00_0", M00_0);
         }
     }
     private IEnumerator GetCharacters()
@@ -80,7 +94,7 @@ public class GetData : MonoBehaviour
         using (UnityWebRequest www = UnityWebRequest.Get($"{pathOpenCharacter}"))
         {
             yield return www.SendWebRequest();
-            GameAccountOpenCharacter Open = JsonUtility.FromJson<GameAccountOpenCharacter>(www.downloadHandler.text);
+            GameAccountOpen Open = JsonUtility.FromJson<GameAccountOpen>(www.downloadHandler.text);
             PlayerPrefs.SetInt("OpenCharacter_1", Open.open[0]);
             PlayerPrefs.SetInt("OpenCharacter_2", Open.open[1]);
             PlayerPrefs.SetInt("OpenCharacter_3", Open.open[2]);
@@ -97,6 +111,20 @@ public class GetData : MonoBehaviour
             GameAccountArrPriceCharacter arrPrice = JsonUtility.FromJson<GameAccountArrPriceCharacter>(www.downloadHandler.text);
             PlayerPrefs.SetInt("arrPrice_1", arrPrice.arrPrice[0]);
             PlayerPrefs.SetInt("arrPrice_2", arrPrice.arrPrice[1]);
+        }
+    }
+    private IEnumerator GetOpenWeapon()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get($"{pathOpenWeapon}"))
+        {
+            yield return www.SendWebRequest();
+            GameAccountOpen Open = JsonUtility.FromJson<GameAccountOpen>(www.downloadHandler.text);
+            PlayerPrefs.SetInt("OpenWeapon_1", Open.open[0]);
+            PlayerPrefs.SetInt("OpenWeapon_2", Open.open[1]);
+            PlayerPrefs.SetInt("OpenWeapon_3", Open.open[2]);
+            PlayerPrefs.SetInt("OpenWeapon_4", Open.open[3]);
+            PlayerPrefs.SetInt("OpenWeapon_5", Open.open[4]);
+            PlayerPrefs.SetInt("OpenWeapon_6", Open.open[5]);
         }
     }
 }

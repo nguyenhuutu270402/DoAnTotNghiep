@@ -10,7 +10,7 @@ public class OperationeMenuMap : MonoBehaviour
     public GameObject MenuSettings;
 
     public GameObject load1, load2;
-    private float time = 2f;
+    private float time = 1.5f;
 
     private void Awake()
     {

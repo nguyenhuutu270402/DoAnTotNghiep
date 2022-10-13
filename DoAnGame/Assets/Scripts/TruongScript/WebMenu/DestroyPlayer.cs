@@ -52,14 +52,12 @@ public class DestroyPlayer : MonoBehaviour
     }
     IEnumerator explodePlayer()
     {
-        
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-        // c?p nh?t price t?ng
+        // cap nhat tong  points cua user
+        Point = PlayerPrefs.GetInt("Score");
         userPoints += Point;
         PlayerPrefs.SetInt("UserPoints", userPoints);
-        // check ?i?m màn ch?i này có cao h?n ?i?m cao nh?t không
         checkPoint(Point, HighPoint);
-        
+        checkM00_0(Point);
         GameObject explode_ = Instantiate(explode, gameObject.transform.position, Quaternion.identity);
         Destroy(explode_, 0.05f);
         yield return new WaitForSeconds(0.5f);
@@ -68,46 +66,42 @@ public class DestroyPlayer : MonoBehaviour
         Time.timeScale = 0f;
         
     }
+    private void checkM00_0(int _Point)
+    {
+        int M00_0 = PlayerPrefs.GetInt("M00_0");
+        if(_Point > M00_0)
+        {
+            PlayerPrefs.SetInt("M00_0", Point);
+        }
+    }
 
     private void checkPoint(int _point, int _highhPoint)
     {
-        if(_point > _highhPoint)
+        // kiem tra xem diem man nay co phai diem cao nhat khong va updata
+        Updata.Instance.upPointUser();
+        Updata.Instance.upPriceBoss();
+        if (_point > _highhPoint)
         {
             TextScore.text = Point + "!";
             TextScore.color = Color.red;
-            Debug.Log("Destroy red: " + Point);
+
             PlayerPrefs.SetInt("texthighPoint", _point);
             Updata.Instance.upPoint(); 
-            Updata.Instance.upPointUser();
-            Updata.Instance.upPriceBoss();
         }
         else
         {
             TextScore.text = Point + "";
             TextScore.color = Color.black;
-            Debug.Log("Destroy black: " + Point);
-            Updata.Instance.upPointUser();
-            Updata.Instance.upPriceBoss();
         }
-
     }
-
-    private void Update()
-    {
-        Point = PlayerPrefs.GetInt("Score");
-    }
-
 
     public void GetHighPoint()
     {
         int ModeMap = PlayerPrefs.GetInt("ModeMap");
         string map_id = PlayerPrefs.GetString("map_id");
         texthighPoint = map_id + "_" + ModeMap;
-        Debug.Log(texthighPoint + "    : GetHighPoint");
         Switch(texthighPoint);
         TextHightScore.text = HighPoint + "";
-        Debug.Log(HighPoint + " :setHighPoint");
-
     }
     public void Switch(string _highPoint)
     {

@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
     private int price_boss = 0;
 
+    private int maxWeapon = 3;
+
     void Start()
     {
         dust_coolDown = dust_coolDownlap;
@@ -35,7 +37,9 @@ public class Player : MonoBehaviour
     {
         dust_coolDown -= Time.deltaTime;
         animator.SetBool("isMove", isMove);
-        
+
+        maxWeapon = PlayerPrefs.GetInt("maxWeapon");
+        Debug.Log(maxWeapon + "Player");
     }
 
     private void FixedUpdate()
@@ -57,7 +61,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-          
             isMove = false;
         }
 
@@ -82,13 +85,10 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.name == "chest_0" || collision.gameObject.name == "chest_Boss_0")
         {   
-            
-
-
             //PickupWeapon = Random.Range(3, 8);
             while (PickupWeapon == HoldingWeapon)
             {
-                PickupWeapon = Random.Range(0, 9);
+                PickupWeapon = Random.Range(0, maxWeapon);
             }
             transform.GetChild(HoldingWeapon).transform.gameObject.SetActive(false);
             transform.GetChild(PickupWeapon).transform.gameObject.SetActive(true);
@@ -99,18 +99,6 @@ public class Player : MonoBehaviour
             ScorePlayer.Instance.IncreaseScore();
 
                 // 
-
-
-            //if (PickupWeapon == 7)
-            //{
-            //    Cam.GetComponent<Volume>().weight = 1;
-            //}
-            //else
-            //{
-            //    Cam.GetComponent<Volume>().weight = 0;
-
-            //}
-
             ChestRandom.Instance.RandomPosition();
 
             HoldingWeapon = PickupWeapon;
@@ -118,7 +106,7 @@ public class Player : MonoBehaviour
             {
                 price_boss += Random.Range(1, 3);
                 PlayerPrefs.SetInt("PriceBoss", price_boss);
-                Debug.Log(price_boss + " player");
+                Debug.Log(price_boss + " PriceBoss");
                 Destroy(collision.gameObject);
                 ArrowChest.Instance.setactive();
             }
@@ -128,5 +116,15 @@ public class Player : MonoBehaviour
 
 
 
-    
+    //if (PickupWeapon == 7)
+    //{
+    //    Cam.GetComponent<Volume>().weight = 1;
+    //}
+    //else
+    //{
+    //    Cam.GetComponent<Volume>().weight = 0;
+
+    //}
+
+
 }

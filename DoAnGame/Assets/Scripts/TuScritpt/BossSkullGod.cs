@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using System.Threading;
 
 
 public class BossSkullGod : MonoBehaviour
 {
-    public float HP, timeRe, SpeedBullet, SpeedRotation, timeAttack2, numAttack2, timeAttack3, numAttack3;
+    public float HP, timeRe, SpeedBullet, SpeedRotation, timeAttack2, numAttack2, timeAttack3, numAttack3, timeAttack4, numAttack4;
     public AILerp aILerp;
     public GameObject explosionClassic, explosionBazoka, bullet1, bullet2, effBuffHP;
     public Animator animator;
@@ -17,7 +16,7 @@ public class BossSkullGod : MonoBehaviour
     public Transform point1, point2, point3, point4;
     float x, y, angel = 0, radius = 10;
     float xBullet, yBullet;
-    float nAttack2, nAttack3, attack = 0, speedBoss;
+    float nAttack2, nAttack3, nAttack4, attack = 0, speedBoss;
 
 
     // Start is called before the first frame update
@@ -26,6 +25,7 @@ public class BossSkullGod : MonoBehaviour
         timeLoop = timeRe;
         nAttack2 = numAttack2;
         nAttack3 = numAttack3;
+        nAttack4 = numAttack4;
         speedBoss = aILerp.speed;
     }
 
@@ -45,8 +45,31 @@ public class BossSkullGod : MonoBehaviour
         timeLoop -= Time.deltaTime;
         if (timeLoop <= 0 & attack == 0 & die == false)
         {
-            attack = 4;
-            //numAttack3 = nAttack3;
+            int rd = Random.Range(1, 5);
+            if (rd == 1)
+            {
+                attack = 1;
+            }
+            else if (rd == 2)
+            {
+                attack = 2;
+                numAttack2 = nAttack2;
+            }
+            else if (rd == 3)
+            {
+                attack = 3;
+                numAttack3 = nAttack3;
+            }
+            else
+            {
+                attack = 4;
+                GameObject eff = Instantiate(effBuffHP, transform.position, Quaternion.identity);
+                Destroy(eff, 2.5f);
+                numAttack4 = nAttack4;
+                timeLoop = timeAttack4;
+            }
+
+            
         }
 
 
@@ -64,7 +87,7 @@ public class BossSkullGod : MonoBehaviour
         {
             attack3();
         }
-        else
+        if (attack == 4)
         {
             attack4();
         }
@@ -155,12 +178,28 @@ public class BossSkullGod : MonoBehaviour
 
     void attack4()
     {
-        Instantiate(effBuffHP, transform.position, Quaternion.identity);
+
         aILerp.speed = 0;
-        Thread.Sleep(2000);
-        HP += 10;
-        aILerp.speed = speedBoss;
-        attack = 0;
+        timeLoop -= Time.deltaTime;
+
+
+
+        if (timeLoop <= 0)
+        {
+            numAttack4--;
+            HP += 10;
+            timeLoop = timeAttack4;
+            if (HP > 100)
+            {
+                HP = 100;
+            }
+        }
+        if (numAttack4 <= 0)
+        {
+            aILerp.speed = speedBoss;
+            attack = 0;
+            timeLoop = timeRe;
+        }
     }
 
 

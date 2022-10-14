@@ -423,11 +423,16 @@ MonoBehaviour:
   SpeedRotation: 9
   timeAttack2: 0.05
   numAttack2: 50
+  timeAttack3: 0.5
+  numAttack3: 3
+  timeAttack4: 2.5
+  numAttack4: 2
   aILerp: {fileID: 5467519428308897639}
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
   bullet1: {fileID: 3823952975702899247, guid: 494d0e991b5fd2b42a409a06f0149a39, type: 3}
   bullet2: {fileID: 6582559480800272598, guid: ea1a338967063484dad857143df48ce4, type: 3}
+  effBuffHP: {fileID: 4595275050385860922, guid: 55c3d240f9303e54a9ad2e4fe521d581, type: 3}
   animator: {fileID: 2023248139}
   enemySkull: {fileID: 7426729934133385571, guid: 84a3cc69a92f0af4a8723f36c335bd3b, type: 3}
   point1: {fileID: 1071547881}

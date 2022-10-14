@@ -13,6 +13,8 @@ public class BossUmbrellaDarkKnight : MonoBehaviour
     public float HP;
     public GameObject explosionClassic, explosionBazoka, bullet, umbrella1, umbrella2, shadow, expAttack, explosionDead, pointBossMove;
     public Rigidbody2D rb2D;
+    bool die = false;
+
 
 
     // Start is called before the first frame update
@@ -27,12 +29,18 @@ public class BossUmbrellaDarkKnight : MonoBehaviour
     void Update()
     {
         attack();
+        if (HP <= 0 & die == false)
+        {
+            animator.SetBool("Die", true);
+            die = true;
+
+        }
     }
 
     void attack()
     {
         timeLoop -= Time.deltaTime;
-        if (timeLoop <= 0 & isAttack == false)
+        if (timeLoop <= 0 & isAttack == false & die == false)
         {
             animator.SetBool("Attack1", true);
             player = GameObject.FindWithTag("Player");

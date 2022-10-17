@@ -7,9 +7,9 @@ public class BossGiantMutantBeetle : MonoBehaviour
 {
     public float HP, timeRe, timeReBullet, SpeedBullet, numBullet;
     bool die = false, isRun = false, isAttack = false;
-    float timeLoop, speedBoss, HPStart, numBulletStart;
+    float timeLoop, speedBoss, HPStart, numBulletStart, rdX, rdY;
     public Transform pointBullet;
-    public GameObject explosionClassic, explosionBazoka, bullet1, bullet2;
+    public GameObject explosionClassic, explosionBazoka, bullet1, bullet2, prison, effPrison, effPrison2;
     public Animator animator;
     public AILerp aILerp;
     GameObject player;
@@ -37,7 +37,7 @@ public class BossGiantMutantBeetle : MonoBehaviour
             die = true;
         }
         timeLoop -= Time.deltaTime;
-        if(timeLoop <= 0 & isAttack == false)
+        if(timeLoop <= 0 & isAttack == false & die == false)
         {
             isAttack = true;
             attack1();
@@ -59,8 +59,22 @@ public class BossGiantMutantBeetle : MonoBehaviour
         {
             numBullet--;
             moveDirection = (player.transform.position - transform.position).normalized;
-            float rdX = Random.Range(moveDirection.x * -1, moveDirection.x);
-            float rdY = Random.Range(moveDirection.y * -1, moveDirection.y);
+            if (moveDirection.x > 0 )
+            {
+                rdX = Random.Range(0.001f, moveDirection.x);
+            } else
+            {
+                rdX = Random.Range(moveDirection.x, 0.001f);
+            }
+
+            if (moveDirection.y < 0)
+            {
+                rdY = Random.Range(0.001f, moveDirection.y);
+            }
+            else
+            {
+                rdY = Random.Range(moveDirection.y, 0.001f);
+            }
 
             GameObject b = Instantiate(bullet2, pointBullet.position, Quaternion.identity);
             Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
@@ -70,6 +84,7 @@ public class BossGiantMutantBeetle : MonoBehaviour
             timeLoop = timeReBullet;
             if (numBullet <= 0)
             {
+                Instantiate(bullet1, pointBullet.position, Quaternion.identity);
                 timeLoop = timeRe;
                 isAttack = false;
                 numBullet = numBulletStart;
@@ -117,6 +132,11 @@ public class BossGiantMutantBeetle : MonoBehaviour
             isRun = true;
             aILerp.speed = speedBoss;
             // destroy prison, tao eff pha huy prison
+            Destroy(prison);
+            GameObject eff = Instantiate(effPrison, transform.position, Quaternion.identity);
+            GameObject eff2 = Instantiate(effPrison2, transform.position, Quaternion.identity);
+            Destroy(eff2, 0.25f);
+            Destroy(eff, 2f);
         }
     }
 

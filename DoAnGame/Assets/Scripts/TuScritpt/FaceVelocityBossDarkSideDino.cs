@@ -10,11 +10,14 @@ public class FaceVelocityBossDarkSideDino : MonoBehaviour
     Vector2 direction;
     Animator animator;
     public GameObject EnemyGameObject, explosion;
+    GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player");
 
     }
 
@@ -30,8 +33,8 @@ public class FaceVelocityBossDarkSideDino : MonoBehaviour
         float sp = EnemyAIPath.speed;
         animator.SetFloat("Speed", sp);
 
-        direction = EnemyAIPath.velocity;
-        if (direction.x > 0)
+        direction = (player.transform.position - transform.position).normalized;
+        if (direction.x >= 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }

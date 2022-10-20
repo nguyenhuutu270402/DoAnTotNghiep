@@ -8,8 +8,8 @@ public class GetData : MonoBehaviour
     private string pathPoint = "http://localhost:3000/api/point-user/";
     private string UserID;
 
-    private string pathCharacter = "http://localhost:3000/api/product-user/";
-    private string pathOpenCharacter = "http://localhost:3000/api/open-character";
+    private string pathCharacter = "http://localhost:3000/api/character-user/";
+    private string pathOpenCharacter = "http://localhost:3000/api/point-character";
     private string pathArrPriceCharacter = "http://localhost:3000/api/price-character";
     private string pathOpenWeapon = "http://localhost:3000/api/open-weapons";
 

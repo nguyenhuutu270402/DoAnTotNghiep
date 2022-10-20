@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
         animator.SetBool("isMove", isMove);
 
         maxWeapon = PlayerPrefs.GetInt("maxWeapon");
-        Debug.Log(maxWeapon + "Player");
     }
 
     private void FixedUpdate()

@@ -58,6 +58,7 @@ public class DestroyPlayer : MonoBehaviour
         PlayerPrefs.SetInt("UserPoints", userPoints);
         checkPoint(Point, HighPoint);
         checkM00_0(Point);
+        TextHightScore.text = HighPoint + "";
         GameObject explode_ = Instantiate(explode, gameObject.transform.position, Quaternion.identity);
         Destroy(explode_, 0.05f);
         yield return new WaitForSeconds(0.5f);
@@ -99,9 +100,9 @@ public class DestroyPlayer : MonoBehaviour
     {
         int ModeMap = PlayerPrefs.GetInt("ModeMap");
         string map_id = PlayerPrefs.GetString("map_id");
+        Debug.Log(map_id + " : " + ModeMap + "Destroy player");
         texthighPoint = map_id + "_" + ModeMap;
         Switch(texthighPoint);
-        TextHightScore.text = HighPoint + "";
     }
     public void Switch(string _highPoint)
     {

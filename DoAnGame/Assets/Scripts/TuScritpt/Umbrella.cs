@@ -27,7 +27,13 @@ public class Umbrella : MonoBehaviour
     void Update()
     {
         attack();
-        moveDirection = (player.transform.position - transform.position).normalized;
+        try
+        {
+            moveDirection = (player.transform.position - transform.position).normalized;
+        }
+        catch (System.Exception)
+        {
+        }
         transform.right = new Vector2(moveDirection.x, moveDirection.y);
 
     }

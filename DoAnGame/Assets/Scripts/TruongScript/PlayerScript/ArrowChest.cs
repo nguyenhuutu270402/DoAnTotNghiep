@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,6 +14,11 @@ public class ArrowChest : MonoBehaviour
     private Vector3 positionChestBoss;
     private bool checkDie = false;
     private bool checkChest = false;
+
+    //public GameObject TOP;
+    //public GameObject BOTTOM;
+    //private float time = 1;
+
     public static ArrowChest Instance { get; private set; }
     private void Awake()
     {
@@ -57,9 +63,10 @@ public class ArrowChest : MonoBehaviour
         score = _score;
         switch (score)
         {
-            case 2: case 23: case 35: case 46: case 59: case 71: case 83: case 95: case 107: case 119: case 131:
+            case 1: case 23: case 35: case 46: case 59: case 71: case 83: case 95: case 107: case 119: case 131:
 
                 BossAppears = 1;
+                //StartCoroutine(AnimationBoss());
                 BossRandom.Instance.RandomBossAndPosition();
                 
                 break;
@@ -75,4 +82,11 @@ public class ArrowChest : MonoBehaviour
         positionChestBoss = v;
         checkDie = _checkDie;
     }
+    //IEnumerator AnimationBoss()
+    //{
+    //    Debug.Log("ArrowChest " + Time.deltaTime);
+    //    LeanTween.moveY(TOP, 810f, time);
+    //    LeanTween.moveY(BOTTOM, 270f, time);
+    //    yield return new WaitForSeconds(time);
+    //}
 }

@@ -110,6 +110,7 @@ MonoBehaviour:
   enemy9: {fileID: 2458027500024268318, guid: aaf1dd83b356af442bb6d87e3f02b570, type: 3}
   enemy10: {fileID: 1952393884113091031, guid: 7c5efd70f80f0604196e4d2328a67f74, type: 3}
   enemy11: {fileID: 9134023677756016146, guid: 26c75825879821f4bab2a0e192d1c479, type: 3}
+  animator: {fileID: 7607660382093183604}
 --- !u!95 &7607660382093183604
 Animator:
   serializedVersion: 4

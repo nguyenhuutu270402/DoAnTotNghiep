@@ -7,8 +7,8 @@ public class Shovel : MonoBehaviour
     private float coolDown = 0;
     public float coolDownLap;
 
-    private Animator animator;
-    [SerializeField] public AudioSource[] triggerSound;
+    private Animator animator; 
+    private AudioSource triggerSound;
     public Transform circleOrigin;
     public float radius;
 
@@ -21,6 +21,7 @@ public class Shovel : MonoBehaviour
     {
         coolDown = coolDownLap;
         animator = GetComponent<Animator>();
+        triggerSound = GetComponent<AudioSource>();
 
     }
     void Update()
@@ -46,7 +47,7 @@ public class Shovel : MonoBehaviour
     void DoSlash()
     {
 
-        triggerSound[0].Play();
+        triggerSound.Play();
         animator.SetBool("isSlash", true);
         isDectect = true;
 
@@ -64,7 +65,6 @@ public class Shovel : MonoBehaviour
             
             if(collider.gameObject.layer == 11)
             {
-                triggerSound[2].Play();
                 Destroy(collider.gameObject);
             }
             if (collider.gameObject.layer == 8)

@@ -18,10 +18,27 @@ public class BossSkullGod : MonoBehaviour
     float xBullet, yBullet;
     float nAttack2, nAttack3, nAttack4, attack = 0, speedBoss;
 
-
+    // health bar script
+    BossHealthBar healthBar;
+    float HPStart;
     // Start is called before the first frame update
     void Start()
     {
+        int mode = PlayerPrefs.GetInt("ModeMap");
+
+        if (mode == 1)
+        {
+            // normal mode
+        }
+        else
+        {
+            // hard mode
+            HP += (HP / 2);
+            HPStart = HP;
+        }
+        healthBar = FindObjectOfType<BossHealthBar>();
+        healthBar.setMaxHealth(HP);
+        healthBar.setBossName("SKULL GOD");
         timeLoop = timeRe;
         nAttack2 = numAttack2;
         nAttack3 = numAttack3;
@@ -32,6 +49,7 @@ public class BossSkullGod : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.setHealth(HP);
 
 
         if (HP <= 0 & die == false)
@@ -39,6 +57,8 @@ public class BossSkullGod : MonoBehaviour
             aILerp.speed = 0;
             animator.SetBool("Die", true);
             die = true;
+            healthBar.setActiveBarBoss();
+
             ArrowChest.Instance.getPositionBoss(transform.position, true);
         }
 
@@ -190,9 +210,9 @@ public class BossSkullGod : MonoBehaviour
             numAttack4--;
             HP += 10;
             timeLoop = timeAttack4;
-            if (HP > 100)
+            if (HP > HPStart)
             {
-                HP = 100;
+                HP = HPStart;
             }
         }
         if (numAttack4 <= 0)

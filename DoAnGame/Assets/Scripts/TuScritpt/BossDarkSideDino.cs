@@ -18,10 +18,27 @@ public class BossDarkSideDino : MonoBehaviour
     GameObject player;
     Vector2 moveDirection;
 
+    // health bar script
+    BossHealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        int mode = PlayerPrefs.GetInt("ModeMap");
+
+        if (mode == 1)
+        {
+            // normal mode
+        }
+        else
+        {
+            // hard mode
+            HP += (HP / 2);
+        }
+        healthBar = FindObjectOfType<BossHealthBar>();
+        healthBar.setMaxHealth(HP);
+        healthBar.setBossName("DARKSIDE DINO");
+
         timeLoop = timeRe;
         speedBoss = aILerp.speed;
         numAttack1Start = numAttack1;
@@ -34,11 +51,13 @@ public class BossDarkSideDino : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.setHealth(HP);
         if (HP <= 0 & die == false)
         {
             aILerp.speed = 0;
             animator.SetBool("Die", true);
             die = true;
+            healthBar.setActiveBarBoss();
             ArrowChest.Instance.getPositionBoss(transform.position, true);
         }
         timeLoop -= Time.deltaTime;

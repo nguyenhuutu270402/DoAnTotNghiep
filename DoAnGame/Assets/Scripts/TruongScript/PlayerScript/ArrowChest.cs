@@ -9,6 +9,8 @@ public class ArrowChest : MonoBehaviour
     public GameObject chest;
     public GameObject Depot;
     public GameObject ChestBoss;
+    public GameObject HealthBar;
+
     private int score;
     private int BossAppears = 0;
     private Vector3 positionChestBoss;
@@ -65,10 +67,11 @@ public class ArrowChest : MonoBehaviour
         {
             case 11: case 23: case 35: case 46: case 59: case 71: case 83: case 95: case 107: case 119: case 131:
 
+                HealthBar.SetActive(true);
+
                 BossAppears = 1;
                 //StartCoroutine(AnimationBoss());
                 BossRandom.Instance.RandomBossAndPosition();
-                
                 break;
             default:
 

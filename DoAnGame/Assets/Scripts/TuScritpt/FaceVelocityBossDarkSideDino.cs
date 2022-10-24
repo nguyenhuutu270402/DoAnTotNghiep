@@ -32,7 +32,6 @@ public class FaceVelocityBossDarkSideDino : MonoBehaviour
     {
         float sp = EnemyAIPath.speed;
         animator.SetFloat("Speed", sp);
-
         direction = (player.transform.position - transform.position).normalized;
         if (direction.x >= 0)
         {

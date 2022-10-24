@@ -21,10 +21,26 @@ public class BossTheThreeHusketeers : MonoBehaviour
     int skill2 = 0;
     public int numberBullet2;
     int numBl2;
+    // health bar script
+    BossHealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        int mode = PlayerPrefs.GetInt("ModeMap");
+
+        if (mode == 1)
+        {
+            // normal mode
+        }
+        else
+        {
+            // hard mode
+            HP += (HP / 2);
+        }
+        healthBar = FindObjectOfType<BossHealthBar>();
+        healthBar.setMaxHealth(HP);
+        healthBar.setBossName("THE THREE HUSKETEERS");
         timeLoop1 = timeRe1;
         timeLoop2 = timeRe2;
         numBl2 = numberBullet2;
@@ -33,6 +49,8 @@ public class BossTheThreeHusketeers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.setHealth(HP);
+
         attack1();
         attack2();
         if (HP <= 0 & die == false)
@@ -40,6 +58,8 @@ public class BossTheThreeHusketeers : MonoBehaviour
             aILerp.speed = 0;
             animator.SetBool("Die", true);
             die = true;
+            healthBar.setActiveBarBoss();
+
             ArrowChest.Instance.getPositionBoss(transform.position, true);
         }
     }

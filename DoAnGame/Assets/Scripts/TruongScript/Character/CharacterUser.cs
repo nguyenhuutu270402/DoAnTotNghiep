@@ -119,7 +119,21 @@ public class CharacterUser : MonoBehaviour
         else
         {
             selectedOption = PlayerPrefs.GetInt("selectedOption");
-            animator.runtimeAnimatorController = characters[selectedOption] as RuntimeAnimatorController;
+            if (selectedOption + 1 > characters.Count)
+            {
+                if (selectedOption == 7)
+                {
+                    animator.runtimeAnimatorController = CharacterBuy[0] as RuntimeAnimatorController;
+                }
+                if (selectedOption == 8)
+                {
+                    animator.runtimeAnimatorController = CharacterBuy[1] as RuntimeAnimatorController;
+                }
+            }
+            else
+            {
+                animator.runtimeAnimatorController = characters[selectedOption] as RuntimeAnimatorController;
+            }
         }
     }
     void Update()

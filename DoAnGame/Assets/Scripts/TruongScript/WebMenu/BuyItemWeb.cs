@@ -70,6 +70,17 @@ public class BuyItemWeb : MonoBehaviour
                     CHPlay.Instance.UpdatePrice(id);
                     CHPlay.Instance.updateCharacter();
 
+                    int skin1 = PlayerPrefs.GetInt("skin1");
+                    int skin2 = PlayerPrefs.GetInt("skin2");
+                    if (skin1 == 0)
+                    {
+                        PlayerPrefs.SetInt("skin1", id);
+                    }
+                    else if (skin2 == 0)
+                    {
+                        PlayerPrefs.SetInt("skin2", id);
+                    }
+
                     int UserPrice = PlayerPrefs.GetInt("UserPrice") - 150;
                     PlayerPrefs.SetInt("UserPrice", UserPrice);
 

@@ -220,7 +220,7 @@ public class CHPlay : MonoBehaviour
             Dino.SetActive(false);
             Erro.SetActive(false);
             TextConfirm.text = "You definitely want to use " + prices[ID] + " RP to buy a " + characters[ID].name;
-            BuyItemWeb.Instance.BuyItem(ID);
+            BuyItemWeb.Instance.BuyItem(ID, prices[ID]);
         }
         else
         {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class BuyItemWeb : MonoBehaviour
 {
     private int id;
+    private int prite;
+
     public GameObject Dino;
     public GameObject Confirm;
     public GameObject Erro;
@@ -25,9 +28,10 @@ public class BuyItemWeb : MonoBehaviour
     {
         
     }
-    public void BuyItem(int _id)
+    public void BuyItem(int _id, int _prite)
     {
         id = _id;
+        prite = _prite;
     }
     public void ConfirmWeb()
     {
@@ -49,7 +53,7 @@ public class BuyItemWeb : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("user_id", PlayerPrefs.GetString("UserID"));
         form.AddField("product_id", id);
-        form.AddField("price", 150);
+        form.AddField("price", prite);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/reset-price", form))
         {

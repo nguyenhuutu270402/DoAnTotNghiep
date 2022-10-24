@@ -39,6 +39,7 @@ public class BossSkullGod : MonoBehaviour
             aILerp.speed = 0;
             animator.SetBool("Die", true);
             die = true;
+            ArrowChest.Instance.getPositionBoss(transform.position, true);
         }
 
 

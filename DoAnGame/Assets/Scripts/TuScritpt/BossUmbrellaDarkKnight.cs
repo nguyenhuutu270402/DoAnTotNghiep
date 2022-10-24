@@ -33,7 +33,7 @@ public class BossUmbrellaDarkKnight : MonoBehaviour
         {
             animator.SetBool("Die", true);
             die = true;
-
+            ArrowChest.Instance.getPositionBoss(transform.position, true);
         }
     }
 

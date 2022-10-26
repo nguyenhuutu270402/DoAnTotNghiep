@@ -32,6 +32,7 @@ public class LoadLeverMap : MonoBehaviour
         M02_2 = PlayerPrefs.GetInt("M02_2");
         M03_1 = PlayerPrefs.GetInt("M03_1");
         M03_2 = PlayerPrefs.GetInt("M03_2");
+        Debug.Log(M01_1 + " : " + M01_2 + " : " + M02_1 + " : " + M02_2 + " : " + M03_1 + " : " + M03_2 );
     }
 
     void Start()
@@ -94,11 +95,12 @@ public class LoadLeverMap : MonoBehaviour
     }
     public void setPointsMax(int normal, int hard)
     {
+        Debug.Log("vaooooo : " + Mode);
         if (Mode == 1)
         {
             PointsMax.text = normal + "";
         }
-        else
+        if(Mode == 2)
         {
             PointsMax.text = hard + "";
         }
@@ -127,9 +129,10 @@ public class LoadLeverMap : MonoBehaviour
         {
             ModeMap.text = "hard mode";
         }
-        Switch(Mode);
+        Switch(SceneMap);
         
         Debug.Log("mode" + PlayerPrefs.GetInt("ModeMap"));
-        
+        Debug.Log("SceneMap" + SceneMap);
+
     }
 }

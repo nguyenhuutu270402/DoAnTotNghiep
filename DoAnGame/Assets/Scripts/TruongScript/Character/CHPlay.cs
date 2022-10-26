@@ -69,10 +69,6 @@ public class CHPlay : MonoBehaviour
         }
         prices.Add((int)PlayerPrefs.GetInt("arrPrice_1"));
         prices.Add((int)PlayerPrefs.GetInt("arrPrice_2"));
-        //for (int i = 0; i < CharacterBuy.Count; i++)
-        //{
-        //    prices.Add(150);
-        //}
         int skin1 = PlayerPrefs.GetInt("skin1");
         int skin2 = PlayerPrefs.GetInt("skin2");
         if (skin1 == 8 || skin2 == 8)

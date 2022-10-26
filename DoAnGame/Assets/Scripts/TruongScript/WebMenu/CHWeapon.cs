@@ -17,7 +17,6 @@ public class CHWeapon : MonoBehaviour
     private void FixedUpdate()
     {
         maxWeapon = PlayerPrefs.GetInt("maxWeapon");
-        Debug.Log(maxWeapon + "CHWeapon");
     }
 
     private void upWeapon()

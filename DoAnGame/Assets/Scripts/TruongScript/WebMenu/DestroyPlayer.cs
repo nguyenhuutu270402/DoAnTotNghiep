@@ -59,6 +59,7 @@ public class DestroyPlayer : MonoBehaviour
         checkPoint(Point, HighPoint);
         checkM00_0(Point);
         TextHightScore.text = HighPoint + "";
+        upDataPriceBoss();
         GameObject explode_ = Instantiate(explode, gameObject.transform.position, Quaternion.identity);
         Destroy(explode_, 0.05f);
         yield return new WaitForSeconds(0.5f);
@@ -67,8 +68,21 @@ public class DestroyPlayer : MonoBehaviour
         Time.timeScale = 0f;
 
     }
+    private void upDataPriceBoss()
+    {
+        // cap nhat price
+        int UserPrice = PlayerPrefs.GetInt("UserPrice");
+        int PriceBoss = PlayerPrefs.GetInt("PriceBoss");
+        if(PriceBoss > 0)
+        {
+            Updata.Instance.upPriceBoss();
+            UserPrice += PriceBoss;
+            PlayerPrefs.SetInt("UserPrice", UserPrice);
+        }
+    }
     private void checkM00_0(int _Point)
     {
+        // check points cao nhat 3 map va 2 che do
         int M00_0 = PlayerPrefs.GetInt("M00_0");
         if (_Point > M00_0)
         {
@@ -80,13 +94,12 @@ public class DestroyPlayer : MonoBehaviour
     {
         // kiem tra xem diem man nay co phai diem cao nhat khong va updata
         Updata.Instance.upPointUser();
-        Updata.Instance.upPriceBoss();
         if (_point > _highhPoint)
         {
             TextScore.text = Point + "!";
             TextScore.color = Color.red;
 
-            PlayerPrefs.SetInt("texthighPoint", _point);
+            PlayerPrefs.SetInt(texthighPoint, _point);
             Updata.Instance.upPoint();
         }
         else
@@ -130,9 +143,6 @@ public class DestroyPlayer : MonoBehaviour
                 break;
         }
     }
-
-
-
     public void Retry()
     {
         Time.timeScale = 1f;

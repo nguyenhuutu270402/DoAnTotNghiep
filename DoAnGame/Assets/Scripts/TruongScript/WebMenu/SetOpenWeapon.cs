@@ -21,9 +21,7 @@ public class SetOpenWeapon : MonoBehaviour
         arr.Add(PlayerPrefs.GetInt("OpenWeapon_4"));
         arr.Add(PlayerPrefs.GetInt("OpenWeapon_5"));
         arr.Add(PlayerPrefs.GetInt("OpenWeapon_6"));
-
     }
-
     void Start()
     {
         if(Scene == 1)
@@ -32,8 +30,6 @@ public class SetOpenWeapon : MonoBehaviour
             PlayerPrefs.SetInt("maxWeapon", MaxWeapon(arr, M00_0));
         }
     }
-    
-
     void Update()
     {
         M00_0 = PlayerPrefs.GetInt("M00_0");

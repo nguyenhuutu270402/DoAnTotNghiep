@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc59aca258c50f4092bc4c92f5626d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRe: 10
+  timeRe: 7
   enemy1: {fileID: 544491089225725590, guid: 491ef2017ecf3ab45a041aebe94fc9cd, type: 3}
   enemy2: {fileID: 7380684546314112703, guid: a6d41c0394d6de94eb7e9e545d929cf0, type: 3}
   enemy3: {fileID: 5753871232645582080, guid: e3172c78a8b29424195bcae3573272a2, type: 3}

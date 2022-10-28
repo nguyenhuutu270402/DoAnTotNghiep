@@ -30,7 +30,8 @@ public class BossUmbrellaDarkKnight : MonoBehaviour
         else
         {
             // hard mode
-            HP += (HP / 2);
+            //HP += (HP / 2);
+            HP *= 2;
         }
         healthBar = FindObjectOfType<BossHealthBar>();
         healthBar.setMaxHealth(HP);

@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896307c7f2b30fe4eb1c6850c3b7ab2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 50
   timeRe: 3
   timeReBullet: 0.1
   SpeedBullet: 2
@@ -337,6 +337,7 @@ MonoBehaviour:
   effPrison2: {fileID: 788943414665018995, guid: aab34dab1b915204db329ff1c1294f12, type: 3}
   animator: {fileID: 1439038272}
   aILerp: {fileID: 4831189263034620865}
+  timeForRun: 30
 --- !u!1 &5530158303947132753
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,16 @@ public class BlackHole : MonoBehaviour
     public Animator animator;
     void Start()
     {
+        int mode = PlayerPrefs.GetInt("ModeMap");
 
+        if (mode == 1)
+        {
+        }
+        else
+        {
+            // hard mode
+            timeRe -= timeRe / 3;
+        }
     }
 
     // Update is called once per frame

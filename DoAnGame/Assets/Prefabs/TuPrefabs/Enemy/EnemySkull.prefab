@@ -255,7 +255,7 @@ MonoBehaviour:
     maximumInterval: 2
     visualizeSensitivity: 0
   canMove: 1
-  speed: 1
+  speed: 0.8
   orientation: 1
   enableRotation: 0
   rotationSpeed: 10

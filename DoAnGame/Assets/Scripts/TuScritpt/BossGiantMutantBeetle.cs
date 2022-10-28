@@ -14,7 +14,7 @@ public class BossGiantMutantBeetle : MonoBehaviour
     public AILerp aILerp;
     GameObject player;
     Vector2 moveDirection;
-
+    public float timeForRun;
     // health bar script
     BossHealthBar healthBar;
     // Start is called before the first frame update
@@ -29,7 +29,8 @@ public class BossGiantMutantBeetle : MonoBehaviour
         else
         {
             // hard mode
-            HP += (HP/2);
+            //HP += (HP / 2);
+            HP *= 2;
         }
         healthBar = FindObjectOfType<BossHealthBar>();
         healthBar.setMaxHealth(HP);
@@ -61,6 +62,19 @@ public class BossGiantMutantBeetle : MonoBehaviour
             attack1();
         }
         attack2();
+
+        timeForRun -= Time.deltaTime;
+        if (timeForRun <= 0 & isRun == false)
+        {
+            isRun = true;
+            aILerp.speed = speedBoss;
+            // destroy prison, tao eff pha huy prison
+            Destroy(prison);
+            GameObject eff = Instantiate(effPrison, transform.position, Quaternion.identity);
+            GameObject eff2 = Instantiate(effPrison2, transform.position, Quaternion.identity);
+            Destroy(eff2, 0.25f);
+            Destroy(eff, 2f);
+        }
     }
 
     void attack1()

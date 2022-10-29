@@ -24,7 +24,7 @@ public class InfoUser : MonoBehaviour
         UserName = PlayerPrefs.GetString("UserName");
         UserPrice = PlayerPrefs.GetInt("UserPrice");
         UserPoints = PlayerPrefs.GetInt("UserPoints");
-        userName.text = "User: " + UserName;
+        userName.text = "" + UserName;
         userPrice.text = "" + UserPrice + "";
         userPoints.text = "" + UserPoints + "";
     }

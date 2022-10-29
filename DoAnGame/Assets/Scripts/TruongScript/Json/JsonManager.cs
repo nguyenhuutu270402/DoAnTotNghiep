@@ -8,101 +8,136 @@ public class JsonManager : MonoBehaviour
 {
     //private string filepath = "ProGame.json";
     private string filepath = Path.Combine(Application.streamingAssetsPath, "ProGame.json");
- 
 
+    private string path = "word";
+    private string Encry(string data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char)(data[i] + path[i % path.Length]);
+        }
+        return modifiedData;
+    }
+    private string Encry_(string data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char)(data[i] - path[i % path.Length]);
+        }
+        return modifiedData;
+    }
     public static JsonManager Instance { get; private set; }
 
     private void Awake()
     {
+
+        StartJson();
         Instance = this;
     }
-    void Start()
-    {
-        StartJson();
-    }
+
     public void updateSounds(float value, int index)
     {
         // 0 : SFX
         // 1 : BGM
-        var progames = StreamReader();
-        if (index == 0)
+        string dataSvae = "";
+        using (StreamReader r = new StreamReader(filepath))
         {
-            foreach (var item in progames)
+            string json = r.ReadToEnd();
+            string json_ = "";
+            for (int i = 1; i < json.Length - 1; i++)
             {
-                item.SFX_valu = value;
+                json_ += json[i];
             }
+            var loadData = Encry_(json_);
+            ProGame game = JsonConvert.DeserializeObject<ProGame>(loadData);
+            if (index == 0)
+            {
+                game.SFX_valu = value;
+            }
+            if (index == 1)
+            {
+                game.BGM_valu = value;
+            }
+            string datanew = JsonConvert.SerializeObject(game);
+            dataSvae = Encry(datanew);
         }
-        else if(index == 1)
+        using (StreamWriter file = File.CreateText(filepath))
         {
-            foreach (var item in progames)
-            {
-                item.BGM_valu = value;
-            }
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(file, dataSvae);
         }
-        StreamWriter(progames);
     }
 
     public float[] getSounds()
     {
-        // 0 : SFX
-        // 1 : BGM
         float[] sound = new float[2];
-        var progames = StreamReader();
-        foreach (var item in progames)
+        using (StreamReader r = new StreamReader(filepath))
         {
-            sound[0] = item.SFX_valu;
-            sound[1] = item.BGM_valu;
+            string json = r.ReadToEnd();
+            string json_ = "";
+            for (int i = 1; i < json.Length - 1; i++)
+            {
+                json_ += json[i];
+            }
+            var loadData = Encry_(json_);
+            ProGame game = JsonConvert.DeserializeObject<ProGame>(loadData);
+            sound[0] = game.SFX_valu;
+            sound[1] = game.BGM_valu;
         }
+
         return sound;
     }
 
-    public List<ProGame> StreamReader()
-    {
-        var progames = new List<ProGame>();
-        using (StreamReader r = new StreamReader(filepath))
-        {
-            var json = r.ReadToEnd();
-            progames = JsonConvert.DeserializeObject<List<ProGame>>(json);
-        }
-        return progames;
-    }
-    public void StreamWriter(List<ProGame> proGames)
-    {
-        using (StreamWriter file = File.CreateText(filepath))
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, proGames);
-        }
-    }
+
+
+
     public void StartJson()
     {
-       ProGame progameInfo = new ProGame()
-       {
-           BGM_valu = 1,
-           SFX_valu = 1,
-           tontai = 0,
-       };
-        
-        var progames = new List<ProGame>();
+        ProGame progameInfo = new ProGame()
+        {
+            BGM_valu = 1,
+            SFX_valu = 1,
+            tontai = 0,
+        };
+
+        string datanew = JsonConvert.SerializeObject(progameInfo);
+        Debug.Log(datanew + " :dataNew");
+
+        string dataSvae = Encry(datanew);
+        Debug.Log(dataSvae + " :data save");
+
+
+        string dataTest = Encry_(dataSvae);
+        Debug.Log(dataTest + " :data Test");
+
         using (StreamReader r = new StreamReader(filepath))
         {
-            var json = r.ReadToEnd();
-            progames = JsonConvert.DeserializeObject<List<ProGame>>(json);
-            // kiem tra username ton tai
-            if (progames == null) progames = new List<ProGame>();
-            var check = progames.Find(i => i.tontai == 0);
-            if (check != null)
+            string json = r.ReadToEnd();
+            if (json.Length > 2)
             {
-                return;
+                string json_ = "";
+                for (int i = 1; i < json.Length - 1; i++)
+                {
+                    json_ += json[i];
+                }
+                var loadData = Encry_(json_);
+                ProGame game = JsonConvert.DeserializeObject<ProGame>(loadData);
+                if (game.tontai != null)
+                {
+                    return;
+                }
             }
         }
-        progames.Add(progameInfo);
         using (StreamWriter file = File.CreateText(filepath))
         {
             JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, progames);
+            serializer.Serialize(file, dataSvae);
         }
     }
+
+
     public class ProGame
     {
         public float BGM_valu { get; set; }

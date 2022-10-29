@@ -7,9 +7,29 @@ using System.IO;
 public class JsonUser : MonoBehaviour
 {
     //private string filepath = "ProGame.json";
-    private string filepath = Path.Combine(Application.streamingAssetsPath, "saveuser.json");
+    private string filepath = Path.Combine(Application.streamingAssetsPath, "saveuserNew.json");
 
     public static JsonUser Instance { get; private set; }
+    private string path = "word";
+    private string Encry(string data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char)(data[i] + path[i % path.Length]);
+        }
+        return modifiedData;
+    }
+    private string Encry_(string data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char)(data[i] - path[i % path.Length]);
+        }
+        return modifiedData;
+    }
+
 
     private ProGame check;
 
@@ -88,6 +108,16 @@ public class JsonUser : MonoBehaviour
             username = user,
             password = pass,
         };
+
+        //string datanew = JsonConvert.SerializeObject(game);
+        //Debug.Log(datanew + " :dataNew");
+
+        //string dataSvae = Encry(datanew);
+        //Debug.Log(dataSvae + " :data save");
+
+        //string dataTest = Encry_(dataSvae);
+        //Debug.Log(dataTest + " :data Test");
+
         var games = new List<ProGame>();
         using (StreamReader r = new StreamReader(filepath))
         {
@@ -113,12 +143,22 @@ public class JsonUser : MonoBehaviour
         }
         
         games.Add(game);
+
+
+
         using (StreamWriter file = File.CreateText(filepath))
         {
             JsonSerializer serializer = new JsonSerializer();
             serializer.Serialize(file, games);
         }
     }
+
+    public class EncryData
+    {
+        public string data;
+    }
+
+
     public class ProGame
     {
         public string username { get; set; }

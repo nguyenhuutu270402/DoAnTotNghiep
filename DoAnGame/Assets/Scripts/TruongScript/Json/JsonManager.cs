@@ -103,14 +103,14 @@ public class JsonManager : MonoBehaviour
         };
 
         string datanew = JsonConvert.SerializeObject(progameInfo);
-        Debug.Log(datanew + " :dataNew");
+        //Debug.Log(datanew + " :dataNew");
 
         string dataSvae = Encry(datanew);
-        Debug.Log(dataSvae + " :data save");
+        //Debug.Log(dataSvae + " :data save");
 
 
         string dataTest = Encry_(dataSvae);
-        Debug.Log(dataTest + " :data Test");
+        //Debug.Log(dataTest + " :data Test");
 
         using (StreamReader r = new StreamReader(filepath))
         {

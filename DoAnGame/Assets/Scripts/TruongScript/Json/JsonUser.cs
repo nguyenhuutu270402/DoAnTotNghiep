@@ -7,7 +7,7 @@ using System.IO;
 public class JsonUser : MonoBehaviour
 {
     //private string filepath = "ProGame.json";
-    private string filepath = Path.Combine(Application.streamingAssetsPath, "saveuserNew.json");
+    private string filepath = Path.Combine(Application.streamingAssetsPath, "saveuser.json");
 
     public static JsonUser Instance { get; private set; }
     private string path = "word";
@@ -45,7 +45,13 @@ public class JsonUser : MonoBehaviour
         using (StreamReader r = new StreamReader(filepath))
         {
             var json = r.ReadToEnd();
-            users = JsonConvert.DeserializeObject<List<ProGame>>(json);
+            string json_ = "";
+            for (int i = 1; i < json.Length - 1; i++)
+            {
+                json_ += json[i];
+            }
+            var loadData = Encry_(json_);
+            users = JsonConvert.DeserializeObject<List<ProGame>>(loadData);
             if (users == null)
             {
                 users = new List<ProGame>();
@@ -67,7 +73,13 @@ public class JsonUser : MonoBehaviour
         using (StreamReader r = new StreamReader(filepath))
         {
             var json = r.ReadToEnd();
-            users = JsonConvert.DeserializeObject<List<ProGame>>(json);
+            string json_ = "";
+            for (int i = 1; i < json.Length - 1; i++)
+            {
+                json_ += json[i];
+            }
+            var loadData = Encry_(json_);
+            users = JsonConvert.DeserializeObject<List<ProGame>>(loadData);
             if (users == null)
             {
                 users = new List<ProGame>();
@@ -86,7 +98,13 @@ public class JsonUser : MonoBehaviour
         using (StreamReader r = new StreamReader(filepath))
         {
             var json = r.ReadToEnd();
-            games = JsonConvert.DeserializeObject<List<ProGame>>(json);
+
+            string json_ = "";
+            for (int i = 1; i < json.Length - 1; i++)
+            {
+                json_ += json[i];
+            }
+            var loadData = Encry_(json_);
             // kiem tra username ton tai
             if (games == null) games = new List<ProGame>();
             check = games.Find(i => i.username == user);
@@ -95,10 +113,20 @@ public class JsonUser : MonoBehaviour
                 games.Remove(check);
             }
         }
+
+        string datanew = JsonConvert.SerializeObject(games);
+        Debug.Log(datanew + " :dataNew");
+
+        string dataSvae = Encry(datanew);
+        Debug.Log(dataSvae + " :data save");
+
+        string dataTest = Encry_(dataSvae);
+        Debug.Log(dataTest + " :data Test");
+
         using (StreamWriter file = File.CreateText(filepath))
         {
             JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, games);
+            serializer.Serialize(file, dataSvae);
         }
     }
     public void SavaUser(string user, string pass)
@@ -108,21 +136,19 @@ public class JsonUser : MonoBehaviour
             username = user,
             password = pass,
         };
-
-        //string datanew = JsonConvert.SerializeObject(game);
-        //Debug.Log(datanew + " :dataNew");
-
-        //string dataSvae = Encry(datanew);
-        //Debug.Log(dataSvae + " :data save");
-
-        //string dataTest = Encry_(dataSvae);
-        //Debug.Log(dataTest + " :data Test");
-
         var games = new List<ProGame>();
         using (StreamReader r = new StreamReader(filepath))
         {
             var json = r.ReadToEnd();
-            games = JsonConvert.DeserializeObject<List<ProGame>>(json);
+
+            string json_ = "";
+            for (int i = 1; i < json.Length - 1; i++)
+            {
+                json_ += json[i];
+            }
+            var loadData = Encry_(json_);
+            games = JsonConvert.DeserializeObject<List<ProGame>>(loadData);
+
             // kiem tra username ton tai
             if (games == null) games = new List<ProGame>();
             check = games.Find(i => i.username == user);
@@ -143,13 +169,20 @@ public class JsonUser : MonoBehaviour
         }
         
         games.Add(game);
+        string datanew = JsonConvert.SerializeObject(games);
+        Debug.Log(datanew + " :dataNew");
 
+        string dataSvae = Encry(datanew);
+        Debug.Log(dataSvae + " :data save");
+
+        string dataTest = Encry_(dataSvae);
+        Debug.Log(dataTest + " :data Test");
 
 
         using (StreamWriter file = File.CreateText(filepath))
         {
             JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, games);
+            serializer.Serialize(file, dataSvae);
         }
     }
 

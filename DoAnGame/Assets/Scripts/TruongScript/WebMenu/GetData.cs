@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GetData : MonoBehaviour
 {
@@ -20,8 +22,34 @@ public class GetData : MonoBehaviour
     private IEnumerator coroutineArrPriceCharacter;
     private IEnumerator coroutineOpenWeapon;
 
-    void Start()
+
+    private float time = 2f;
+    public Slider slider;
+    private float _time = 0f;
+    private bool check = false;
+
+    public static GetData Instance { get; private set; }
+    private void Awake()
     {
+        Instance = this;
+    }
+
+    void Update()
+    {
+        if (check)
+        {
+            _time += Time.deltaTime;
+            slider.value = _time / time;
+            if (time - _time <= 0)
+            {
+                SceneManager.LoadScene(1);
+                
+            }
+        }
+    }
+    public void checkLoading()
+    {
+        check = true;
         UserID = PlayerPrefs.GetString("UserID");
         coroutinePoint = GetPoints();
         StartCoroutine(coroutinePoint);
@@ -38,6 +66,7 @@ public class GetData : MonoBehaviour
         coroutineOpenWeapon = GetOpenWeapon();
         StartCoroutine(coroutineOpenWeapon);
     }
+
 
     private IEnumerator GetPoints()
     {

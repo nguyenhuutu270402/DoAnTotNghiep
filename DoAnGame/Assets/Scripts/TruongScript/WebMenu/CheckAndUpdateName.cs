@@ -111,6 +111,12 @@ public class CheckAndUpdateName : MonoBehaviour
         }
         if (id == 2)
         {
+            int priceUser = PlayerPrefs.GetInt("UserPrice");
+            if(priceUser < 99)
+            {
+                errCheckNameCard.text = "You don't have enough RP for the transaction";
+                
+            }
             price = 99;
             name = NameUpdateCard.text.Trim();
         }

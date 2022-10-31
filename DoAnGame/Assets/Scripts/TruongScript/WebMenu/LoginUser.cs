@@ -16,6 +16,9 @@ public class LoginUser : MonoBehaviour
     private float startTime = 0.0f;
     public Toggle toggle;
 
+    public GameObject loading;
+
+
     void Start()
     {
         TextErro.SetActive(false);
@@ -66,8 +69,10 @@ public class LoginUser : MonoBehaviour
                     PlayerPrefs.SetInt("UserPrice", account.price);
                     PlayerPrefs.SetInt("UserPoints", account.points);
 
-                    Screen.SetResolution(1920, 1080, true);
-                    SceneManager.LoadScene(1);
+                    loading.SetActive(true);
+                    GetData.Instance.checkLoading();
+
+                    
                     CheckSave(toggle.isOn, username, password);
                     yield return null;
                 }else if(!account.status)

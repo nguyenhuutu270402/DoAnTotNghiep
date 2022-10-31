@@ -11,7 +11,7 @@ public class LoadLeverMap : MonoBehaviour
     public Sprite IMG1, IMG2, IMG3;
     public TextMeshProUGUI NameMap;
     public GameObject load1, load2;
-    private int SceneMap = 3;
+    private int SceneMap = 2;
     public TextMeshProUGUI ModeMap;
     private int Mode = 1;
 
@@ -49,9 +49,9 @@ public class LoadLeverMap : MonoBehaviour
     {
         SceneMap++;
         PlayerPrefs.SetInt("SceneMap", SceneMap);
-        if (SceneMap > 5)
+        if (SceneMap > 4)
         {
-            SceneMap = 3;
+            SceneMap = 2;
         }
         Switch(SceneMap);
         Debug.Log("map_id: " + PlayerPrefs.GetString("map_id"));
@@ -60,9 +60,9 @@ public class LoadLeverMap : MonoBehaviour
     {
         SceneMap--;
         PlayerPrefs.SetInt("SceneMap", SceneMap);
-        if (SceneMap < 3)
+        if (SceneMap < 2)
         {
-            SceneMap = 5;
+            SceneMap = 4;
         }
         Switch(SceneMap);
         Debug.Log("map_id: " + PlayerPrefs.GetString("map_id"));
@@ -71,19 +71,19 @@ public class LoadLeverMap : MonoBehaviour
     {
         switch (map)
         {
-            case 3:
+            case 2:
                 IMG.sprite = IMG1;
                 NameMap.text = "M01";
                 PlayerPrefs.SetString("map_id", "M01");
                 setPointsMax(M01_1, M01_2);
                 break;
-            case 4:
+            case 3:
                 IMG.sprite = IMG2;
                 NameMap.text = "M02";
                 PlayerPrefs.SetString("map_id", "M02");
                 setPointsMax(M02_1, M02_2);
                 break;
-            case 5:
+            case 4:
                 IMG.sprite = IMG3;
                 NameMap.text = "M03";
                 PlayerPrefs.SetString("map_id", "M03");

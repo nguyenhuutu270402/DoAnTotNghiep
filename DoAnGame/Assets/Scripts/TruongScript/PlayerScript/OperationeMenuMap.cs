@@ -49,7 +49,7 @@ public class OperationeMenuMap : MonoBehaviour
     
     public void BtnBackToTitle()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
         TimePause(1);        
     }
 

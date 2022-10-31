@@ -11,7 +11,6 @@ public class CHWeapon : MonoBehaviour
     void Start()
     {   
         index = 10;
-        transform.position = new Vector3(0, -60, 0);
         upWeapon();
     }
     private void FixedUpdate()

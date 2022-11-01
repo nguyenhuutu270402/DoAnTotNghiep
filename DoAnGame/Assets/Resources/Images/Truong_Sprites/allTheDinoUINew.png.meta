@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUINew_10
+      name: left3
       rect:
         serializedVersion: 2
         x: 6
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allTheDinoUINew_11
+      name: left2
       rect:
         serializedVersion: 2
         x: 23
@@ -541,7 +541,7 @@ TextureImporter:
       name: table
       rect:
         serializedVersion: 2
-        x: 72
+        x: 73
         y: 108
         width: 162
         height: 100
@@ -592,7 +592,6 @@ TextureImporter:
     nameFileIdTable:
       allTheDinoUINew_25: -1572210317
       allTheDinoUINew_45: 1438366473
-      allTheDinoUINew_11: 616399594
       allTheDinoUINew_41: -1367807231
       allTheDinoUINew_6: -976562563
       allTheDinoUINew_42: 908726600
@@ -608,9 +607,10 @@ TextureImporter:
       allTheDinoUINew_46: -851014517
       allTheDinoUINew_8: -1816311914
       allTheDinoUINew_37: 1194994091
+      left2: 616399594
       right3: -1719482327
+      left3: -1876475222
       allTheDinoUINew_14: 1338490889
-      allTheDinoUINew_10: -1876475222
       allTheDinoUINew_19: -2117047068
       allTheDinoUINew_21: 1574663137
       btn1_1: 1044945431
@@ -625,8 +625,8 @@ TextureImporter:
       btn2_2: -831433751
       slider2: -799703067
       allTheDinoUINew_26: 607913927
-      allTheDinoUINew_27: -493062978
       slider1: -1759278565
+      allTheDinoUINew_27: -493062978
       allTheDinoUINew_13: -679134547
       allTheDinoUINew_35: 2138325824
       allTheDinoUINew_18: 2039630149

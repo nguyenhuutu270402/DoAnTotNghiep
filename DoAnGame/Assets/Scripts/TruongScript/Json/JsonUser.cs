@@ -88,7 +88,7 @@ public class JsonUser : MonoBehaviour
         }
         for (int i = 0; i < users.Count; i++)
         {
-            data.Add(users[i].username);
+            data.Add(users[i].password);
         }
         return data;
     }

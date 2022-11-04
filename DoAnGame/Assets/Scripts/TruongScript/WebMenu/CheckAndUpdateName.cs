@@ -30,7 +30,6 @@ public class CheckAndUpdateName : MonoBehaviour
     public GameObject errCheckLengthCard;
     public TextMeshProUGUI errCheckNameCard;
     public GameObject tableCard;
-    public GameObject Dino;
 
     private bool checkCard = false;
 
@@ -99,7 +98,23 @@ public class CheckAndUpdateName : MonoBehaviour
     }
     public void SaveName(int id)
     {   
-        StartCoroutine(SaveNew(id));
+        if(id == 2)
+        {
+            int priceUser = PlayerPrefs.GetInt("UserPrice");
+            if (priceUser < 99)
+            {
+                errCheckNameCard.text = "You don't have enough RP for the transaction";
+            }
+            if(priceUser > 99)
+            {
+                StartCoroutine(SaveNew(id));
+            }
+        }
+        if(id == 1)
+        {
+            StartCoroutine(SaveNew(id));
+        }
+        
     }
     private IEnumerator SaveNew(int id)
     {
@@ -111,17 +126,9 @@ public class CheckAndUpdateName : MonoBehaviour
         }
         if (id == 2)
         {
-            int priceUser = PlayerPrefs.GetInt("UserPrice");
-            if(priceUser < 99)
-            {
-                errCheckNameCard.text = "You don't have enough RP for the transaction";
-                
-            }
             price = 99;
             name = NameUpdateCard.text.Trim();
         }
-
-        
         WWWForm form = new WWWForm();
         form.AddField("user_id", UserID);
         form.AddField("name", name);
@@ -150,7 +157,6 @@ public class CheckAndUpdateName : MonoBehaviour
                         CHPlay.Instance.updatePrice(UserPrice);
 
                         tableCard.SetActive(false);
-                        Dino.SetActive(true);
 
                     }
 

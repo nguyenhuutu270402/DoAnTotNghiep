@@ -71,7 +71,7 @@ public class LoginUser : MonoBehaviour
 
                     loading.SetActive(true);
                     GetData.Instance.checkLoading();
-
+                    GetArchiverment.Instance.GetData();
                     
                     CheckSave(toggle.isOn, username, password);
                     yield return null;

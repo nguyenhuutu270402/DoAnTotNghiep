@@ -52,7 +52,7 @@ public class BuyItemWeb : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("user_id", PlayerPrefs.GetString("UserID"));
-        form.AddField("product_id", id);
+        form.AddField("code", id);
         form.AddField("price", prite);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/reset-price", form))

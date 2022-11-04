@@ -105,6 +105,7 @@ public class JsonUser : MonoBehaviour
                 json_ += json[i];
             }
             var loadData = Encry_(json_);
+            games = JsonConvert.DeserializeObject<List<ProGame>>(loadData);
             // kiem tra username ton tai
             if (games == null) games = new List<ProGame>();
             check = games.Find(i => i.username == user);

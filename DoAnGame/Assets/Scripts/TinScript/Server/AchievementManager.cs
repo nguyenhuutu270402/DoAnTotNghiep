@@ -21,8 +21,16 @@ public class AchievementManager : MonoBehaviour
             return;
 
         achievements = new List<DinoAchievement>();
-        achievements.Add(new DinoAchievement("achievement_id","First Blood", "First time get 12 weapon chest in game.", (object o) => highScore == 12));
-        achievements.Add(new DinoAchievement("achievement_id","Catch Up", "First time reach to 20 point.", (object o) => totalPoint == 20));
+
+        achievements.Add(new DinoAchievement(GetArchiverment.Instance._achievement.open[0]._id,
+            GetArchiverment.Instance._achievement.open[0].name,
+            "First time get 12 weapon chest in game.",
+            (object o) => highScore == 12));
+
+
+
+        //achievements.Add(new DinoAchievement("achievement_id","First Blood", "First time get 12 weapon chest in game.", (object o) => highScore == 12));
+        //achievements.Add(new DinoAchievement("achievement_id","Catch Up", "First time reach to 20 point.", (object o) => totalPoint == 20));
     }
     private void Update()
     {

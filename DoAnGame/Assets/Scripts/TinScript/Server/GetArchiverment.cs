@@ -9,6 +9,7 @@ public class GetArchiverment : MonoBehaviour
 {
     private string ACHIEVEMENT_API_PATH = "http://localhost:3000/api/my-achievement/"; 
     private string userID;
+    public _Achievement _achievement;
 
     private string filepath = Path.Combine(Application.streamingAssetsPath, "Achievement.json");
 
@@ -62,7 +63,7 @@ public class GetArchiverment : MonoBehaviour
         using (UnityWebRequest www = UnityWebRequest.Get($"{ACHIEVEMENT_API_PATH}{userID}"))
         {
             yield return www.SendWebRequest();
-            _Achievement _achievement = JsonUtility.FromJson<_Achievement>(www.downloadHandler.text);
+            _achievement = JsonUtility.FromJson<_Achievement>(www.downloadHandler.text);
             SaveAchievement(_achievement);
             Debug.Log("ID THANH TUU: " + _achievement.open[0]._id);
             Debug.Log("TEN THANH TUU: " + _achievement.open[0].name);

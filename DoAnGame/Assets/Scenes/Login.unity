@@ -2535,52 +2535,6 @@ MonoBehaviour:
   Drop: {fileID: 781271950}
   username: {fileID: 244899155}
   password: {fileID: 203383886}
---- !u!1 &789878897
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 789878899}
-  - component: {fileID: 789878898}
-  m_Layer: 0
-  m_Name: AchievementManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &789878898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789878897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48614af881cbc2439a3f92ca091e1d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highScore: 0
-  totalPoint: 0
---- !u!4 &789878899
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789878897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 477.53925, y: 413.79254, z: -4.7227488}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807549457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,6 +3158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b731fe49dd8ab904988db0a6d8b9ebaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _achievement:
+    open: []
 --- !u!1 &995241226
 GameObject:
   m_ObjectHideFlags: 0

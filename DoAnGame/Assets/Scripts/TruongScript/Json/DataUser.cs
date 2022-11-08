@@ -14,6 +14,7 @@ public class GameAccounts
     public string name;
     public int price;
     public int points;
+    public string image;
 }
 
 [System.Serializable]

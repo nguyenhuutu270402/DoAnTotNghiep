@@ -61,17 +61,17 @@ public class LoginUser : MonoBehaviour
             else
             {
                 GameAccounts account = JsonUtility.FromJson<GameAccounts>(www.downloadHandler.text);
-                Debug.Log(account.status + " : " + account.id + " : " + account.name + " : " + +account.price + " : " + account.points);
+                Debug.Log(account.status + " : " + account.id + " : " + account.name + " : " + +account.price + " : " + account.points + " : " + account.image );
                 if (account.status)
                 {
                     PlayerPrefs.SetString("UserID", account.id);
                     PlayerPrefs.SetString("UserName", account.name);
                     PlayerPrefs.SetInt("UserPrice", account.price);
                     PlayerPrefs.SetInt("UserPoints", account.points);
+                    PlayerPrefs.SetString("UserImage", account.image);
 
                     loading.SetActive(true);
                     GetData.Instance.checkLoading();
-
                     
                     CheckSave(toggle.isOn, username, password);
                     yield return null;

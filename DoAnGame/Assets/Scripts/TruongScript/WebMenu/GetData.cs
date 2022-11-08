@@ -11,17 +11,9 @@ public class GetData : MonoBehaviour
     private string UserID;
 
     private string pathCharacter = "http://localhost:3000/api/character-user/";
-    private string pathOpenCharacter = "http://localhost:3000/api/point-character";
+    private string pathOpenCharacter = "http://localhost:3000/api/get-character";
     private string pathArrPriceCharacter = "http://localhost:3000/api/price-character";
     private string pathOpenWeapon = "http://localhost:3000/api/open-weapons";
-
-
-    private IEnumerator coroutinePoint;
-    private IEnumerator coroutineCharacter;
-    private IEnumerator coroutineOpenCharacter;
-    private IEnumerator coroutineArrPriceCharacter;
-    private IEnumerator coroutineOpenWeapon;
-
 
     private float time = 2f;
     public Slider slider;
@@ -49,26 +41,22 @@ public class GetData : MonoBehaviour
     }
     public void checkLoading()
     {
-        check = true;
+        
         UserID = PlayerPrefs.GetString("UserID");
-        coroutinePoint = GetPoints();
-        StartCoroutine(coroutinePoint);
+        StartCoroutine(GetPoints());
 
-        coroutineCharacter = GetCharacters();
-        StartCoroutine(coroutineCharacter);
+        StartCoroutine(GetCharacters());
 
-        coroutineOpenCharacter = GetOpenCharacters();
-        StartCoroutine(coroutineOpenCharacter);
+        StartCoroutine(GetOpenCharacters());
 
-        coroutineArrPriceCharacter = GetArrPriceCharacters();
-        StartCoroutine(coroutineArrPriceCharacter);
+        StartCoroutine(GetArrPriceCharacters());
 
-        coroutineOpenWeapon = GetOpenWeapon();
-        StartCoroutine(coroutineOpenWeapon);
+        StartCoroutine(GetOpenWeapon());
+        check = true;
     }
 
 
-    private IEnumerator GetPoints()
+    public IEnumerator GetPoints()
     {
         using (UnityWebRequest www = UnityWebRequest.Get($"{pathPoint}{UserID}/get"))
         {
@@ -89,6 +77,7 @@ public class GetData : MonoBehaviour
                 }
             }
             PlayerPrefs.SetInt("M00_0", M00_0);
+            Debug.Log("GetPoints" + M00_0);
         }
     }
     private IEnumerator GetCharacters()
@@ -114,7 +103,7 @@ public class GetData : MonoBehaviour
                 PlayerPrefs.SetInt("skin1", character.data[0]);
                 PlayerPrefs.SetInt("skin2", character.data[1]);
             }
-            Debug.Log(PlayerPrefs.GetInt("skin1") + " : " +  PlayerPrefs.GetInt("skin2") + " :getData: ");
+            Debug.Log(PlayerPrefs.GetInt("skin1") + " : " +  PlayerPrefs.GetInt("skin2") + " :GetCharacters: ");
             
         }
     }
@@ -130,6 +119,7 @@ public class GetData : MonoBehaviour
             PlayerPrefs.SetInt("OpenCharacter_4", Open.open[3]);
             PlayerPrefs.SetInt("OpenCharacter_5", Open.open[4]);
             PlayerPrefs.SetInt("OpenCharacter_6", Open.open[5]);
+            Debug.Log(Open.open[0] + " : " + Open.open[1] + " : " + Open.open[2] + " : " + Open.open[3] + " : " + Open.open[4] + " : " + Open.open[5] + " :GetOpenCharacters: ");
         }
     }
     private IEnumerator GetArrPriceCharacters()
@@ -140,6 +130,7 @@ public class GetData : MonoBehaviour
             GameAccountArrPriceCharacter arrPrice = JsonUtility.FromJson<GameAccountArrPriceCharacter>(www.downloadHandler.text);
             PlayerPrefs.SetInt("arrPrice_1", arrPrice.arrPrice[0]);
             PlayerPrefs.SetInt("arrPrice_2", arrPrice.arrPrice[1]);
+            Debug.Log(arrPrice.arrPrice[1] + " : " + arrPrice.arrPrice[1] + " :GetArrPriceCharacters: ");
         }
     }
     private IEnumerator GetOpenWeapon()
@@ -154,6 +145,7 @@ public class GetData : MonoBehaviour
             PlayerPrefs.SetInt("OpenWeapon_4", Open.open[3]);
             PlayerPrefs.SetInt("OpenWeapon_5", Open.open[4]);
             PlayerPrefs.SetInt("OpenWeapon_6", Open.open[5]);
+            Debug.Log(Open.open[0] + " : " + Open.open[1] + " : " + Open.open[2] + " : " + Open.open[3] + " : " + Open.open[4] + " : " + Open.open[5] + " :GetOpenWeapon: ");
         }
     }
 }

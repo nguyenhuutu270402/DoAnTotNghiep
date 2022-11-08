@@ -33,6 +33,12 @@ public class CheckAndUpdateName : MonoBehaviour
 
     private bool checkCard = false;
 
+    private void Awake()
+    {
+        Screen.SetResolution(1920, 1080, false);
+        Screen.fullScreen = true;
+    }
+
     void Start()
     {
         UserName = PlayerPrefs.GetString("UserName");

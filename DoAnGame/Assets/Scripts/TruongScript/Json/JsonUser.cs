@@ -116,13 +116,13 @@ public class JsonUser : MonoBehaviour
         }
 
         string datanew = JsonConvert.SerializeObject(games);
-        Debug.Log(datanew + " :dataNew");
+        //Debug.Log(datanew + " :dataNew");
 
         string dataSvae = Encry(datanew);
-        Debug.Log(dataSvae + " :data save");
+        //Debug.Log(dataSvae + " :data save");
 
         string dataTest = Encry_(dataSvae);
-        Debug.Log(dataTest + " :data Test");
+        //Debug.Log(dataTest + " :data Test");
 
         using (StreamWriter file = File.CreateText(filepath))
         {
@@ -171,13 +171,13 @@ public class JsonUser : MonoBehaviour
         
         games.Add(game);
         string datanew = JsonConvert.SerializeObject(games);
-        Debug.Log(datanew + " :dataNew");
+        //Debug.Log(datanew + " :dataNew");
 
         string dataSvae = Encry(datanew);
-        Debug.Log(dataSvae + " :data save");
+        //Debug.Log(dataSvae + " :data save");
 
         string dataTest = Encry_(dataSvae);
-        Debug.Log(dataTest + " :data Test");
+        //Debug.Log(dataTest + " :data Test");
 
 
         using (StreamWriter file = File.CreateText(filepath))

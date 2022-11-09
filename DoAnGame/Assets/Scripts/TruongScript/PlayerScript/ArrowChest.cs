@@ -28,7 +28,7 @@ public class ArrowChest : MonoBehaviour
     }
     void Update()
     {
-        if(BossAppears == 0)
+        if (BossAppears == 0)
         {
             transform.up = new Vector2(chest.transform.position.x - transform.position.x, chest.transform.position.y - transform.position.y);
         }
@@ -65,7 +65,17 @@ public class ArrowChest : MonoBehaviour
         score = _score;
         switch (score)
         {
-            case 11: case 23: case 35: case 46: case 59: case 71: case 83: case 95: case 107: case 119: case 131:
+            case 11:
+            case 23:
+            case 35:
+            case 46:
+            case 59:
+            case 71:
+            case 83:
+            case 95:
+            case 107:
+            case 119:
+            case 131:
 
                 HealthBar.SetActive(true);
 

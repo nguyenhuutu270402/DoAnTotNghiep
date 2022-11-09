@@ -63,7 +63,7 @@ public class Shovel : MonoBehaviour
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circleOrigin.position, radius))
         {
             
-            if(collider.gameObject.layer == 11)
+            if(collider.gameObject.layer == 10 | collider.gameObject.layer == 11 | collider.gameObject.layer == 12)
             {
                 Destroy(collider.gameObject);
             }

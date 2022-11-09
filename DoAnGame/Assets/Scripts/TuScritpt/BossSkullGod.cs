@@ -11,7 +11,7 @@ public class BossSkullGod : MonoBehaviour
     public GameObject explosionClassic, explosionBazoka, bullet1, bullet2, effBuffHP;
     public Animator animator;
     bool die = false;
-    float timeLoop;
+    float timeLoop = 2;
     public GameObject enemySkull;
     public Transform point1, point2, point3, point4;
     float x, y, angel = 0, radius = 10;
@@ -29,6 +29,7 @@ public class BossSkullGod : MonoBehaviour
         if (mode == 1)
         {
             // normal mode
+            HPStart = HP;
         }
         else
         {

@@ -77,7 +77,7 @@ public class GetData : MonoBehaviour
                 }
             }
             PlayerPrefs.SetInt("M00_0", M00_0);
-            Debug.Log("GetPoints" + M00_0);
+            //Debug.Log("GetPoints" + M00_0);
         }
     }
     private IEnumerator GetCharacters()

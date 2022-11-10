@@ -72,6 +72,7 @@ public class LoginUser : MonoBehaviour
 
                     loading.SetActive(true);
                     GetData.Instance.checkLoading();
+                    GetAchievement.Instance.checkLoading();
                     
                     CheckSave(toggle.isOn, username, password);
                     yield return null;

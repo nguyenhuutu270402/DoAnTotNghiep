@@ -36,7 +36,7 @@ public class BuyItemWeb : MonoBehaviour
     public void ConfirmWeb()
     {
         int UserPrice = PlayerPrefs.GetInt("UserPrice");
-        if(UserPrice < 150)
+        if(UserPrice < prite)
         {
             Erro.SetActive(true);
         }
@@ -85,7 +85,7 @@ public class BuyItemWeb : MonoBehaviour
                         PlayerPrefs.SetInt("skin2", id);
                     }
 
-                    int UserPrice = PlayerPrefs.GetInt("UserPrice") - 150;
+                    int UserPrice = PlayerPrefs.GetInt("UserPrice") - prite;
                     PlayerPrefs.SetInt("UserPrice", UserPrice);
 
                     CharacterUser.Instance.updteCharacter(id);

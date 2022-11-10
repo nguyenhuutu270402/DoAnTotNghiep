@@ -9,14 +9,18 @@ public class GetAchievement : MonoBehaviour
     private string ACHIEVEMENT_PATH = "http://localhost:3000/api/my-achievement/";
     private string USER_ID;
     public static GetAchievement Instance;
+
+    public int point;
     //public List<achievement> achievements;
     //public achievement[] achievements;
+    public achievementData _achievementData;
     private void Awake()
     {
         Instance = this;
+        point = PlayerPrefs.GetInt("UserPoints");
     }
 
-    public void checkLoading()
+    public void CheckGetData()
     {
 
         USER_ID = PlayerPrefs.GetString("UserID");
@@ -28,14 +32,34 @@ public class GetAchievement : MonoBehaviour
         using (UnityWebRequest www = UnityWebRequest.Get($"{ACHIEVEMENT_PATH}{USER_ID}"))
         {
             yield return www.SendWebRequest();
-            achievementData _achievementData = JsonUtility.FromJson<achievementData>(www.downloadHandler.text);
-
+            _achievementData = JsonUtility.FromJson<achievementData>(www.downloadHandler.text);
             foreach (var achievement in _achievementData.achievement)
             {
                 Debug.Log(achievement.name + " name");
+                Debug.Log(achievement.requiment + " requirement");
             }
+            Debug.Log(point + "player point");
+
         }
     }
+
+    private void Update()
+    {
+        CheckAchievementCompletion();
+    }
+
+    private void CheckAchievementCompletion()
+    {
+        //if (achievement == null)
+        //    return;
+
+        foreach (var achievement in _achievementData.achievement)
+        {
+            achievement.UpdateCompletion();
+        }
+    }
+
+
 }
 
 [Serializable]
@@ -71,13 +95,18 @@ public class achievement
 
         if (RequirementsMet())
         {
-            Debug.Log($"{id}:{name} {description} {achieved}");
+            Debug.Log($"{id}:{name} {description} {achieved} YOlO");
             achieved = true;
         }
     }
     public bool RequirementsMet()
     {
+        bool checkRequirement = false;
         //return requiment.Invoke(null);
-        return true;
+        if(GetAchievement.Instance.point >= requiment)
+        {
+            checkRequirement = true;
+        }
+        return checkRequirement;
     }
 }

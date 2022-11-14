@@ -17,6 +17,10 @@ public class GetAchievement : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
+    }
+    private void Start()
+    {
         point = PlayerPrefs.GetInt("UserPoints");
     }
 
@@ -37,8 +41,10 @@ public class GetAchievement : MonoBehaviour
             {
                 Debug.Log(achievement.name + " name");
                 Debug.Log(achievement.requiment + " requirement");
+                Debug.Log(achievement.achieved + " achieved");
+                Debug.Log("//////////////////");
             }
-            Debug.Log(point + "player point");
+            Debug.Log( "PLAYER POINT: "+ point);
 
         }
     }
@@ -95,8 +101,9 @@ public class achievement
 
         if (RequirementsMet())
         {
-            Debug.Log($"{id}:{name} {description} {achieved} YOlO");
             achieved = true;
+            Debug.Log($"{id}:{name} {description} {achieved} YOlO");
+            
         }
     }
     public bool RequirementsMet()

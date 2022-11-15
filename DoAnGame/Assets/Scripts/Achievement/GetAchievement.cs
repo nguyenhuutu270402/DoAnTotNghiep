@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class GetAchievement : MonoBehaviour
 {
@@ -11,20 +12,52 @@ public class GetAchievement : MonoBehaviour
     public static GetAchievement Instance;
 
     public int point;
-    //public List<achievement> achievements;
-    //public achievement[] achievements;
     public achievementData _achievementData;
+
+    [SerializeField] private GameObject row;
+
+    [SerializeField] private GameObject parentPanel;
     private void Awake()
     {
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
+        DontDestroyOnLoad(gameObject);
         point = PlayerPrefs.GetInt("UserPoints");
     }
-
+    private void Start()
+    {
+        CheckGetData();
+    }
     public void CheckGetData()
     {
 
-        USER_ID = PlayerPrefs.GetString("UserID");
+        //USER_ID = PlayerPrefs.GetString("UserID"); //original player's id when run game
+        USER_ID = "6373517f5646ccbf8b060e5b"; // hard player's id for test
         StartCoroutine(GetData());
+        
+    }
+
+    private void SpawnAchievementList()
+    {
+        float rowHeight = 250; // one row height
+        float posX = 0; // PosX Rect Transform in "RowContainer"
+        float posY = -150; // PosY Rect Transform in "RowContainer"
+        float panelLength = 0; // "RowContainer" height in Rect Transform
+
+        for (int i = 0; i < _achievementData.achievement.Length; i++)
+        {
+            GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
+            _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
+            _row.GetComponentInChildren<Text>().text = _achievementData.achievement[i].name; // Get Text UI Component
+            panelLength += rowHeight; // Increase "RowContainer" height so we can scroll it correctly
+            parentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1100, panelLength); // Set "RowContainer" height
+            posY -= rowHeight; // Position for next achievement in array
+        }
     }
 
     IEnumerator GetData()
@@ -35,17 +68,18 @@ public class GetAchievement : MonoBehaviour
             _achievementData = JsonUtility.FromJson<achievementData>(www.downloadHandler.text);
             foreach (var achievement in _achievementData.achievement)
             {
-                Debug.Log(achievement.name + " name");
-                Debug.Log(achievement.requiment + " requirement");
+                //Debug.Log(achievement.name + " name");
+                //.Log(achievement.requiment + " requirement");
             }
             Debug.Log(point + "player point");
 
         }
+        SpawnAchievementList();
     }
 
     private void Update()
     {
-        CheckAchievementCompletion();
+        //CheckAchievementCompletion();
     }
 
     private void CheckAchievementCompletion()

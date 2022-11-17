@@ -17,6 +17,7 @@ public class GetAchievement : MonoBehaviour
     [SerializeField] private GameObject row;
 
     [SerializeField] private GameObject parentPanel;
+    [SerializeField] private GameObject loadingText;
     private void Awake()
     {
         if(Instance != null)
@@ -48,16 +49,31 @@ public class GetAchievement : MonoBehaviour
         float posX = 0; // PosX Rect Transform in "RowContainer"
         float posY = -150; // PosY Rect Transform in "RowContainer"
         float panelLength = 0; // "RowContainer" height in Rect Transform
-
+        
+        
         for (int i = 0; i < _achievementData.achievement.Length; i++)
         {
             GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
             _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
             _row.transform.GetChild(0).GetComponent<Text>().text = _achievementData.achievement[i].name; // Get Text UI Component
             _row.transform.GetChild(1).GetComponent<Text>().text = _achievementData.achievement[i].description;
+            _row.transform.GetChild(2).GetComponentInChildren<Text>().text = _achievementData.achievement[i].achieved == true ? "Claim" : "Incomplete";
             panelLength += rowHeight; // Increase "RowContainer" height so we can scroll it correctly
             parentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1100, panelLength); // Set "RowContainer" height
             posY -= rowHeight; // Position for next achievement in array
+        }
+    }
+
+    private void LoadingNotification()
+    {
+        if (_achievementData.achievement.Length <= 0)
+        {
+            loadingText.SetActive(true);
+        }
+        else if(_achievementData.achievement.Length > 0)
+        {
+            loadingText.SetActive(false);
+
         }
     }
 
@@ -71,16 +87,17 @@ public class GetAchievement : MonoBehaviour
             {
                 //Debug.Log(achievement.name + " name");
                 //.Log(achievement.requiment + " requirement");
-            }
+            } // Got the data yet? Yes, wega them
             Debug.Log(point + "player point");
-
         }
         SpawnAchievementList();
     }
 
     private void Update()
     {
-        //CheckAchievementCompletion();
+        LoadingNotification();
+        CheckAchievementCompletion();
+        
     }
 
     private void CheckAchievementCompletion()

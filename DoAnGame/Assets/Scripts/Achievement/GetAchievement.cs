@@ -53,7 +53,8 @@ public class GetAchievement : MonoBehaviour
         {
             GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
             _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
-            _row.GetComponentInChildren<Text>().text = _achievementData.achievement[i].name; // Get Text UI Component
+            _row.transform.GetChild(0).GetComponent<Text>().text = _achievementData.achievement[i].name; // Get Text UI Component
+            _row.transform.GetChild(1).GetComponent<Text>().text = _achievementData.achievement[i].description;
             panelLength += rowHeight; // Increase "RowContainer" height so we can scroll it correctly
             parentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1100, panelLength); // Set "RowContainer" height
             posY -= rowHeight; // Position for next achievement in array

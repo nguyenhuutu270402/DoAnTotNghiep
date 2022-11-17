@@ -46,21 +46,25 @@ public class GetAchievement : MonoBehaviour
     private void SpawnAchievementList()
     {
         float rowHeight = 250; // one row height
-        float posX = 0; // PosX Rect Transform in "RowContainer"
+        float posX = -700; // PosX Rect Transform in "RowContainer"
         float posY = -150; // PosY Rect Transform in "RowContainer"
         float panelLength = 0; // "RowContainer" height in Rect Transform
+        float moveTime = 0.25f; 
         
         
         for (int i = 0; i < _achievementData.achievement.Length; i++)
         {
             GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
+            
             _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
+            _row.LeanMoveLocalX(0, moveTime); // Animation
             _row.transform.GetChild(0).GetComponent<Text>().text = _achievementData.achievement[i].name; // Get Text UI Component
             _row.transform.GetChild(1).GetComponent<Text>().text = _achievementData.achievement[i].description;
             _row.transform.GetChild(2).GetComponentInChildren<Text>().text = _achievementData.achievement[i].achieved == true ? "Claim" : "Incomplete";
             panelLength += rowHeight; // Increase "RowContainer" height so we can scroll it correctly
             parentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1100, panelLength); // Set "RowContainer" height
             posY -= rowHeight; // Position for next achievement in array
+            moveTime += 0.1f; // The bottom row will be delayed a litle bit compared to the top row
         }
     }
 

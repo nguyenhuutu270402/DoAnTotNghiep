@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 593765681}
   - component: {fileID: 593765680}
   m_Layer: 5
-  m_Name: Loading
+  m_Name: LoadingNotification
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

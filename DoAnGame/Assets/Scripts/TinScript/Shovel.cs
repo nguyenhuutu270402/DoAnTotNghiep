@@ -50,11 +50,12 @@ public class Shovel : MonoBehaviour
         triggerSound.Play();
         animator.SetBool("isSlash", true);
         isDectect = true;
+        CinemachineShake.Instance.ShakeCamera(1f, 0.1f);
 
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.red;
         Vector3 position = circleOrigin == null ? Vector3.zero : circleOrigin.position;
         Gizmos.DrawWireSphere(position, radius);
     }

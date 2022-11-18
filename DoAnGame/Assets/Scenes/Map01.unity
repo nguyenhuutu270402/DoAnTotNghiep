@@ -1187,7 +1187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &138954925
 Animator:
   serializedVersion: 4
@@ -3080,13 +3080,29 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 701780783, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 701780784, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.057
+      objectReference: {fileID: 0}
     - target: {fileID: 701780787, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: radius
-      value: 0.2
+      value: 0.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 701780787, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: coolDownLap
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593161023, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.159
       objectReference: {fileID: 0}
     - target: {fileID: 1669442040, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1842961767, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_IsActive
@@ -3186,7 +3202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5960307950419533765, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5960307950419533770, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: coolDownLap

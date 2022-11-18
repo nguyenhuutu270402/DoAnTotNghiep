@@ -3188,6 +3188,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5960307950419533770, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: coolDownLap
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7660373165614776051, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: GameOver
       value: 
@@ -5608,7 +5612,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1680349331}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 1
+    OrthographicSize: 1.2
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -75413,7 +75417,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 1.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -92030,7 +92034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1662578088
 MonoBehaviour:
   m_ObjectHideFlags: 0

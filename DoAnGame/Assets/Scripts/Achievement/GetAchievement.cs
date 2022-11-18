@@ -22,12 +22,12 @@ public class GetAchievement : MonoBehaviour
     {
         if(Instance != null)
         {
-            Destroy(gameObject);
-            return;
+            //Destroy(gameObject);
+            //return;
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         point = PlayerPrefs.GetInt("UserPoints");
     }
     private void Start()
@@ -37,8 +37,8 @@ public class GetAchievement : MonoBehaviour
     public void CheckGetData()
     {
 
-        //USER_ID = PlayerPrefs.GetString("UserID"); //original player's id when run game
-        USER_ID = "6373517f5646ccbf8b060e5b"; // hard player's id for test
+        USER_ID = PlayerPrefs.GetString("UserID"); //original player's id when run game
+        //USER_ID = "6373517f5646ccbf8b060e5b"; // hard player's id for test
         StartCoroutine(GetData());
         
     }

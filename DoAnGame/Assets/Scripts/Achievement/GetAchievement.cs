@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GetAchievement : MonoBehaviour
 {
     private string ACHIEVEMENT_PATH = "http://localhost:3000/api/my-achievement/";
+    private string ACHIEVEMENT_UPDATE_PATH = "http://localhost:3000/api/my-achievement/update";
     private string USER_ID;
     public static GetAchievement Instance;
 
@@ -29,6 +30,7 @@ public class GetAchievement : MonoBehaviour
         Instance = this;
         //DontDestroyOnLoad(gameObject);
         point = PlayerPrefs.GetInt("UserPoints");
+        
     }
     private void Start()
     {
@@ -39,6 +41,7 @@ public class GetAchievement : MonoBehaviour
 
         USER_ID = PlayerPrefs.GetString("UserID"); //original player's id when run game
         //USER_ID = "6373517f5646ccbf8b060e5b"; // hard player's id for test
+
         StartCoroutine(GetData());
         
     }
@@ -55,7 +58,6 @@ public class GetAchievement : MonoBehaviour
         for (int i = 0; i < _achievementData.achievement.Length; i++)
         {
             GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
-            
             _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
             _row.LeanMoveLocalX(0, moveTime); // Animation
             _row.transform.GetChild(0).GetComponent<Text>().text = _achievementData.achievement[i].name; // Get Text UI Component
@@ -66,6 +68,8 @@ public class GetAchievement : MonoBehaviour
             posY -= rowHeight; // Position for next achievement in array
             moveTime += 0.1f; // The bottom row will be delayed a litle bit compared to the top row
         }
+
+        
     }
 
     private void LoadingNotification()
@@ -81,7 +85,8 @@ public class GetAchievement : MonoBehaviour
         }
     }
 
-    IEnumerator GetData()
+
+    public IEnumerator GetData()
     {
         using (UnityWebRequest www = UnityWebRequest.Get($"{ACHIEVEMENT_PATH}{USER_ID}"))
         {
@@ -90,12 +95,41 @@ public class GetAchievement : MonoBehaviour
             foreach (var achievement in _achievementData.achievement)
             {
                 //Debug.Log(achievement.name + " name");
-                //.Log(achievement.requiment + " requirement");
+                //Debug.Log(achievement.id + " id");
+                //Debug.Log(achievement.requiment + " requirement");
+                //Debug.Log(achievement.reward + " reward");
+                //Debug.Log(achievement.rewarded + " rewarded");
+                //Debug.Log(achievement.achieved + " achieved");
+                //Debug.Log(achievement.description + " description");
             } // Got the data yet? Yes, wega them
             Debug.Log(point + "player point");
         }
         SpawnAchievementList();
     }
+
+
+    public IEnumerator SetAchievement(string id, string achieved, string rewarded)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("_id", id);
+        form.AddField("achieved", achieved.ToString(). ToLower());
+        form.AddField("rewarded", rewarded.ToString().ToLower());
+
+        using (UnityWebRequest www = UnityWebRequest.Post($"{ACHIEVEMENT_UPDATE_PATH}", form))
+        {
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            Debug.Log("_id" + id);
+            Debug.Log("achieved" + achieved);
+            Debug.Log("rewarded" + rewarded);
+            yield return null;
+        }
+    }
+
+
 
     private void Update()
     {
@@ -111,12 +145,21 @@ public class GetAchievement : MonoBehaviour
 
         foreach (var achievement in _achievementData.achievement)
         {
+
             achievement.UpdateCompletion();
         }
     }
 
+    
+
 
 }
+
+
+
+
+
+
 
 [Serializable]
 public class achievementData
@@ -133,8 +176,9 @@ public class achievement
     public int requiment; // dieu kien hoan thanh (nhung no viet sai chinh ta)
     public string description;
     public bool achieved;
+    public bool rewarded;
 
-    public achievement(string id, string name, int reward, int requiment, string description, bool achieved)
+    public achievement(string id, string name, int reward, int requiment, string description, bool achieved, bool rewarded)
     {
         this.id = id;
         this.name = name;
@@ -142,6 +186,7 @@ public class achievement
         this.requiment = requiment;
         this.description = description;
         this.achieved = achieved;
+        this.rewarded = rewarded;
     }
 
     public void UpdateCompletion()
@@ -151,8 +196,10 @@ public class achievement
 
         if (RequirementsMet())
         {
-            Debug.Log($"{id}:{name} {description} {achieved} YOlO");
+            
             achieved = true;
+            GetAchievement.Instance.StartCoroutine(GetAchievement.Instance.SetAchievement("" + id, achieved + "", rewarded + ""));
+            Debug.Log($"{id}:{name} {description} {achieved} {rewarded} YOlO");
         }
     }
     public bool RequirementsMet()
@@ -165,4 +212,6 @@ public class achievement
         }
         return checkRequirement;
     }
+
+   
 }

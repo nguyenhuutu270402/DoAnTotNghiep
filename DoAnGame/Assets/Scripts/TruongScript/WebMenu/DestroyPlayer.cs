@@ -46,6 +46,7 @@ public class DestroyPlayer : MonoBehaviour
             if (!check)
             {
                 StartCoroutine(explodePlayer());
+
                 check = true;
             }
         }

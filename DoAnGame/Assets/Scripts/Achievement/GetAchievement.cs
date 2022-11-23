@@ -52,6 +52,8 @@ public class GetAchievement : MonoBehaviour
 
         for (int i = 0; i < _achievementData.achievement.Length; i++)
         {
+            var temp = i; // ch? này c? ?o ?o, ch?c ch?n ph?i xem l?i(Unity3D: Best way to add listener programmatically for Button onClick // Github)
+
             GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
             _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
             _row.LeanMoveLocalX(0, moveTime); // Animation
@@ -60,6 +62,9 @@ public class GetAchievement : MonoBehaviour
             _row.transform.GetChild(2).GetComponentInChildren<Text>().text
                 = _achievementData.achievement[i].achieved == true ? "Claim" : "Incomplete";
 
+            _row.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => OnClickClaimButton(_achievementData.achievement[temp].requiment));
+
+
             panelLength += rowHeight; // Increase "RowContainer" height so we can scroll it correctly
             parentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1100, panelLength); // Set "RowContainer" height
             posY -= rowHeight; // Position for next achievement in array
@@ -67,6 +72,10 @@ public class GetAchievement : MonoBehaviour
         }
     }
 
+    public void OnClickClaimButton(int i)
+    {
+        Debug.Log("LET ME OUT "+ i);
+    }
 
     private void LoadingNotification()
     {
@@ -119,9 +128,6 @@ public class GetAchievement : MonoBehaviour
             {
                 Debug.Log(www.error);
             }
-            Debug.Log("_id" + id);
-            Debug.Log("achieved" + achieved);
-            Debug.Log("rewarded" + rewarded);
             yield return null;
         }
     }

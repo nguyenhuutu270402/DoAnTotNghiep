@@ -9,6 +9,7 @@ public class GetAchievement : MonoBehaviour
 {
     private string ACHIEVEMENT_PATH = "http://localhost:3000/api/my-achievement/";
     private string ACHIEVEMENT_UPDATE_PATH = "http://localhost:3000/api/my-achievement/update";
+    private string ACHIEVEMENT_REWARD_PATH = "http://localhost:3000/api/add-price";
     private string USER_ID;
     public static GetAchievement Instance;
 
@@ -52,7 +53,7 @@ public class GetAchievement : MonoBehaviour
 
         for (int i = 0; i < _achievementData.achievement.Length; i++)
         {
-            var temp = i; // ch? này c? ?o ?o, ch?c ch?n ph?i xem l?i(Unity3D: Best way to add listener programmatically for Button onClick // Github)
+            var temp = i; // cho này cu ao ao, chac chan phai xem lai(Unity3D: Best way to add listener programmatically for Button onClick // Github)
 
             GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
             _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
@@ -62,7 +63,16 @@ public class GetAchievement : MonoBehaviour
             _row.transform.GetChild(2).GetComponentInChildren<Text>().text
                 = _achievementData.achievement[i].achieved == true ? "Claim" : "Incomplete";
 
-            _row.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => OnClickClaimButton(_achievementData.achievement[temp].requiment));
+            Button claimButton = _row.transform.GetChild(2).GetComponent<Button>();
+            claimButton.onClick.AddListener(delegate {
+                OnClickClaimButton(
+                _achievementData.achievement[temp].reward,
+                _achievementData.achievement[temp].id,
+                _achievementData.achievement[temp].achieved,
+                _achievementData.achievement[temp].rewarded,
+                claimButton);
+                
+            });
 
 
             panelLength += rowHeight; // Increase "RowContainer" height so we can scroll it correctly
@@ -72,9 +82,29 @@ public class GetAchievement : MonoBehaviour
         }
     }
 
-    public void OnClickClaimButton(int i)
+    public void OnClickClaimButton(int i, string id, bool achieved, bool rewarded, Button button)
     {
-        Debug.Log("LET ME OUT "+ i);
+        if (rewarded )
+        {
+            Debug.Log("Tham nam, ban da nhan thuong cua thanh tuu nay roi");
+            return;
+        }
+
+        if (!rewarded && achieved) // dat du yeu cau + chua nhan
+        {
+            Debug.Log("U received " + i + " coin");
+            StartCoroutine(SendCoin(i));
+            rewarded = true;
+            StartCoroutine(SetAchievement(id, achieved+"", rewarded+""));
+            button.enabled = false;
+            //StartCoroutine(GetData());
+        }
+        if (!rewarded && !achieved)
+        {
+            Debug.Log("Ra xa hoi lam an buong chai de nhan " + i + " coin nhe");
+
+        }
+
     }
 
     private void LoadingNotification()
@@ -113,15 +143,29 @@ public class GetAchievement : MonoBehaviour
 
     }
 
-
     public IEnumerator SetAchievement(string id, string achieved, string rewarded)
     {
         WWWForm form = new WWWForm();
         form.AddField("_id", id);
-        form.AddField("achieved", achieved.ToString(). ToLower());
+        form.AddField("achieved", achieved.ToString().ToLower());
         form.AddField("rewarded", rewarded.ToString().ToLower());
 
         using (UnityWebRequest www = UnityWebRequest.Post($"{ACHIEVEMENT_UPDATE_PATH}", form))
+        {
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            yield return null;
+        }
+    }
+    public IEnumerator SendCoin(int number)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("user_id", USER_ID);
+        form.AddField("price", number);
+        using (UnityWebRequest www = UnityWebRequest.Post($"{ACHIEVEMENT_REWARD_PATH}", form))
         {
             yield return www.SendWebRequest();
             if (www.result != UnityWebRequest.Result.Success)
@@ -186,7 +230,7 @@ public class achievement
         if (RequirementsMet())
         {
             achieved = true;
-            GetAchievement.Instance.StartCoroutine(GetAchievement.Instance.SetAchievement("" + id, achieved + "", rewarded + ""));
+            GetAchievement.Instance.StartCoroutine(GetAchievement.Instance.SetAchievement(id, achieved + "", rewarded + ""));
         }
     }
     public bool RequirementsMet()

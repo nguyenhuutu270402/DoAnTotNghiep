@@ -13,12 +13,11 @@ public class GetAchievement : MonoBehaviour
     private string USER_ID;
     public static GetAchievement Instance;
 
-    public int point;
+    public int point; // Player's total point
     public achievementData _achievementData;
 
 
     [SerializeField] private GameObject row;
-
     [SerializeField] private GameObject parentPanel;
     [SerializeField] private GameObject loadingText;
 
@@ -53,17 +52,24 @@ public class GetAchievement : MonoBehaviour
 
         for (int i = 0; i < _achievementData.achievement.Length; i++)
         {
-            var temp = i; // cho này cu ao ao, chac chan phai xem lai(Unity3D: Best way to add listener programmatically for Button onClick // Github)
+            var temp = i; // cho nay cu ao ao, chac chan phai xem lai(Unity3D: Best way to add listener programmatically for Button onClick // Github)
 
             GameObject _row = Instantiate(row, new Vector2(posX, posY), Quaternion.identity); // Create a row which contain all information of ONE achivement
             _row.transform.SetParent(parentPanel.transform, false); // Make it become children of parent panel
+
             _row.LeanMoveLocalX(0, moveTime); // Animation
-            _row.transform.GetChild(0).GetComponent<Text>().text = _achievementData.achievement[i].name; // Get Text UI Component
-            _row.transform.GetChild(1).GetComponent<Text>().text = _achievementData.achievement[i].description;
-            _row.transform.GetChild(2).GetComponentInChildren<Text>().text
+
+            _row.transform.GetChild(0).GetComponent<Text>().text 
+                = _achievementData.achievement[i].name; // Get Text UI Component
+
+            _row.transform.GetChild(1).GetComponent<Text>().text 
+                = _achievementData.achievement[i].description; 
+
+            _row.transform.GetChild(3).GetComponentInChildren<Text>().text
                 = _achievementData.achievement[i].achieved == true ? "Claim" : "Incomplete";
 
-            Button claimButton = _row.transform.GetChild(2).GetComponent<Button>();
+
+            Button claimButton = _row.transform.GetChild(3).GetComponent<Button>(); // Get Button
             claimButton.onClick.AddListener(delegate {
                 OnClickClaimButton(
                 _achievementData.achievement[temp].reward,
@@ -72,39 +78,48 @@ public class GetAchievement : MonoBehaviour
                 _achievementData.achievement[temp].rewarded,
                 claimButton);
                 
-            });
+            }); // Add event on button
 
+            if (_achievementData.achievement[i].rewarded)
+            {
+                claimButton.gameObject.SetActive(false);
+            }
 
+            /* UI Handle 
+             * 
+             */
             panelLength += rowHeight; // Increase "RowContainer" height so we can scroll it correctly
             parentPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1100, panelLength); // Set "RowContainer" height
             posY -= rowHeight; // Position for next achievement in array
             moveTime += 0.1f; // The bottom row will be delayed a litle bit compared to the top row
+            /* UI Handle 
+             * 
+             */
         }
     }
 
-    public void OnClickClaimButton(int i, string id, bool achieved, bool rewarded, Button button)
+    public void OnClickClaimButton(int coin, string id, bool achieved, bool rewarded, Button button)
     {
-        if (rewarded )
+        if (!rewarded && achieved) // Get enought for requirement + not claimed yet
         {
-            Debug.Log("Tham nam, ban da nhan thuong cua thanh tuu nay roi");
-            return;
-        }
-
-        if (!rewarded && achieved) // dat du yeu cau + chua nhan
-        {
-            Debug.Log("U received " + i + " coin");
-            StartCoroutine(SendCoin(i));
+            Debug.Log("U received " + coin + " coin");
+            StartCoroutine(SendCoin(coin));
             rewarded = true;
             StartCoroutine(SetAchievement(id, achieved+"", rewarded+""));
-            button.enabled = false;
-            //StartCoroutine(GetData());
+            UpdatePrice(coin);
+            button.gameObject.SetActive(false);
         }
         if (!rewarded && !achieved)
         {
-            Debug.Log("Ra xa hoi lam an buong chai de nhan " + i + " coin nhe");
+            Debug.Log("Ra xa hoi lam an buong chai de nhan " + coin + " coin nhe");
 
         }
-
+    }
+    private void UpdatePrice(int coin)
+    {
+        int UserPrice = PlayerPrefs.GetInt("UserPrice");
+        UserPrice += coin;
+        PlayerPrefs.SetInt("UserPrice", UserPrice);
     }
 
     private void LoadingNotification()

@@ -46,7 +46,7 @@ public class GetAchievement : MonoBehaviour
     {
         float rowHeight = 250; // one row height
         float posX = -700; // PosX Rect Transform in "RowContainer"
-        float posY = -150; // PosY Rect Transform in "RowContainer"
+        float posY = -117.5f; // PosY Rect Transform in "RowContainer"
         float panelLength = 0; // "RowContainer" height in Rect Transform
         float moveTime = 0.25f;
 

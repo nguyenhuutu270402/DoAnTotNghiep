@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: 5b97e273e79159847936bb4a333b97e7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: den_hoi_lam_long_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 89
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97d838b87717a14abcb831bd7481576
+      internalID: 1983238966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_9
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 91
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe9746818f58dd448a12e1a50f92861
+      internalID: 438011595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_10
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 89
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e82dcc08530014ea3e8a5440220b75
+      internalID: 16496499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_11
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 89
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d197d5ca97ce8c498e5c069ce3c0a43
+      internalID: 956199349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 91
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96067e7af34d5743981099f945e3648
+      internalID: 749901187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_13
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 89
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2e40dcccd69d54382796627c989a2b
+      internalID: 1546106996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_23
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 47
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5563251f0f3445e43bec43b636d11779
+      internalID: 1817706853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 47
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16aaaadecd0a66543a2fd627f3888822
+      internalID: -1305364359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_25
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 47
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63562c25e1ec216498dee7e487125d2e
+      internalID: -1274101651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_35
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5635902c3a1420646b453279ae9c956f
+      internalID: 705832534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_36
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 5
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0538253cdad3340a749004802fae3d
+      internalID: 59562690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_37
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 5
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c758c1a2b8a06c347b9c680e1e9522f4
+      internalID: 1115496413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_38
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 4
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7201762708c2be42b258ce9f0ab20a4
+      internalID: 662663388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_39
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 4
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c37bb951bee6e48b15264e103d8a65
+      internalID: 645550213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: den_hoi_lam_long_40
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 4
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f495a8e9dafdce4cb62eff613d57e79
+      internalID: 1369851321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      den_hoi_lam_long_4: 792048725
+      den_hoi_lam_long_19: -847565139
+      den_hoi_lam_long_21: 1542745394
+      den_hoi_lam_long_5: -817108920
+      den_hoi_lam_long_13: 1546106996
+      den_hoi_lam_long_22: 213629205
+      den_hoi_lam_long_14: -708199485
+      den_hoi_lam_long_9: 438011595
+      den_hoi_lam_long_30: 464347335
+      den_hoi_lam_long_23: 1817706853
+      den_hoi_lam_long_35: 705832534
+      den_hoi_lam_long_36: 59562690
+      den_hoi_lam_long_7: -366596737
+      den_hoi_lam_long_32: -1839966752
+      den_hoi_lam_long_28: 614208776
+      den_hoi_lam_long_8: 1983238966
+      den_hoi_lam_long_33: 970551549
+      den_hoi_lam_long_10: 16496499
+      den_hoi_lam_long_34: -1279476859
+      den_hoi_lam_long_6: -1649287733
+      den_hoi_lam_long_0: -1362166493
+      den_hoi_lam_long_39: 645550213
+      den_hoi_lam_long_25: -1274101651
+      den_hoi_lam_long_3: -1429738591
+      den_hoi_lam_long_17: -2035913102
+      den_hoi_lam_long_18: -1274493127
+      den_hoi_lam_long_12: 749901187
+      den_hoi_lam_long_38: 662663388
+      den_hoi_lam_long_2: 1775703830
+      den_hoi_lam_long_15: 1764848355
+      den_hoi_lam_long_1: -1740728932
+      den_hoi_lam_long_11: 956199349
+      den_hoi_lam_long_24: -1305364359
+      den_hoi_lam_long_37: 1115496413
+      den_hoi_lam_long_29: -143221524
+      den_hoi_lam_long_31: -1767609570
+      den_hoi_lam_long_27: 931726725
+      den_hoi_lam_long_20: -377509884
+      den_hoi_lam_long_40: 1369851321
+      den_hoi_lam_long_16: -360877597
+      den_hoi_lam_long_26: 1464178636
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

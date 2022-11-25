@@ -13,7 +13,7 @@ public class EnemyAlpha1 : MonoBehaviour
     public GameObject explosion, explosionClassic, explosionBazoka;
 
     bool die = false;
-
+    Vector3 vtSize;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class EnemyAlpha1 : MonoBehaviour
         rigidbody2D.velocity = new Vector2(x * Speed, y * Speed);
 
         int mode = PlayerPrefs.GetInt("ModeMap");
+        vtSize = transform.localScale;
 
         if (mode == 1)
         {
@@ -41,11 +42,12 @@ public class EnemyAlpha1 : MonoBehaviour
     {
         if (rigidbody2D.velocity.x > 0)
         {
-            transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            transform.localScale = new Vector3(vtSize.x, vtSize.y, vtSize.z);
         }
         else
         {
-            transform.localScale = new Vector3(-0.3f, 0.3f, 0.3f);
+            transform.localScale = new Vector3(vtSize.x * -1, vtSize.y, vtSize.z);
+
 
         }
 

@@ -438,7 +438,7 @@ Transform:
   - {fileID: 1911568603}
   - {fileID: 1863829877}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &34366371
 GameObject:
@@ -797,7 +797,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &50406478
 GameObject:
@@ -3150,7 +3150,7 @@ PrefabInstance:
       objectReference: {fileID: 1477569337}
     - target: {fileID: 5960307950089987095, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5960307950089987095, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4810,10 +4810,6 @@ PrefabInstance:
     - target: {fileID: 7607660382093183605, guid: f4f23ee8b1b36af4788b71d589e5dd2a, type: 3}
       propertyPath: m_Name
       value: BlackHole
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607660382093183605, guid: f4f23ee8b1b36af4788b71d589e5dd2a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -76375,7 +76371,7 @@ Transform:
   - {fileID: 1863010687}
   - {fileID: 1443906367}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1261059032
 GameObject:
@@ -85726,7 +85722,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1469618511
 GameObject:
@@ -92642,7 +92638,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1734360872
 PrefabInstance:
@@ -96335,7 +96331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5771206965773696530, guid: c2d87ac2a4237af4caddd848715c25e1, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5771206965773696530, guid: c2d87ac2a4237af4caddd848715c25e1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -98070,7 +98066,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7659851325491506501, guid: 2637a149c5324d8409ab9cfccf10bc15, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7659851325491506501, guid: 2637a149c5324d8409ab9cfccf10bc15, type: 3}
       propertyPath: m_LocalPosition.x

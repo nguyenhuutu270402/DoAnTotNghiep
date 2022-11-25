@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7607660382093183606
 SpriteRenderer:
@@ -110,6 +110,12 @@ MonoBehaviour:
   enemy9: {fileID: 2458027500024268318, guid: aaf1dd83b356af442bb6d87e3f02b570, type: 3}
   enemy10: {fileID: 1952393884113091031, guid: 7c5efd70f80f0604196e4d2328a67f74, type: 3}
   enemy11: {fileID: 9134023677756016146, guid: 26c75825879821f4bab2a0e192d1c479, type: 3}
+  enemy12: {fileID: 7426729934133385571, guid: 84a3cc69a92f0af4a8723f36c335bd3b, type: 3}
+  enemy13: {fileID: 586377417521312238, guid: ec662876c60836746816d1cd70d4bac5, type: 3}
+  enemy14: {fileID: 3070655306888737856, guid: 0432372c0cc024b42b6d05573ee945d7, type: 3}
+  enemy15: {fileID: 1820715104245449898, guid: a61f86e20bbaae544a17cf2d631ad168, type: 3}
+  enemy16: {fileID: 8222172989726165528, guid: 6fecee04ccd453140bc4bc475e42cc46, type: 3}
+  enemy17: {fileID: 533771204995609790, guid: 7e41684e7c830034ebc6f5255686faac, type: 3}
   animator: {fileID: 7607660382093183604}
 --- !u!95 &7607660382093183604
 Animator:

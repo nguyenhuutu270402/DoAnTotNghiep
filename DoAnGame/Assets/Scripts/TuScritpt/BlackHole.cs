@@ -7,7 +7,7 @@ public class BlackHole : MonoBehaviour
     // Start is called before the first frame update
     float timeLoop = 5;
     public float timeRe;
-    public GameObject enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9, enemy10, enemy11;
+    public GameObject enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9, enemy10, enemy11, enemy12, enemy13, enemy14, enemy15, enemy16, enemy17;
     public Animator animator;
     void Start()
     {
@@ -41,7 +41,7 @@ public class BlackHole : MonoBehaviour
 
     public void createEnemy()
     {
-        int rd = Random.Range(1, 12);
+        int rd = Random.Range(1, 18);
         if (rd == 1)
         {
             Instantiate(enemy11, transform.position, Quaternion.identity);
@@ -81,6 +81,30 @@ public class BlackHole : MonoBehaviour
         else if(rd == 10)
         {
             Instantiate(enemy10, transform.position, Quaternion.identity);
+        }
+        else if (rd == 11)
+        {
+            Instantiate(enemy12, transform.position, Quaternion.identity);
+        }
+        else if (rd == 12)
+        {
+            Instantiate(enemy13, transform.position, Quaternion.identity);
+        }
+        else if (rd == 13)
+        {
+            Instantiate(enemy14, transform.position, Quaternion.identity);
+        }
+        else if (rd == 14)
+        {
+            Instantiate(enemy15, transform.position, Quaternion.identity);
+        }
+        else if (rd == 15)
+        {
+            Instantiate(enemy16, transform.position, Quaternion.identity);
+        }
+        else if (rd == 16)
+        {
+            Instantiate(enemy17, transform.position, Quaternion.identity);
         }
         else
         {

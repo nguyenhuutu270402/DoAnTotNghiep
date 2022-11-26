@@ -22,6 +22,10 @@ public class LoginUser : MonoBehaviour
     void Start()
     {
         TextErro.SetActive(false);
+
+        
+        Debug.Log("LoginUser start");
+
         PlayerPrefs.DeleteAll();
     }
     void Update()
@@ -50,6 +54,7 @@ public class LoginUser : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", username);
         form.AddField("password", password);
+        Debug.Log("User login:  " + username + " : " + password);
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/login-user", form))
         {
             yield return www.SendWebRequest();
@@ -69,6 +74,8 @@ public class LoginUser : MonoBehaviour
                     PlayerPrefs.SetInt("UserPrice", account.price);
                     PlayerPrefs.SetInt("UserPoints", account.points);
                     PlayerPrefs.SetString("UserImage", account.image);
+
+                    JsonUser.Instance.checkUserPass(username, password);
 
                     loading.SetActive(true);
                     GetData.Instance.checkLoading();

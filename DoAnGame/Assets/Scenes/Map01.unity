@@ -1294,10 +1294,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 659798977}
   - {fileID: 2029504810}
   - {fileID: 1477569338}
   - {fileID: 2099175975}
-  - {fileID: 659798977}
   - {fileID: 1338767121}
   - {fileID: 1917689045}
   - {fileID: 1643344440}
@@ -5987,7 +5987,7 @@ GameObject:
   - component: {fileID: 785115401}
   - component: {fileID: 785115400}
   m_Layer: 5
-  m_Name: BMG
+  m_Name: BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6033,7 +6033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BMG Volume
+  m_text: BGM Volume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2feda41d083143448ef9007fd5c9238, type: 2}
   m_sharedMaterial: {fileID: 4449817554180658884, guid: c2feda41d083143448ef9007fd5c9238, type: 2}
@@ -76725,7 +76725,7 @@ GameObject:
   - component: {fileID: 1276786329}
   - component: {fileID: 1276786330}
   m_Layer: 5
-  m_Name: BMG_Slider
+  m_Name: BGM_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

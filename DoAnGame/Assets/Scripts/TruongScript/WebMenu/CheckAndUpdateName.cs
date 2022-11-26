@@ -33,10 +33,13 @@ public class CheckAndUpdateName : MonoBehaviour
 
     private bool checkCard = false;
 
+    private string Nametemporary = "";
+
     private void Awake()
     {
         Screen.SetResolution(1920, 1080, false);
         Screen.fullScreen = true;
+        Nametemporary = "";
     }
 
     void Start()
@@ -57,6 +60,11 @@ public class CheckAndUpdateName : MonoBehaviour
     void Update()
     {
         string name = NameUpdate.text.Trim();
+        if(name != Nametemporary)
+        {
+            check = false;
+        }
+
         if (name.Length < 6 || name.Length > 20)
         {
             BtnCheck.interactable = false;
@@ -77,6 +85,12 @@ public class CheckAndUpdateName : MonoBehaviour
             BtnSave.interactable = false;
         }
         string nameCard = NameUpdateCard.text.Trim();
+
+        if (nameCard != Nametemporary)
+        {
+            checkCard = false;
+        }
+
         if (nameCard.Length < 6 || nameCard.Length > 20)
         {
             BtnCheckCard.interactable = false;
@@ -120,7 +134,6 @@ public class CheckAndUpdateName : MonoBehaviour
         {
             StartCoroutine(SaveNew(id));
         }
-        
     }
     private IEnumerator SaveNew(int id)
     {
@@ -230,6 +243,9 @@ public class CheckAndUpdateName : MonoBehaviour
                     errCheckNameCard.text = "This name can use";
                     errCheckNameCard.color = Color.blue;
                     checkCard = true;
+
+
+                    Nametemporary = name;
                 }
             }
         }

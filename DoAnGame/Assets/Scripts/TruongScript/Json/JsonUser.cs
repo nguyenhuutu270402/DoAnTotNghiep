@@ -65,6 +65,9 @@ public class JsonUser : MonoBehaviour
         }
         return data;
     }
+
+
+
     public List<string> getPass()
     {
         List<string> data = new List<string> { };
@@ -91,6 +94,40 @@ public class JsonUser : MonoBehaviour
             data.Add(users[i].password);
         }
         return data;
+    }
+    public int checkUserPass(string user, string pass)
+    {
+        ProGame game = new ProGame()
+        {
+            username = user,
+            password = pass,
+        };
+        var games = new List<ProGame>();
+        using (StreamReader r = new StreamReader(filepath))
+        {
+            var json = r.ReadToEnd();
+
+            string json_ = "";
+            for (int i = 1; i < json.Length - 1; i++)
+            {
+                json_ += json[i];
+            }
+            var loadData = Encry_(json_);
+            games = JsonConvert.DeserializeObject<List<ProGame>>(loadData);
+
+            // kiem tra username ton tai
+            if (games == null) games = new List<ProGame>();
+            check = games.Find(i => i.username == user);
+
+            if (check != null)
+            {
+                PlayerPrefs.SetString("user_name", check.username);
+                PlayerPrefs.SetString("user_password", check.password);
+            }  
+        }
+
+
+        return 1;
     }
     public void DeleteUser(string user )
     {
@@ -152,24 +189,34 @@ public class JsonUser : MonoBehaviour
 
             // kiem tra username ton tai
             if (games == null) games = new List<ProGame>();
-            check = games.Find(i => i.username == user);
-            if (check != null)
-            {
-                return;
-            }
         }
-        if(check != null)
+
+        check = games.Find(i => i.username == user);
+        if (check != null)
         {
             foreach (var item in games)
             {
-                if (item.username == check.username && item.password != check.password)
+                if (item.username == check.username)
                 {
                     item.password = pass;
+                    Debug.Log(item.username + " : " + item.password + " saver pass new ");
                 }
             }
+            string _datanew = JsonConvert.SerializeObject(games);
+            string _dataSvae = Encry(_datanew);
+            using (StreamWriter file = File.CreateText(filepath))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, _dataSvae);
+            }
+            return;
         }
-        
+
         games.Add(game);
+
+        PlayerPrefs.SetString("user_name", user);
+        PlayerPrefs.SetString("user_password", pass);
+
         string datanew = JsonConvert.SerializeObject(games);
         //Debug.Log(datanew + " :dataNew");
 

@@ -15,11 +15,16 @@ public class DropdownUser : MonoBehaviour
     private List<string> dataUser;
     private List<string> dataPass;
 
+    private string user, pass;
+
     public static DropdownUser Instance { get; private set; }
 
 
     private void Awake()
     {
+        Debug.Log("DropdownUser Awake");
+        user = PlayerPrefs.GetString("user_name");
+        pass = PlayerPrefs.GetString("user_password");
         Instance = this;
     }
 
@@ -34,13 +39,17 @@ public class DropdownUser : MonoBehaviour
         Drop.onValueChanged.AddListener(delegate {
             DropdownValueChanged(Drop);
         });
-        if(Drop.options.Count > 0)
+        if(user.Length > 0)
+        {
+            username.text = user;
+            password.text = pass;
+        }
+        else if(Drop.options.Count > 0)
         {
             username.text = dataUser[0] + "";
             password.text = dataPass[0] + "";
         }
     }
-    
     void DropdownValueChanged(TMP_Dropdown change)
     {
         username.text = dataUser[change.value] + "";
@@ -54,11 +63,5 @@ public class DropdownUser : MonoBehaviour
         Drop.ClearOptions();
         Drop.AddOptions(dataUser);
     }
-
-
-
-
-
-
 
 }

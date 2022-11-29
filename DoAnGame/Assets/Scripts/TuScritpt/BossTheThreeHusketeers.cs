@@ -36,8 +36,8 @@ public class BossTheThreeHusketeers : MonoBehaviour
         else
         {
             // hard mode
-            //HP += (HP / 2);
-            HP *= 2;
+            HP = HP * 1.5f;
+
         }
         healthBar = FindObjectOfType<BossHealthBar>();
         healthBar.setMaxHealth(HP);
@@ -133,7 +133,25 @@ public class BossTheThreeHusketeers : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet_classic")
         {
-            HP -= 1;
+            HP -= 2;
+            animator.SetBool("Hurt", true);
+            GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
+            Destroy(effect, 0.25f);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "bullet_korth")
+        {
+            HP -= 4;
+            animator.SetBool("Hurt", true);
+            GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
+            Destroy(effect, 0.25f);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "bullet_sniper")
+        {
+            HP -= 18;
             animator.SetBool("Hurt", true);
             GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
             Destroy(effect, 0.25f);
@@ -150,18 +168,20 @@ public class BossTheThreeHusketeers : MonoBehaviour
 
         if (collision.gameObject.tag == "arrowforbow")
         {
-            HP -= 1;
+            HP -= 18;
             if (HP > 0)
             {
                 animator.SetBool("Hurt", true);
             }
+            Debug.Log("cham, ");
         }
 
         if (collision.gameObject.tag == "eplBazooka")
         {
-            HP -= 10;
+            HP -= 12;
             animator.SetBool("Hurt", true);
         }
     }
+
 
 }

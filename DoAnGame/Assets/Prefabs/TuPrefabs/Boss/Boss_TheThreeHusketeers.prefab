@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41c8de9125488a44ad2a345ca3e98c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 50
+  HP: 60
   aILerp: {fileID: 8388956484692874640}
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}

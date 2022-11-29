@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1820715104245449893}
   - component: {fileID: 5094846177114934416}
   m_Layer: 11
-  m_Name: EnemyNormal8
+  m_Name: LittleKiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,7 @@ Transform:
   - {fileID: 3823522764820716091}
   - {fileID: 1820715103886257197}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1820715104245449895
 MonoBehaviour:
@@ -374,8 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e98fe4d3676f3d45bcdde23a8d71b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRe: 3
-  HP: 5
+  timeRe: 5
+  HP: 6
   enemyBullet: {fileID: 1755829521016270668, guid: 4b9ae419aabbf224486bee79021596cc, type: 3}
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}

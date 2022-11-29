@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af42b277bcd8a274aa9f8827bb2d3185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 50
+  HP: 60
   timeRe: 3
   SpeedBullet: 0.1
   SpeedRotation: 9

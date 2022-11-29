@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 404759578420064154}
   - component: {fileID: 7181520545455821493}
   m_Layer: 11
-  m_Name: EnemyNormal1
+  m_Name: VioletDevil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
     maximumInterval: 2
     visualizeSensitivity: 0
   canMove: 1
-  speed: 0.25
+  speed: 0.23
   orientation: 0
   enableRotation: 0
   rotationSpeed: 10
@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9712ebac508460947b191e923b069038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRe: 3
-  HP: 5
+  timeRe: 5
+  HP: 6
   enemyBullet: {fileID: 7340997306474949457, guid: a85f4590061a11e4f916a61e3f6180a0, type: 3}
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}

@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
 
     private int maxWeapon = 3;
 
+    [SerializeField] private float speed = 20;
+
     void Start()
     {
         dust_coolDown = dust_coolDownlap;
@@ -68,13 +70,13 @@ public class Player : MonoBehaviour
         if (hit.collider == null)
         {
             //Make this thing move 
-            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+            transform.Translate(0, moveDelta.y * Time.deltaTime * speed, 0);
         }
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
         if (hit.collider == null)
         {
             //Make this thing move 
-            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+            transform.Translate(moveDelta.x * Time.deltaTime * speed, 0, 0);
         }
     }
 

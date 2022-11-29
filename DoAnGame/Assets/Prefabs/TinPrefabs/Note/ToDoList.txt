@@ -1,0 +1,4 @@
+- some strange thing happen with laser when contact with enviroment collider
+- laser flash when shoot
+- better should has animation for the gun when trigger
+- the muzzle not work with all the gun (maybe) except pistol

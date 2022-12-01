@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
             HoldingWeapon = PickupWeapon;
             if (collision.gameObject.name == "chest_Boss_0")
             {
-                price_boss += Random.Range(1, 3);
+                price_boss += checkMode();
                 PlayerPrefs.SetInt("PriceBoss", price_boss);
                 Debug.Log(price_boss + " PriceBoss");
                 Destroy(collision.gameObject);
@@ -114,8 +114,6 @@ public class Player : MonoBehaviour
             
         }
     }
-
-
 
     //if (PickupWeapon == 7)
     //{
@@ -127,5 +125,17 @@ public class Player : MonoBehaviour
 
     //}
 
-
+    public int checkMode()
+    {
+        int ModeMap = PlayerPrefs.GetInt("ModeMap");
+        if(ModeMap == 1)
+        {
+            return Random.Range(1, 3);
+        }
+        if (ModeMap == 2)
+        {
+            return Random.Range(2, 6);
+        }
+        return 0;   
+    }
 }

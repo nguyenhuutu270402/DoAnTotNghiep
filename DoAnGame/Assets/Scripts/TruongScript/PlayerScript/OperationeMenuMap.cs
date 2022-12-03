@@ -14,7 +14,8 @@ public class OperationeMenuMap : MonoBehaviour
 
     private void Awake()
     {
-       
+        load1.SetActive(true);
+        load2.SetActive(true);
     }
     private void Start()
     {

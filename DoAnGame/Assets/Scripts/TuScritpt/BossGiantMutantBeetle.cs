@@ -189,6 +189,11 @@ public class BossGiantMutantBeetle : MonoBehaviour
             Destroy(eff2, 0.25f);
             Destroy(eff, 2f);
         }
+        if (collision.gameObject.tag == "Melee")
+        {
+            HP -= 8;
+            animator.SetBool("Hurt", true);
+        }
     }
 
 }

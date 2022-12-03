@@ -13,7 +13,7 @@ public class Shovel : MonoBehaviour
     public float radius;
 
     private bool isDectect = false;
-
+    public Collider2D collider2D;
 
 
 
@@ -22,6 +22,7 @@ public class Shovel : MonoBehaviour
         coolDown = coolDownLap;
         animator = GetComponent<Animator>();
         triggerSound = GetComponent<AudioSource>();
+        //collider2D = GetComponent<Collider2D>();
 
     }
     void Update()
@@ -41,12 +42,13 @@ public class Shovel : MonoBehaviour
 
     public void ResetSlash()
     {
+        collider2D.enabled = false;
         animator.SetBool("isSlash", false);
         isDectect = false;
     }
     void DoSlash()
     {
-
+        collider2D.enabled = true;
         triggerSound.Play();
         animator.SetBool("isSlash", true);
         isDectect = true;
@@ -64,7 +66,7 @@ public class Shovel : MonoBehaviour
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circleOrigin.position, radius))
         {
             
-            if(collider.gameObject.layer == 10 | collider.gameObject.layer == 11 | collider.gameObject.layer == 12)
+            if(collider.gameObject.layer == 10 )
             {
                 Destroy(collider.gameObject);
             }

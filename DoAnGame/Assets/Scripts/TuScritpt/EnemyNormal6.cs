@@ -198,6 +198,11 @@ public class EnemyNormal6 : MonoBehaviour
             HP -= 12;
             animator.SetBool("Hurt", true);
         }
+        if (collision.gameObject.tag == "Melee")
+        {
+            HP -= 8;
+            animator.SetBool("Hurt", true);
+        }
     }
 
 

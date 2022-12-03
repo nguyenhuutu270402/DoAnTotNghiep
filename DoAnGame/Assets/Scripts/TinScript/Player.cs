@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -115,15 +114,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    //if (PickupWeapon == 7)
-    //{
-    //    Cam.GetComponent<Volume>().weight = 1;
-    //}
-    //else
-    //{
-    //    Cam.GetComponent<Volume>().weight = 0;
-
-    //}
 
     public int checkMode()
     {

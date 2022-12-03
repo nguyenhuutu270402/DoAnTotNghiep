@@ -4262,7 +4262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58e567c8095ed0c42935b8e31d8b98db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f3dc52348fcf0447a92493e13a35b9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4317,7 +4317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380, y: 61}
+  m_AnchoredPosition: {x: 294.7, y: 57}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434916635
@@ -4327,7 +4327,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434916633}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -17225,9 +17225,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IMG: {fileID: 849836038}
-  IMG1: {fileID: 21300000, guid: 9068ff99cd87a324880046649c9c4945, type: 3}
-  IMG2: {fileID: 21300000, guid: 934a179148021334f9bca83b712d3e5e, type: 3}
-  IMG3: {fileID: 21300000, guid: f914ab0211e0d6e40a411dbaa454b325, type: 3}
+  IMG1: {fileID: 21300000, guid: 797fa856b50b1c145a206f875bb02b71, type: 3}
+  IMG2: {fileID: 21300000, guid: 44b0d951a7c85d2459dd232f5a4cccd9, type: 3}
+  IMG3: {fileID: 21300000, guid: 3691eaa682f60c14caa9b3ccc33d6caf, type: 3}
   NameMap: {fileID: 816726684}
   load1: {fileID: 1766134890}
   load2: {fileID: 1350719562}

@@ -194,7 +194,7 @@ public class CHPlay : MonoBehaviour
                 }
                 else
                 {
-                    PriceText[i].text = prices[check] + " RP";
+                    PriceText[i].text = prices[check] + " coin";
                     Sprite[i].color = new Color(0.01f, 0.01f, 0.01f);
                 }
                 IDText[i].text = check + "";
@@ -215,7 +215,7 @@ public class CHPlay : MonoBehaviour
             Confirm.SetActive(true);
             Dino.SetActive(false);
             Erro.SetActive(false);
-            TextConfirm.text = "You definitely want to use " + prices[ID] + " RP to buy a " + characters[ID].name;
+            TextConfirm.text = "You definitely want to use " + prices[ID] + " coin to buy a " + characters[ID].name;
             BuyItemWeb.Instance.BuyItem(ID, prices[ID]);
         }
         else

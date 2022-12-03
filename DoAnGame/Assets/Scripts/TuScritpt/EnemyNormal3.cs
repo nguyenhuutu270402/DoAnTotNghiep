@@ -7,7 +7,7 @@ using Pathfinding;
 public class EnemyNormal3 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float timeRe, HP;
+    public float timeRe, HP, SpeedBullet;
     float repeat, timeLoop;
     float repeatLoop;
     public GameObject enemyBullet;
@@ -18,7 +18,7 @@ public class EnemyNormal3 : MonoBehaviour
 
     public AILerp aILerp;
 
-
+    
 
     void Start()
     {
@@ -62,19 +62,19 @@ public class EnemyNormal3 : MonoBehaviour
                 {
                     GameObject bullet1 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet1 = bullet1.GetComponent<Rigidbody2D>();
-                    rbBullet1.velocity = new Vector2(2, 0);
+                    rbBullet1.velocity = new Vector2(2*SpeedBullet, 0 * SpeedBullet);
                     bullet1.transform.right = new  Vector2(2, 0);
 
 
                     GameObject bullet2 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet2 = bullet2.GetComponent<Rigidbody2D>();
-                    rbBullet2.velocity = new Vector2(1, 1);
+                    rbBullet2.velocity = new Vector2(1 * SpeedBullet, 1 * SpeedBullet);
                     bullet2.transform.right = new Vector2(1, 1);
 
 
                     GameObject bullet3 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet3 = bullet3.GetComponent<Rigidbody2D>();
-                    rbBullet3.velocity = new Vector2(1, -1);
+                    rbBullet3.velocity = new Vector2(1 * SpeedBullet, -1 * SpeedBullet);
                     bullet3.transform.right = new Vector2(1, -1);
 
                 }
@@ -82,19 +82,19 @@ public class EnemyNormal3 : MonoBehaviour
                 {
                     GameObject bullet1 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet1 = bullet1.GetComponent<Rigidbody2D>();
-                    rbBullet1.velocity = new Vector2(-2, 0);
+                    rbBullet1.velocity = new Vector2(-2 * SpeedBullet, 0 * SpeedBullet);
                     bullet1.transform.right = new Vector2(-2, 0);
 
 
                     GameObject bullet2 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet2 = bullet2.GetComponent<Rigidbody2D>();
-                    rbBullet2.velocity = new Vector2(-1, 1);
+                    rbBullet2.velocity = new Vector2(-1 * SpeedBullet, 1 * SpeedBullet);
                     bullet2.transform.right = new Vector2(-1, 1);
 
 
                     GameObject bullet3 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet3 = bullet3.GetComponent<Rigidbody2D>();
-                    rbBullet3.velocity = new Vector2(-1, -1);
+                    rbBullet3.velocity = new Vector2(-1 * SpeedBullet, -1 * SpeedBullet);
                     bullet3.transform.right = new Vector2(-1, -1);
 
                 }

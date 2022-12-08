@@ -50,7 +50,7 @@ public class BlackHole : MonoBehaviour
     public void setCheck(bool _check)
     {
         check = _check;
-        Debug.Log(check + "  -setcheck + " + transform.name);
+        //Debug.Log(check + "  -setcheck + " + transform.name);
     }
 
     public void createEnemy()

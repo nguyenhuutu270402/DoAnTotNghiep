@@ -73,19 +73,19 @@ public class LoadLeverMap : MonoBehaviour
         {
             case 2:
                 IMG.sprite = IMG1;
-                NameMap.text = "M01";
+                NameMap.text = "Forest";
                 PlayerPrefs.SetString("map_id", "M01");
                 setPointsMax(M01_1, M01_2);
                 break;
             case 3:
                 IMG.sprite = IMG2;
-                NameMap.text = "M02";
+                NameMap.text = "Laboratory";
                 PlayerPrefs.SetString("map_id", "M02");
                 setPointsMax(M02_1, M02_2);
                 break;
             case 4:
                 IMG.sprite = IMG3;
-                NameMap.text = "M03";
+                NameMap.text = "Desert";
                 PlayerPrefs.SetString("map_id", "M03");
                 setPointsMax(M03_1, M03_2);
                 break;

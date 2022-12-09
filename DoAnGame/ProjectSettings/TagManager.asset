@@ -16,6 +16,8 @@ TagManager:
   - eplBazooka
   - Boss_TheThreeHusketeers
   - Point
+  - HealthBar
+  - Melee
   layers:
   - Default
   - TransparentFX
@@ -30,7 +32,7 @@ TagManager:
   - BulletEnemy
   - Enemy
   - Boss
-  - 
+  - Hiable2
   - 
   - 
   - 

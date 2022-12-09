@@ -29,7 +29,7 @@ public class BossBullet3 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Hiable" || collision.gameObject.tag == "BlockBoder")
+        if (collision.gameObject.layer == 8)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);

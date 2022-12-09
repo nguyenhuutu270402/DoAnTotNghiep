@@ -8,7 +8,7 @@ public class DuckBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 6f);
 
     }
 
@@ -20,7 +20,7 @@ public class DuckBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Hiable" || collision.gameObject.tag == "BlockBoder")
+        if (collision.gameObject.layer == 8)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);

@@ -31,7 +31,7 @@ public class BossBullet6 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Hiable" || collision.gameObject.tag == "BlockBoder")
+        if (collision.gameObject.layer == 8)
         {
             GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity);
             expl.transform.localScale = new Vector3(3f, 3f, 3f);

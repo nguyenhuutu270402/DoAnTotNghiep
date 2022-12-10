@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LookAt : MonoBehaviour
-{
-    [SerializeField] Camera cam;
-    [SerializeField] Transform player;
+{   
+    Camera cam;
+    Transform player;
     [SerializeField] float threshold;
     private void Awake()
     {

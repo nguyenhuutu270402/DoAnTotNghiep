@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Torch
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -1747890782, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
-  - {fileID: -1739612880, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
-  - {fileID: -695603324, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
-  - {fileID: -322908822, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
-  - {fileID: 1163152817, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
-  - {fileID: 1510993116, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
-  - {fileID: 1259002594, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
+  - {fileID: 1058856701, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
+  - {fileID: -1122072794, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
+  - {fileID: 1289233858, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
+  - {fileID: 691368070, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
+  - {fileID: 1911266049, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
+  - {fileID: 1514570760, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
+  - {fileID: 1202802790, guid: 3d6ea24e253bdfc4cafe0c76449fbc5f, type: 3}
   m_MinSpeed: 2
   m_MaxSpeed: 7
   m_AnimationStartTime: 0

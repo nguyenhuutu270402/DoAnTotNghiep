@@ -84,8 +84,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.name == "chest_0" || collision.gameObject.name == "chest_Boss_0")
-        {   
+        {
             //PickupWeapon = Random.Range(3, 8);
+
+            HoldingWeapon = PickupWeapon;
+            PickupWeapon = Random.Range(0, maxWeapon);
             while (PickupWeapon == HoldingWeapon)
             {
                 PickupWeapon = Random.Range(0, maxWeapon);
@@ -101,7 +104,6 @@ public class Player : MonoBehaviour
                 // 
             ChestRandom.Instance.RandomPosition();
 
-            HoldingWeapon = PickupWeapon;
             if (collision.gameObject.name == "chest_Boss_0")
             {
                 price_boss += checkMode();

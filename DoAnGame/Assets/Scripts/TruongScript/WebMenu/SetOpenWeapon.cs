@@ -39,6 +39,7 @@ public class SetOpenWeapon : MonoBehaviour
             PlayerPrefs.SetInt("maxWeapon", MaxWeapon(arr, M00_0));
             StartM00_0 = M00_0;
         }
+        Debug.Log(MaxWeapon(arr, M00_0) + " max Weapon");
     }
     public int MaxWeapon(List<int> _arr, int _M00_0)
     {
@@ -48,7 +49,7 @@ public class SetOpenWeapon : MonoBehaviour
             if( _M00_0 >= _arr[i])
             {
                 Debug.Log(arr[i] + " index" + i);
-                maxWeapon += i + 1;
+                maxWeapon += i + 2;
                 return maxWeapon;
             }
         }

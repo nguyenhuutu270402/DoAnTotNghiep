@@ -21,6 +21,9 @@ public class BossSkullGod : MonoBehaviour
     // health bar script
     BossHealthBar healthBar;
     float HPStart;
+
+
+    private bool checkHP = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +72,13 @@ public class BossSkullGod : MonoBehaviour
         if (timeLoop <= 0 & attack == 0 & die == false)
         {
             int rd = Random.Range(1, 5);
+
+            if(rd == 4 && checkHP == true)
+            {
+                rd = Random.Range(1, 4);
+            }
+
+
             if (rd == 1)
             {
                 attack = 1;
@@ -83,21 +93,18 @@ public class BossSkullGod : MonoBehaviour
                 attack = 3;
                 numAttack3 = nAttack3;
             }
-            else
+            else if(rd == 4 && checkHP == false)
             {
                 attack = 4;
                 GameObject eff = Instantiate(effBuffHP, transform.position, Quaternion.identity);
                 Destroy(eff, 2.5f);
                 numAttack4 = nAttack4;
                 timeLoop = timeAttack4;
+                checkHP = true;
             }
 
             
         }
-
-
-
-
         if (attack == 1)
         {
             attack1();
@@ -241,7 +248,7 @@ public class BossSkullGod : MonoBehaviour
 
         if (collision.gameObject.tag == "bullet_korth")
         {
-            HP -= 4;
+            HP -= 6;
             animator.SetBool("Hurt", true);
             GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
             Destroy(effect, 0.25f);

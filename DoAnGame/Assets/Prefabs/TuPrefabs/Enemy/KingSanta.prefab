@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885f5e462f216094abc99d7d87b4c99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRe: 0.1
+  timeRe: 0.15
   HP: 12
   SpeedBullet: 0.05
   SpeedRotation: 5
@@ -262,6 +262,7 @@ MonoBehaviour:
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}
   animator: {fileID: 7191964993130619519}
   aILerp: {fileID: 7191964992030040497}
+  timeResume: 2
 --- !u!1 &7191964993130619505
 GameObject:
   m_ObjectHideFlags: 0

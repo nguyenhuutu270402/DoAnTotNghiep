@@ -18,11 +18,15 @@ public class EnemyAlpha3 : MonoBehaviour
     float xBullet, yBullet;
 
     public AILerp aILerp;
+    public float timeResume;
+    float timePause = 0;
+    float timeResume_0;
+
 
     void Start()
     {
         int mode = PlayerPrefs.GetInt("ModeMap");
-
+        timeResume_0 = timeResume;
         if (mode == 1)
         {
             // normal mode
@@ -42,7 +46,18 @@ public class EnemyAlpha3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attack();
+        timeResume -= Time.deltaTime;
+        if(timeResume <= 0)
+        {
+            attack();
+            timePause += Time.deltaTime;    
+        }
+        if(timePause >= 3)
+        {
+            timeResume = timeResume_0;
+            timePause = 0;
+        }
+
         if (HP <= 0 & die == false)
         {
             aILerp.speed = 0;
@@ -88,7 +103,7 @@ public class EnemyAlpha3 : MonoBehaviour
 
         if (collision.gameObject.tag == "bullet_korth")
         {
-            HP -= 4;
+            HP -= 6;
             animator.SetBool("Hurt", true);
             GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
             Destroy(effect, 0.25f);

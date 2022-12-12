@@ -421,8 +421,8 @@ MonoBehaviour:
   timeRe: 3
   SpeedBullet: 0.1
   SpeedRotation: 9
-  timeAttack2: 0.05
-  numAttack2: 50
+  timeAttack2: 0.075
+  numAttack2: 40
   timeAttack3: 0.5
   numAttack3: 3
   timeAttack4: 2.5

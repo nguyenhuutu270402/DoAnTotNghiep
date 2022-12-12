@@ -120,7 +120,7 @@ public class EnemyNormal4 : MonoBehaviour
 
         if (collision.gameObject.tag == "bullet_korth")
         {
-            HP -= 4;
+            HP -= 6;
             animator.SetBool("Hurt", true);
             GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
             Destroy(effect, 0.25f);

@@ -85,7 +85,7 @@ public class LoadLeverMap : MonoBehaviour
                 break;
             case 4:
                 IMG.sprite = IMG3;
-                NameMap.text = "Desert";
+                NameMap.text = "City";
                 PlayerPrefs.SetString("map_id", "M03");
                 setPointsMax(M03_1, M03_2);
                 break;

@@ -83,7 +83,7 @@ public class Shoot : MonoBehaviour
                 CreateBullet(smgFlyingDirection, 0, 3f);
                 break;
 
-            case "3Shot":
+            case "AssaultRifle":
                 StartCoroutine(CreateThreeBullet());
                 break;
 

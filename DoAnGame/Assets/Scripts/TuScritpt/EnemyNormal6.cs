@@ -87,19 +87,19 @@ public class EnemyNormal6 : MonoBehaviour
                 {
                     GameObject bullet1 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet1 = bullet1.GetComponent<Rigidbody2D>();
-                    rbBullet1.velocity = new Vector2(2, 0);
+                    rbBullet1.velocity = new Vector2(1.7f, 0);
                     bullet1.transform.right = new Vector2(2, 0);
 
 
                     GameObject bullet2 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet2 = bullet2.GetComponent<Rigidbody2D>();
-                    rbBullet2.velocity = new Vector2(1, 1);
+                    rbBullet2.velocity = new Vector2(0.7f, 0.7f);
                     bullet2.transform.right = new Vector2(1, 1);
 
 
                     GameObject bullet3 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet3 = bullet3.GetComponent<Rigidbody2D>();
-                    rbBullet3.velocity = new Vector2(1, -1);
+                    rbBullet3.velocity = new Vector2(0.7f, -0.7f);
                     bullet3.transform.right = new Vector2(1, -1);
 
                 }
@@ -107,19 +107,19 @@ public class EnemyNormal6 : MonoBehaviour
                 {
                     GameObject bullet1 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet1 = bullet1.GetComponent<Rigidbody2D>();
-                    rbBullet1.velocity = new Vector2(-2, 0);
+                    rbBullet1.velocity = new Vector2(-1.7f, 0);
                     bullet1.transform.right = new Vector2(-2, 0);
 
 
                     GameObject bullet2 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet2 = bullet2.GetComponent<Rigidbody2D>();
-                    rbBullet2.velocity = new Vector2(-1, 1);
+                    rbBullet2.velocity = new Vector2(-0.7f, 0.7f);
                     bullet2.transform.right = new Vector2(-1, 1);
 
 
                     GameObject bullet3 = Instantiate(enemyBullet, transform.position, Quaternion.identity);
                     Rigidbody2D rbBullet3 = bullet3.GetComponent<Rigidbody2D>();
-                    rbBullet3.velocity = new Vector2(-1, -1);
+                    rbBullet3.velocity = new Vector2(-0.7f, -0.7f);
                     bullet3.transform.right = new Vector2(-1, -1);
 
                 }
@@ -159,7 +159,7 @@ public class EnemyNormal6 : MonoBehaviour
 
         if (collision.gameObject.tag == "bullet_korth")
         {
-            HP -= 4;
+            HP -= 6;
             animator.SetBool("Hurt", true);
             GameObject effect = Instantiate(explosionClassic, transform.position, Quaternion.identity);
             Destroy(effect, 0.25f);

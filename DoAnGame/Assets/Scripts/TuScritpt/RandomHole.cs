@@ -8,21 +8,6 @@ public class RandomHole : MonoBehaviour
     float timeLoop = 5;
     float timeRe = 7;
 
-    void Awake()
-    {
-        int mode = PlayerPrefs.GetInt("ModeMap");
-
-        if (mode == 1)
-        {
-        }
-        else
-        {
-            // hard mode
-            timeRe -= timeRe / 3;
-        }
-
-    }
-
     void Update()
     {
         timeLoop -= Time.deltaTime;

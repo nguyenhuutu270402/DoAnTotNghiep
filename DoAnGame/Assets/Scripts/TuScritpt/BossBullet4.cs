@@ -13,7 +13,7 @@ public class BossBullet4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 15f);
+        Destroy(gameObject, 5f);
 
     }
 

@@ -13,7 +13,7 @@ public class BossBullet3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 5f);
 
         player = GameObject.FindWithTag("Player");
         moveDirection = (player.transform.position - transform.position).normalized;

@@ -326,7 +326,7 @@ MonoBehaviour:
   timeRe: 3
   timeReBullet: 0.1
   SpeedBullet: 2
-  numBullet: 30
+  numBullet: 25
   pointBullet: {fileID: 1081237349}
   explosionClassic: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   explosionBazoka: {fileID: 5567619753434542863, guid: 17f69f15f69464744bf661895112496f, type: 3}

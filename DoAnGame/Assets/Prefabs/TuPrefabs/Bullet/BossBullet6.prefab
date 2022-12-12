@@ -4954,6 +4954,6 @@ MonoBehaviour:
   rigidbody2D: {fileID: 8589394558519719695}
   explosion: {fileID: 8868194331492075070, guid: e213bd9a6524e8949b3066f6f41f8d0b, type: 3}
   bullet: {fileID: 3823952975702899247, guid: 494d0e991b5fd2b42a409a06f0149a39, type: 3}
-  Speed: 2
+  Speed: 1.5
   numBullet: 10
   SpeedBullet: 8

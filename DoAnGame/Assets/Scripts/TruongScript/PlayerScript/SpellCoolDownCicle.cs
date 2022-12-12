@@ -30,10 +30,11 @@ public class SpellCoolDownCicle : MonoBehaviour
     }
     // lấy time hồi bên shoot
     public void coolDownLap(float time)
-    {
+    {   
         CollDownTime = time;
         if(time > 0.6f)
         {
+            SoundsClick.Instance.playSound("1911-reload-6248");
             isCollDown = true;
             CollDownTimer = CollDownTime;
             ImgCooldown.fillAmount = 1;

@@ -13,21 +13,7 @@ public class StoreBullet : MonoBehaviour
     private AudioSource audioSource;
 
     SpellCoolDownCicle spell;
-    // truong
-    public static StoreBullet Instance { get; private set; }
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-    public void volue(float volume)
-    {
-        audioSource.volume = volume;
-    }
-
-
-
-    //
+    
     void Start()
     {
         storeBullet = bulletNumber;
@@ -76,5 +62,19 @@ public class StoreBullet : MonoBehaviour
         Destroy(bullet, destroyTime);
         storeBullet--;
     }
+    // truong
+    public static StoreBullet Instance { get; private set; }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+    public void volue(float volume)
+    {
+        audioSource.volume = volume;
+    }
+
+
+
+    //
 }

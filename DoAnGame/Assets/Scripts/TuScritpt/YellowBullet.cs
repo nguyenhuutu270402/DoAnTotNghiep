@@ -14,7 +14,7 @@ public class YellowBullet : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 3.5f);
         rigidbody2D = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
         moveDirection = (player.transform.position - transform.position).normalized;

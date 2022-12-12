@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.name == "chest_0" || collision.gameObject.name == "chest_Boss_0")
         {
             //PickupWeapon = Random.Range(3, 8);
-
+            SoundsClick.Instance.playSound("pistol-cock-6014");
             HoldingWeapon = PickupWeapon;
             PickupWeapon = Random.Range(0, maxWeapon);
             while (PickupWeapon == HoldingWeapon)

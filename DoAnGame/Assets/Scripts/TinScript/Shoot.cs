@@ -67,10 +67,10 @@ public class Shoot : MonoBehaviour
         switch (transform.gameObject.name)
         {
             case "Shotgun":
-                for (int i = 0; i <= 5; i++)
+                for (int i = 0; i <= 7; i++)
                 {
                     Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-accurate, accurate), Random.Range(-accurate, accurate), 0);
-                    CreateBullet(shortGunFlyingDirection, 3, 0.7f);
+                    CreateBullet(shortGunFlyingDirection, 3, 0.8f);
                 }
 
                 break;

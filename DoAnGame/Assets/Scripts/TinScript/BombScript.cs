@@ -12,6 +12,7 @@ public class BombScript : MonoBehaviour
     
 
     public AudioSource audioSource;
+    [SerializeField] private TrailRenderer trail;
 
     void Start()
     {
@@ -37,7 +38,12 @@ public class BombScript : MonoBehaviour
             explosion();
 
             gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);
-            Destroy(gameObject, audioSource.clip.length);      
+            Destroy(gameObject, audioSource.clip.length);    
+            
+            if(trail != null)
+            {
+                trail.enabled = false; // turn off trail renderer when the bullet hit something and disappear
+            }
 
         }
 

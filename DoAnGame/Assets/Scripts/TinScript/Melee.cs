@@ -52,7 +52,7 @@ public class Melee : MonoBehaviour
 
         isDectect = true;
 
-        //CinemachineShake.Instance.ShakeCamera(1f, 0.1f);
+        CinemachineShake.Instance.ShakeCamera(1f, 0.1f);
 
     }
     private void OnDrawGizmos()

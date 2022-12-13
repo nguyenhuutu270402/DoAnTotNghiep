@@ -13,7 +13,12 @@ public class Melee : MonoBehaviour
     public float radius;
 
     private bool isDectect = false;
-    [SerializeField] private ParticleSystem slashEffect;    
+    [SerializeField] private GameObject slashEffect1;    
+    [SerializeField] private Transform rangeCircle;  
+    [SerializeField] private GameObject player;
+    [SerializeField] private float recoilForce;
+
+
 
     void Start()
     {
@@ -40,7 +45,11 @@ public class Melee : MonoBehaviour
     {
         triggerSound.Play(); //play SFX
         animator.SetBool("isSlash", true);
-        slashEffect.Play(); //play partical effect
+        Instantiate(slashEffect1, rangeCircle.position, rangeCircle.rotation); // Genaration slash effect
+
+        //Recoil
+        player.GetComponent<Rigidbody2D>().AddForce(rangeCircle.right * -recoilForce, ForceMode2D.Force);
+
         isDectect = true;
 
         //CinemachineShake.Instance.ShakeCamera(1f, 0.1f);

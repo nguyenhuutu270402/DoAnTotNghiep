@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &57525796
 Transform:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownLap: 1.5
   storeBullet: 0
-  bulletPrefabs: {fileID: 6059766712893784776, guid: b4aa019c00ef1d845be93cf626cac7b9, type: 3}
+  bulletPrefabs: {fileID: 6059766712893784776, guid: 64d4fa2d861a3e447bd6cd6f4f60e103, type: 3}
   firePoint: {fileID: 1167068109}
   bulletForce: 10
 --- !u!1 &694833312
@@ -557,7 +557,7 @@ GameObject:
   m_Layer: 6
   m_Name: weapon
   m_TagString: Melee
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -569,7 +569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701780783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.036, y: 0, z: 0}
+  m_LocalPosition: {x: 0.057, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -662,9 +662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be97a01ffa507b44a817aec32eb13786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDownLap: 1
+  coolDownLap: 0.8
   circleOrigin: {fileID: 1593161023}
-  radius: 0.18
+  radius: 0.244
   collider2D: {fileID: 5535414841547164436}
 --- !u!82 &701780788
 AudioSource:
@@ -815,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &849605534
 Transform:
   m_ObjectHideFlags: 0
@@ -995,7 +995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167068108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.654, y: 0.09, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1028,7 +1028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233044491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1088,7 +1088,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.008651733
+        value: 0.025641024
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1409,7 +1409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593161022}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.129, y: 0.003, z: 0}
+  m_LocalPosition: {x: -0.159, y: 0.003, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDownLap: 1
-  bulletPrefabs: {fileID: 6059766712893784776, guid: b4aa019c00ef1d845be93cf626cac7b9, type: 3}
+  bulletPrefabs: {fileID: 6059766712893784776, guid: 609e02d4f10be1a4cb789c0b5bbc42d7, type: 3}
   firePoint: {fileID: 1365497381}
   bulletForce: 7
   recoilForce: 30
@@ -2400,7 +2400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2294703429022449852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.71799994, y: 0.12499997, z: 0}
+  m_LocalPosition: {x: 0.738, y: 0.12499997, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 4.166666}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4033,7 +4033,7 @@ Transform:
   - {fileID: 849605534}
   - {fileID: 57525796}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5960307950089987088
 SpriteRenderer:
@@ -4224,7 +4224,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 5960307950089987112}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 10
@@ -4248,7 +4248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dust: {fileID: 7792335066883906619, guid: b978e33ad23d952489370c377085e912, type: 3}
-  speed: 20
+  speed: 1.3
 --- !u!1 &5960307950154759096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4629,7 +4629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb60e5fb57ff52a4eaa52f7671372838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDownLap: 0.3
+  coolDownLap: 0.25
   bulletPrefabs: {fileID: 6059766712893784776, guid: b4aa019c00ef1d845be93cf626cac7b9, type: 3}
   firePoint: {fileID: 5960307948499522996}
   bulletForce: 5

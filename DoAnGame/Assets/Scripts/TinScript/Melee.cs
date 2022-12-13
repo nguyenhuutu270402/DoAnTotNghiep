@@ -45,8 +45,8 @@ public class Melee : MonoBehaviour
     {
         triggerSound.Play(); //play SFX
         animator.SetBool("isSlash", true);
-        Instantiate(slashEffect1, rangeCircle.position, rangeCircle.rotation); // Genaration slash effect
-
+        GameObject slashEff=  Instantiate(slashEffect1, rangeCircle.position, rangeCircle.rotation); // Genaration slash effect
+        Destroy(slashEff, 0.25f);
         //Recoil
         player.GetComponent<Rigidbody2D>().AddForce(rangeCircle.right * -recoilForce, ForceMode2D.Force);
 

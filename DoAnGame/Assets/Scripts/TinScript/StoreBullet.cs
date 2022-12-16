@@ -38,12 +38,14 @@ public class StoreBullet : MonoBehaviour
             //Shake
             CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
             audioSource.Play();
-            CreateBullet(Vector3.zero, 0, 3f);
+            CreateBullet(Vector3.zero, 0, 3f); 
+            transform.LeanRotateAround(Vector3.forward, 30, 0.1f); // rotate a little bit when shoot
 
             if (storeBullet <= 0)
             {
                 coolDown = coolDownLap;
                 spell.coolDownLap(coolDownLap);
+                transform.LeanRotateAround(Vector3.forward, 300, 0.3f); // rotate when reload
                 storeBullet = bulletNumber;
             }
 

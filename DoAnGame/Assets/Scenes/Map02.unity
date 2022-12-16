@@ -9248,6 +9248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LookAtPos
       objectReference: {fileID: 0}
+    - target: {fileID: 8558799165609147366, guid: 891b5556a7eaea246b56b0260944dfc4, type: 3}
+      propertyPath: threshold
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8558799165609147367, guid: 891b5556a7eaea246b56b0260944dfc4, type: 3}
       propertyPath: m_RootOrder
       value: 3

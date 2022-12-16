@@ -146,8 +146,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 71
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.7
+  MaxDistance: 1
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -182,7 +182,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -212,7 +212,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
     m_Bits: 256
   ExplosionEffect: {fileID: 2418124123499831402, guid: eb8cf9690afd5bc4390b0eb9ad0bda8c, type: 3}
   audioSource: {fileID: 4394807780253091890}
+  trail: {fileID: 0}
 --- !u!82 &4394807780253091890
 AudioSource:
   m_ObjectHideFlags: 0
@@ -261,8 +262,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.7
+  MaxDistance: 1
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -297,7 +298,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -327,7 +328,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

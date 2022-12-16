@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponMovement : MonoBehaviour
 {
     Vector3 difference;
-    private float rotationZ;
+    public float rotationZ;
     private GameObject Player;
     void Start()
     {

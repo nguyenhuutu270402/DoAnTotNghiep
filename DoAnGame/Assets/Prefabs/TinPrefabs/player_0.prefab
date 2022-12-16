@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!82 &359601317
 AudioSource:
   m_ObjectHideFlags: 0
@@ -324,6 +325,7 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 6059766712893784776, guid: 64d4fa2d861a3e447bd6cd6f4f60e103, type: 3}
   firePoint: {fileID: 1167068109}
   bulletForce: 10
+  weaponMovement: {fileID: 359601318}
 --- !u!1 &694833312
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &694833315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,6 +446,7 @@ MonoBehaviour:
   bulletForce: 6
   recoilForce: 0
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!82 &694833314
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1143,6 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &1624847742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,6 +1166,7 @@ MonoBehaviour:
   bulletForce: 7
   recoilForce: 30
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!82 &1624847741
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1506,6 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &1842961770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1531,7 @@ MonoBehaviour:
   bulletForce: 6
   recoilForce: 10
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!82 &1842961769
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1839,6 +1847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &2019648334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1857,6 +1866,7 @@ MonoBehaviour:
   bulletForce: 7
   recoilForce: 0
   accurate: 0.3
+  weaponMovement: {fileID: 0}
 --- !u!82 &2019648333
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2774,6 +2784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &5960307948640214159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2792,6 +2803,7 @@ MonoBehaviour:
   bulletForce: 5
   recoilForce: 150
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!82 &5960307948640214152
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3121,6 +3133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &5960307949111601125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3139,6 +3152,7 @@ MonoBehaviour:
   bulletForce: 5
   recoilForce: 150
   accurate: 0.35
+  weaponMovement: {fileID: 5960307949111601124}
 --- !u!82 &5960307949111601126
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3354,6 +3368,7 @@ MonoBehaviour:
   bulletForce: 0
   recoilForce: 0
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!82 &5960307949577242258
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3577,6 +3592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &5960307949620752358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3595,6 +3611,7 @@ MonoBehaviour:
   bulletForce: 6
   recoilForce: 30
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!82 &5960307949620752359
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4530,6 +4547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!114 &5960307950419533770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4548,6 +4566,7 @@ MonoBehaviour:
   bulletForce: 5
   recoilForce: 0
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!82 &5960307950419533771
 AudioSource:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class StoreBullet : MonoBehaviour
     private AudioSource audioSource;
 
     SpellCoolDownCicle spell;
+    [SerializeField] WeaponMovement weaponMovement;
     
     void Start()
     {
@@ -38,8 +39,18 @@ public class StoreBullet : MonoBehaviour
             //Shake
             CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
             audioSource.Play();
-            CreateBullet(Vector3.zero, 0, 3f); 
-            transform.LeanRotateAround(Vector3.forward, 30, 0.1f); // rotate a little bit when shoot
+            CreateBullet(Vector3.zero, 0, 3f);
+
+            // check weapon's rotation so you can rotation when shoot in right way
+            if (weaponMovement.rotationZ < -90 || weaponMovement.rotationZ > 90)
+            {
+                transform.LeanRotateAround(Vector3.forward, -30, 0.1f); // rotate a little bit when shoot
+            }
+            else
+            {
+                transform.LeanRotateAround(Vector3.forward, 30, 0.1f); // rotate a little bit when shoot
+            }
+
 
             if (storeBullet <= 0)
             {

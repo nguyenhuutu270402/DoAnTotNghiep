@@ -116584,6 +116584,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 359601314, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 849605533, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -116604,6 +116608,10 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 359625079}
+    - target: {fileID: 5960307949111601120, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5960307950089987091, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: load1
       value: 

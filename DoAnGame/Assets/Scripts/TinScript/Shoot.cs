@@ -13,6 +13,8 @@ public class Shoot : MonoBehaviour
     public float recoilForce;
     public float accurate;
 
+    [SerializeField] private WeaponMovement weaponMovement;
+
 
 
     // truong
@@ -71,6 +73,20 @@ public class Shoot : MonoBehaviour
                 {
                     Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-accurate, accurate), Random.Range(-accurate, accurate), 0);
                     CreateBullet(shortGunFlyingDirection, 3, 0.8f);
+
+                    // check weapon's rotation so you can rotation when shoot in right way
+                    if (weaponMovement != null)
+                    {
+                        if (weaponMovement.rotationZ < -90 || weaponMovement.rotationZ > 90)
+                        {
+                            transform.LeanRotateAround(Vector3.forward, -30, 0.1f); // rotate a little bit when shoot
+                        }
+                        else
+                        {
+                            transform.LeanRotateAround(Vector3.forward, 30, 0.1f); // rotate a little bit when shoot
+                        }
+                    }
+
                 }
 
                 break;

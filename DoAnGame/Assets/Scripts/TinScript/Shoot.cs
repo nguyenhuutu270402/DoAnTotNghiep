@@ -74,18 +74,7 @@ public class Shoot : MonoBehaviour
                     Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-accurate, accurate), Random.Range(-accurate, accurate), 0);
                     CreateBullet(shortGunFlyingDirection, 3, 0.8f);
 
-                    // check weapon's rotation so you can rotation when shoot in right way
-                    if (weaponMovement != null)
-                    {
-                        if (weaponMovement.rotationZ < -90 || weaponMovement.rotationZ > 90)
-                        {
-                            transform.LeanRotateAround(Vector3.forward, -30, 0.1f); // rotate a little bit when shoot
-                        }
-                        else
-                        {
-                            transform.LeanRotateAround(Vector3.forward, 30, 0.1f); // rotate a little bit when shoot
-                        }
-                    }
+                    ShootAnimation(30, 0.1f);
 
                 }
 
@@ -108,7 +97,8 @@ public class Shoot : MonoBehaviour
                 break;
 
             default:
-                CreateBullet(Vector3.zero, 0, 7f);
+                CreateBullet(Vector3.zero, 0, 7f); 
+                ShootAnimation(20, 0.1f);
                 break;
         }
         audioSource.Play();
@@ -154,5 +144,22 @@ public class Shoot : MonoBehaviour
         }
     }
 
+    private void ShootAnimation(float add, float time)
+    {
+        // check weapon's rotation so you can rotation when shoot in right way
+        if (weaponMovement != null)
+        {
+            if (weaponMovement.rotationZ < -90 || weaponMovement.rotationZ > 90)
+            {
+               // transform.LeanRotateAround(Vector3.forward, -30, 0.1f); // rotate a little bit when shoot
+                transform.LeanRotateAround(Vector3.forward, -add, time); // rotate a little bit when shoot
+            }
+            else
+            {
+                //transform.LeanRotateAround(Vector3.forward, 30, 0.1f); // rotate a little bit when shoot
+                transform.LeanRotateAround(Vector3.forward, add, time); // rotate a little bit when shoot
+            }
+        }
+    }
  
 }

@@ -720,7 +720,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &51790398
 GameObject:
@@ -2941,13 +2941,13 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4154016099150804564, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+    - target: {fileID: 57525795, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4154016100129361027, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 849605533, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5960307948640214154, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_IsActive
@@ -3028,10 +3028,6 @@ PrefabInstance:
     - target: {fileID: 5960307950089987112, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: m_Name
       value: player_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960307950419533765, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7660373165614776051, guid: 2a61b3209acad3140bff8be39b0a4879, type: 3}
       propertyPath: GameOver
@@ -89425,9 +89421,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 53f54bd9fdb965344a5f90def93ec876, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ca95359e09723b74ba01fd838ca3aeed, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -99722,7 +99718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5771206965773696530, guid: c2d87ac2a4237af4caddd848715c25e1, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5771206965773696530, guid: c2d87ac2a4237af4caddd848715c25e1, type: 3}
       propertyPath: m_AnchorMax.x

@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &359601315
 Transform:
   m_ObjectHideFlags: 0
@@ -763,7 +763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1233044492
 Transform:
   m_ObjectHideFlags: 0
@@ -818,8 +818,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2026927523
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Positions:
   - {x: 0.15602615, y: 0.097138576, z: 0}
@@ -844,7 +844,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0.7035496, b: 0.12941176, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1073,7 +1073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624847739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.024999997, y: 0.08499999, z: 0}
+  m_LocalPosition: {x: 0.024999997, y: 0.061, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1163,10 +1163,10 @@ MonoBehaviour:
   coolDownLap: 1
   bulletPrefabs: {fileID: 6059766712893784776, guid: 609e02d4f10be1a4cb789c0b5bbc42d7, type: 3}
   firePoint: {fileID: 1365497381}
-  bulletForce: 7
+  bulletForce: 10
   recoilForce: 30
   accurate: 0
-  weaponMovement: {fileID: 0}
+  weaponMovement: {fileID: 1624847743}
 --- !u!82 &1624847741
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2176,7 +2176,7 @@ GameObject:
   - component: {fileID: 4759503468979513742}
   m_Layer: 6
   m_Name: weapon
-  m_TagString: Melee
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3955,7 +3955,7 @@ Transform:
   - {fileID: 849605534}
   - {fileID: 57525796}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5960307950089987088
 SpriteRenderer:
@@ -4566,7 +4566,7 @@ MonoBehaviour:
   bulletForce: 5
   recoilForce: 0
   accurate: 0
-  weaponMovement: {fileID: 0}
+  weaponMovement: {fileID: 5960307950419533769}
 --- !u!82 &5960307950419533771
 AudioSource:
   m_ObjectHideFlags: 0

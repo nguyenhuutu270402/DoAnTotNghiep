@@ -25,15 +25,9 @@ public class BombScript : MonoBehaviour
         //
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-    if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8) //  8: Hitable
         {
             explosion();
 
@@ -54,10 +48,12 @@ public class BombScript : MonoBehaviour
         foreach (Collider2D obj in objects)
         {
             audioSource.Play();
-            if(obj.gameObject.tag == "Enemies")
+            if (obj.gameObject.tag == "Enemies") 
             {
                 Vector2 direction = obj.transform.position - transform.position;
                 obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
+                
+                Debug.Log("what");
                 Destroy(obj.gameObject, 1f);
             }
             GameObject effect = Instantiate(ExplosionEffect, transform.position, Quaternion.identity);

@@ -82,6 +82,7 @@ public class ArrowChest : MonoBehaviour
                 BossAppears = 1;
                 //StartCoroutine(AnimationBoss());
                 BossRandom.Instance.RandomBossAndPosition();
+                BossRandom.Instance.PlayIntro();
                 break;
             default:
 

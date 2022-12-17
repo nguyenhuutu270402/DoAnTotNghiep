@@ -9,17 +9,6 @@ public class BossHealthBar : MonoBehaviour
     public Slider slider;
     public GameObject gobjHB;
     public Text txtName;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void setMaxHealth(float health)
     {

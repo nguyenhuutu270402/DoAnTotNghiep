@@ -39,6 +39,12 @@ public class BombScript : MonoBehaviour
                 trail.enabled = false; // turn off trail renderer when the bullet hit something and disappear
             }
 
+
+        }
+        if (collision.gameObject.layer == 11)
+        {
+            audioSource.Play();
+            SoundsClick.Instance.playSound("hitEffect");
         }
 
     }

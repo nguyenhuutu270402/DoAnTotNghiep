@@ -74,7 +74,7 @@ public class Shoot : MonoBehaviour
                     Vector3 shortGunFlyingDirection = new Vector3(Random.Range(-accurate, accurate), Random.Range(-accurate, accurate), 0);
                     CreateBullet(shortGunFlyingDirection, 3, 0.8f);
 
-                    ShootAnimation(30, 0.1f);
+                    ShootAnimation(30, 0.2f);
 
                 }
 

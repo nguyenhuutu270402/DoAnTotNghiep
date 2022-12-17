@@ -22,6 +22,7 @@ public class BossRandom : MonoBehaviour
 
 
     public GameObject spawningOnSceneBoss;
+    [SerializeField] AudioSource bossAppearSFX;
 
     [Header("Intro UI")]
     [SerializeField] private GameObject introPanel;
@@ -94,8 +95,9 @@ public class BossRandom : MonoBehaviour
         introPanel.SetActive(true);
         nameOfBoss.text = spawningOnSceneBoss.tag;
         avatar.GetComponent<Image>().sprite = AvaterHandle();
-        Invoke("MoveOutXPos", 0.8f);
-        Invoke("DeactivePanel", 1.3f);
+        Invoke("MoveOutXPos", 1.4f);
+        Invoke("DeactivePanel", 1.6f);
+        bossAppearSFX.Play();
 
         MoveInXPos(nameOfBoss.gameObject, 0, 0.5f);
         MoveInXPos(topBorder, 0, 0.4f);
@@ -158,4 +160,6 @@ public class BossRandom : MonoBehaviour
     {
         
     }
+
+
 }

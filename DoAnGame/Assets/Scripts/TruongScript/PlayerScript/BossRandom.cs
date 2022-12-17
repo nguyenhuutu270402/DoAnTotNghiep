@@ -42,6 +42,9 @@ public class BossRandom : MonoBehaviour
 
 
 
+    
+
+
 
 
 
@@ -51,9 +54,17 @@ public class BossRandom : MonoBehaviour
     {
         Instance = this;
     }
-
+    public void volue(float volume)
+    {
+        bossAppearSFX.volume = volume;
+    }
     void Start()
     {
+        //truong
+        float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
+        bossAppearSFX.volume = sound[0];
+
+
         LengthChild_PositionBoss = PositionBoss.transform.childCount;
         for (int i = 0; i < LengthChild_PositionBoss; i++)
         {

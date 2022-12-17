@@ -36,6 +36,8 @@ public class Sounds : MonoBehaviour
                 Shoot.Instance.volue(SFX_Scrollbar_Value);
                 StoreBullet.Instance.volue(SFX_Scrollbar_Value);
                 Melee.Instance.volue(SFX_Scrollbar_Value);
+                BossRandom.Instance.volue(SFX_Scrollbar_Value);
+                BombScript.Instance.volue(SFX_Scrollbar_Value);
             }
             
         }

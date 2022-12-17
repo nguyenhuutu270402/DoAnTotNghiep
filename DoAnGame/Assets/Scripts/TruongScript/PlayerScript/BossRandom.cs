@@ -23,6 +23,7 @@ public class BossRandom : MonoBehaviour
 
     public GameObject spawningOnSceneBoss;
     [SerializeField] AudioSource bossAppearSFX;
+    [SerializeField] BossHealthBar bossHealthBar;
 
     [Header("Intro UI")]
     [SerializeField] private GameObject introPanel;
@@ -126,29 +127,29 @@ public class BossRandom : MonoBehaviour
     private Sprite AvaterHandle()
     {
         Sprite temp = null;
-        if(spawningOnSceneBoss.CompareTag("Boss_UmbrellaDarkKnight"))
+        if(spawningOnSceneBoss.CompareTag("Umbrella Dark Knight"))
         {
             temp = umbrella;
 
         }
 
-        else if(spawningOnSceneBoss.CompareTag("Boss_SkullGod"))
+        else if(spawningOnSceneBoss.CompareTag("Skull God"))
         { 
             temp = skullGod;
         }
 
-        else if (spawningOnSceneBoss.CompareTag("Boss_GiantMutantBeetle"))
+        else if (spawningOnSceneBoss.CompareTag("GiantMutantBeelte"))
         {
             temp = cagedShit;
 
         }
 
-        else if (spawningOnSceneBoss.CompareTag("Boss_TheTreeHusketeers"))
+        else if (spawningOnSceneBoss.CompareTag("The Three Husketeers"))
         { 
             temp = popCorn;
         }
 
-        else if (spawningOnSceneBoss.CompareTag("Boss_DarkSideDino"))
+        else if (spawningOnSceneBoss.CompareTag("DarkSide Dinosaur"))
         {
 
             temp = darkBruh;

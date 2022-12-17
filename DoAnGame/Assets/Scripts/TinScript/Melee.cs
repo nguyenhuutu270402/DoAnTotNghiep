@@ -16,12 +16,21 @@ public class Melee : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private float recoilForce;
 
+    // truong
+    public static Melee Instance { get; private set; }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
         coolDown = coolDownLap;
         triggerSound = GetComponent<AudioSource>();
+
+        float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
+        triggerSound.volume = sound[0];
     }
 
     void Update()
@@ -79,6 +88,11 @@ public class Melee : MonoBehaviour
     {
         animator.SetBool("isSlash", false);
         isDectect = false;
+    }
+
+    public void volue(float volume)
+    {
+        triggerSound.volume = volume;
     }
 
 }

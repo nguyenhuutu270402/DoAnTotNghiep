@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 5493937832774266078}
   m_Layer: 12
   m_Name: Boss_UmbrellaDarkKnight
-  m_TagString: Boss_UmbrellaDarkKnight
+  m_TagString: Umbrella Dark Knight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         Cam = GameObject.FindWithTag("MainCamera");
         transform.GetChild(10).gameObject.SetActive(true);
+        transform.GetChild(3).gameObject.SetActive(false);
+        transform.GetChild(7).gameObject.SetActive(false);
     }
 
     // Update is called once per frame

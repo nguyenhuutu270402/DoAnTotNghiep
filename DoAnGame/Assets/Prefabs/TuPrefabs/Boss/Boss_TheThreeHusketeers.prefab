@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8388956484692874643}
   m_Layer: 12
   m_Name: Boss_TheThreeHusketeers
-  m_TagString: Boss_TheThreeHusketeers
+  m_TagString: The Three Husketeers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

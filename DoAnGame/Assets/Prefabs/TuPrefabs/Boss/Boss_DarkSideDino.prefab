@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 2999605114523528584}
   m_Layer: 12
   m_Name: Boss_DarkSideDino
-  m_TagString: Boss_DarkSideDino
+  m_TagString: DarkSide Dinosaur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

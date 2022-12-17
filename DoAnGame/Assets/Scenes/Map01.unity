@@ -419,13 +419,14 @@ MonoBehaviour:
   bosss:
   - {fileID: 8388956484692874644, guid: 585df9662f66a77499ad1898b8ef20ee, type: 3}
   - {fileID: 5493937832774266068, guid: afdaa3d6ba2c2f04ca15be4bd6a31429, type: 3}
-  - {fileID: 5467519428308897635, guid: dd836a302362c7841b0f31a82ac0a35e, type: 3}
   - {fileID: 4831189263034620869, guid: ddddd9d8b9724b3429cd17ccc6f86009, type: 3}
+  - {fileID: 5467519428308897635, guid: dd836a302362c7841b0f31a82ac0a35e, type: 3}
   - {fileID: 6440444695900610803, guid: 3d41ff330fecf0349bba0767425464ce, type: 3}
   PositionBoss: {fileID: 31414336}
   Depot: {fileID: 43359231}
   spawningOnSceneBoss: {fileID: 0}
   bossAppearSFX: {fileID: 31414339}
+  bossHealthBar: {fileID: 2008453020}
   introPanel: {fileID: 764269708}
   topBorder: {fileID: 2052590125}
   bottomBorder: {fileID: 1911772128}
@@ -6704,7 +6705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &918905098
 Rigidbody2D:
   serializedVersion: 4

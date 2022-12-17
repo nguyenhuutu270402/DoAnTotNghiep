@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 8970114696199328080}
   m_Layer: 12
   m_Name: Boss_GiantMutantBeetle
-  m_TagString: Boss_GiantMutantBeetle
+  m_TagString: GiantMutantBeelte
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

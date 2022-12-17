@@ -124,6 +124,12 @@ public class BossUmbrellaDarkKnight : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "PointBossMove")
+        {
+            attack2();
+            Destroy(collision.gameObject);
+        }
+
         if (collision.gameObject.tag == "bullet_classic")
         {
             HP -= 2;

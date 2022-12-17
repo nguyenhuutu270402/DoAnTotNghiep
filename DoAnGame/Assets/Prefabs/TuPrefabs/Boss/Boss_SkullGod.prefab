@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 8388956484500464192}
   m_Layer: 12
   m_Name: Boss_SkullGod
-  m_TagString: Boss_SkullGod
+  m_TagString: Skull God
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

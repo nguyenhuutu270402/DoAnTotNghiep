@@ -41,7 +41,7 @@ public class BombScript : MonoBehaviour
 
 
         }
-        if (collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == 11 | collision.gameObject.layer == 12) //11: Enemy 12: Boss
         {
             audioSource.Play();
             SoundsClick.Instance.playSound("hitEffect");

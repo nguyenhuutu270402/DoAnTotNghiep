@@ -23,10 +23,10 @@ public class StoreBullet : MonoBehaviour
         spell = FindObjectOfType<SpellCoolDownCicle>();
 
 
-        // truong
+        //truong
         float[] sound = JsonManager.Instance.getSounds();// 0 : SFX // 1 : BGM
         audioSource.volume = sound[0];
-        //
+
     }
 
 

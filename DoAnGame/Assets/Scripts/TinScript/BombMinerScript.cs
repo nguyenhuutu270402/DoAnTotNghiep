@@ -32,9 +32,10 @@ public class BombMinerScript : MonoBehaviour
             gameObject.transform.rotation = Quaternion.Euler(90, 0, 0);
             Destroy(gameObject, audioSource.clip.length);
         }
-        else
+        if (collision.gameObject.layer == 11 | collision.gameObject.layer == 12) //11: Enemy 12: Boss
         {
-            //Destroy(gameObject, 3f);
+            SoundsClick.Instance.playSound("explosion");
+
         }
     }
     public void explosion()

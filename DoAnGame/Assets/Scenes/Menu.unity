@@ -350,6 +350,7 @@ MonoBehaviour:
   bulletForce: 5
   recoilForce: 150
   accurate: 0.35
+  weaponMovement: {fileID: 0}
 --- !u!114 &33526392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &33526393
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1290,6 +1292,7 @@ MonoBehaviour:
   bulletForce: 5
   recoilForce: 0
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!114 &75762586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,6 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &75762587
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6187,6 +6191,7 @@ MonoBehaviour:
   bulletForce: 0
   recoilForce: 0
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!114 &573690261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6650,6 +6655,7 @@ MonoBehaviour:
   bulletForce: 6
   recoilForce: 0
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!114 &594884818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6662,6 +6668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &594884819
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9780,6 +9787,7 @@ MonoBehaviour:
   bulletForce: 7
   recoilForce: 0
   accurate: 0.3
+  weaponMovement: {fileID: 0}
 --- !u!114 &931167032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9792,6 +9800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &931167033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10182,6 +10191,7 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 6059766712893784776, guid: b4aa019c00ef1d845be93cf626cac7b9, type: 3}
   firePoint: {fileID: 1795719768}
   bulletForce: 10
+  weaponMovement: {fileID: 0}
 --- !u!82 &1032153132
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10290,6 +10300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &1032153134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14002,6 +14013,7 @@ MonoBehaviour:
   bulletForce: 6
   recoilForce: 10
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!114 &1336037734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14014,6 +14026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &1336037735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14192,6 +14205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!1 &1362057177
 GameObject:
   m_ObjectHideFlags: 0
@@ -15179,6 +15193,7 @@ MonoBehaviour:
   bulletForce: 6
   recoilForce: 30
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!114 &1487157810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15191,6 +15206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &1487157811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15900,6 +15916,7 @@ MonoBehaviour:
   bulletForce: 7
   recoilForce: 30
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!114 &1519279363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15912,6 +15929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!212 &1519279364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18096,6 +18114,7 @@ MonoBehaviour:
   bulletForce: 5
   recoilForce: 150
   accurate: 0
+  weaponMovement: {fileID: 0}
 --- !u!114 &1753127632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18108,6 +18127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5909f98220074439f0e12233145f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationZ: 0
 --- !u!61 &1753127633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20290,7 +20310,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: afa5d2f6bda77f34a9d44b59d56feff9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9669960e415ea604d81fb0784634df79, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

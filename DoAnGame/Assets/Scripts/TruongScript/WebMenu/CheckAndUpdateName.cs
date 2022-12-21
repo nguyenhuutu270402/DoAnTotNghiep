@@ -59,7 +59,7 @@ public class CheckAndUpdateName : MonoBehaviour
 
     void Update()
     {
-        string name = NameUpdate.text.Trim();
+        string name = NameUpdate.text;
         if(name != Nametemporary)
         {
             check = false;
@@ -84,7 +84,7 @@ public class CheckAndUpdateName : MonoBehaviour
         {
             BtnSave.interactable = false;
         }
-        string nameCard = NameUpdateCard.text.Trim();
+        string nameCard = NameUpdateCard.text;
 
         if (nameCard != Nametemporary)
         {
@@ -141,12 +141,12 @@ public class CheckAndUpdateName : MonoBehaviour
         if (id == 1)
         {
             price = 0;
-            name = NameUpdate.text.Trim();
+            name = NameUpdate.text;
         }
         if (id == 2)
         {
             price = 99;
-            name = NameUpdateCard.text.Trim();
+            name = NameUpdateCard.text;
         }
         WWWForm form = new WWWForm();
         form.AddField("user_id", UserID);

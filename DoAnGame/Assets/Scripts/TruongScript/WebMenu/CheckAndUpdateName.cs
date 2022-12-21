@@ -173,7 +173,11 @@ public class CheckAndUpdateName : MonoBehaviour
                         int UserPrice = PlayerPrefs.GetInt("UserPrice") - price;
                         PlayerPrefs.SetInt("UserPrice", UserPrice);
                         InfoUser.Instance.updatePrice(UserPrice);
-                        CHPlay.Instance.updatePrice(UserPrice);
+                        //CHPlay.Instance.updatePrice(UserPrice);
+
+
+                        Debug.Log("ddax cap nhat thanh cong");
+
 
                         tableCard.SetActive(false);
 

@@ -62,7 +62,8 @@ public class BossUmbrellaDarkKnight : MonoBehaviour
             animator.SetBool("Attack1", true);
             player = GameObject.FindWithTag("Player");
             moveDirection = (player.transform.position - transform.position).normalized;
-            Instantiate(pointBossMove, player.transform.position, Quaternion.identity);
+            GameObject poitBoss = Instantiate(pointBossMove, player.transform.position, Quaternion.identity);
+            Destroy(poitBoss, 5f);
             isAttack = true;
             // an cay du 1 hien cay du 2
             umbrella1.gameObject.SetActive(false);

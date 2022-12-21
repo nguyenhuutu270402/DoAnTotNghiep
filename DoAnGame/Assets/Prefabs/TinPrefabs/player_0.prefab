@@ -1163,7 +1163,7 @@ MonoBehaviour:
   coolDownLap: 1
   bulletPrefabs: {fileID: 6059766712893784776, guid: 609e02d4f10be1a4cb789c0b5bbc42d7, type: 3}
   firePoint: {fileID: 1365497381}
-  bulletForce: 10
+  bulletForce: 15
   recoilForce: 30
   accurate: 0
   weaponMovement: {fileID: 1624847743}

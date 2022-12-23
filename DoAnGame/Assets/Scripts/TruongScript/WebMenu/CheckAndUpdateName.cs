@@ -15,8 +15,8 @@ public class CheckAndUpdateName : MonoBehaviour
     public TextMeshProUGUI errCheckName;
 
     [SerializeField] private TMP_InputField NameUpdate;
-    private string path = "http://localhost:3000/api/update/name";
-    private string pathCheck = "http://localhost:3000/api/check-name";
+    private string path = "http://34.150.93.73/api/update/name";
+    private string pathCheck = "http://34.150.93.73/api/check-name";
     private string UserName;
     private string UserID;
     private int price = 0;

@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class Updata : MonoBehaviour
 {
-    private string path = "http://localhost:3000/api/";
+    private string path = "http://34.150.93.73/api/";
     public static Updata Instance { get; private set; }
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class Updata : MonoBehaviour
         form.AddField("map_id", PlayerPrefs.GetString("map_id") );
         form.AddField("point", PlayerPrefs.GetInt("Score") );
         form.AddField("level", PlayerPrefs.GetInt("ModeMap") );
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/point-user/save", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://34.150.93.73/api/point-user/save", form))
         {
             yield return www.SendWebRequest();
             if (www.result != UnityWebRequest.Result.Success)
@@ -63,7 +63,7 @@ public class Updata : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("user_id", PlayerPrefs.GetString("UserID"));
         form.AddField("price", PriceBoss);
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/add-price", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://34.150.93.73/api/add-price", form))
         {
             yield return www.SendWebRequest();
             if (www.result != UnityWebRequest.Result.Success)

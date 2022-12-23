@@ -55,7 +55,7 @@ public class LoginUser : MonoBehaviour
         form.AddField("username", username);
         form.AddField("password", password);
         Debug.Log("User login:  " + username + " : " + password);
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/login-user", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://34.150.93.73/api/login-user", form))
         {
             yield return www.SendWebRequest();
 

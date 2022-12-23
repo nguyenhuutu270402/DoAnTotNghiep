@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class GetData : MonoBehaviour
 {
-    private string pathPoint = "http://localhost:3000/api/point-user/";
+    private string pathPoint = "http://34.150.93.73/api/point-user/";
     private string UserID;
 
-    private string pathCharacter = "http://localhost:3000/api/character-user/";
-    private string pathOpenCharacter = "http://localhost:3000/api/get-character";
-    private string pathArrPriceCharacter = "http://localhost:3000/api/price-character";
-    private string pathOpenWeapon = "http://localhost:3000/api/open-weapons";
+    private string pathCharacter = "http://34.150.93.73/api/character-user/";
+    private string pathOpenCharacter = "http://34.150.93.73/api/get-character";
+    private string pathArrPriceCharacter = "http://34.150.93.73/api/price-character";
+    private string pathOpenWeapon = "http://34.150.93.73/api/open-weapons";
 
     private float time = 2f;
     public Slider slider;

@@ -55,7 +55,7 @@ public class BuyItemWeb : MonoBehaviour
         form.AddField("code", id);
         form.AddField("price", prite);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/reset-price", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://34.150.93.73/api/reset-price", form))
         {
             yield return www.SendWebRequest();
 

@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class GetAchievement : MonoBehaviour
 {
-    private string ACHIEVEMENT_PATH = "http://localhost:3000/api/my-achievement/";
-    private string ACHIEVEMENT_UPDATE_PATH = "http://localhost:3000/api/my-achievement/update";
-    private string ACHIEVEMENT_REWARD_PATH = "http://localhost:3000/api/add-price";
+    private string ACHIEVEMENT_PATH = "http://34.150.93.73/api/my-achievement/";
+    private string ACHIEVEMENT_UPDATE_PATH = "http://34.150.93.73/api/my-achievement/update";
+    private string ACHIEVEMENT_REWARD_PATH = "http://34.150.93.73/api/add-price";
     private string USER_ID;
     public static GetAchievement Instance;
 
